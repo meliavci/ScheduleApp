@@ -1,0 +1,82 @@
+name: Build Final Report (PDF & DOCX)
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch: {}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: pandoc/latex:latest
+
+    defaults:
+      run:
+        shell: sh   # <- use sh inside the container
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Show repo tree
+        run: |
+          pwd
+          ls -la
+          echo "---- assignments/ ----"
+          ls -la assignments || true
+          echo "---- final/ ----"
+          ls -la final || true
+          echo "---- assets/ ----"
+          ls -la assets || true
+
+      - name: Sanity checks (fail early if files missing)
+        run: |
+          test -f meta.yaml
+          test -f assignments/assignment-01.md
+          test -f assignments/assignment-02.md
+          test -f assignments/assignment-03.md
+          test -f assignments/assignment-04.md
+          test -f final/reflection.md
+
+      - name: Build DOCX
+        run: |
+          mkdir -p build
+          pandoc \
+            assignments/assignment-01.md \
+            assignments/assignment-02.md \
+            assignments/assignment-03.md \
+            assignments/assignment-04.md \
+            final/reflection.md \
+            --metadata-file=meta.yaml \
+            --resource-path=.:assets:assignments \
+            --toc --toc-depth=2 --number-sections \
+            -o build/final-report.docx
+
+      - name: PDF smoke test (Hello, LaTeX)
+        run: |
+          printf "# Hello\nThis is a minimal PDF smoke test.\n" > /tmp/minimal.md
+          pandoc /tmp/minimal.md -o /tmp/minimal.pdf --pdf-engine=xelatex
+          ls -la /tmp/minimal.pdf
+
+      - name: Build PDF (verbose)
+        run: |
+          pandoc \
+            assignments/assignment-01.md \
+            assignments/assignment-02.md \
+            assignments/assignment-03.md \
+            assignments/assignment-04.md \
+            final/reflection.md \
+            --metadata-file=meta.yaml \
+            --resource-path=.:assets:assignments \
+            --pdf-engine=xelatex \
+            --toc --toc-depth=2 --number-sections \
+            -V geometry:margin=1in \
+            --verbose \
+            -o build/final-report.pdf
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: final-report
+          path: build/
+          if-no-files-found: error
