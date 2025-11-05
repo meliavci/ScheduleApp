@@ -125,7 +125,7 @@ Describe the environments you used in your pipeline:
 We utilized a standard three-tier environment strategy, ensuring clear separation of duties and validation stages before releasing the solution to end-users. The Melisa Avci's Environment served as our primary development sandbox.
 
 | Environment Role | Name | Purpose | Characteristics |
-| :--------------- | :--- | ------: |---------------: |
+| :--------------- | :--- | :------ |:--------------- |
 | Development | Melisa Avci's Environment | The source environment where the "TimescheduleApp" was actively built, customized, and linked to the GitHub repository. | Contains unmanaged solutions that allow free editing and debugging. |
 | Testing | Testing | Used for validating the solution's functionality (e.g., confirming the flow triggers and timetable logic work) before release. | Receives a managed solution copy to mirror Production stability. |
 | Production | Production | The final, live environment where end-users access the functional timetable application. | Includes managed solutions that prevent direct editing and accidental modifications. |
