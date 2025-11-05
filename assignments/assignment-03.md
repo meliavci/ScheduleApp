@@ -85,6 +85,10 @@ List your **Epics**, **Issues/User Stories**, and **Tasks**.
 
 
 **Screenshot:** Azure Boards (To-do, Doing, Done), feel free to add your sprints too.
+<img width="2559" height="1397" alt="image" src="https://github.com/user-attachments/assets/f4fbb781-ee82-4d01-86c3-64262ca56c70" />
+<img width="1465" height="612" alt="image" src="https://github.com/user-attachments/assets/a544b73a-6ab0-4697-95c1-6a5bd7e899d4" />
+<img width="1524" height="873" alt="image" src="https://github.com/user-attachments/assets/fb8cc664-bef5-437a-b212-939efb9d63a4" />
+
 
 ### Planning and Collaboration
 Explain how you used Azure Boards to plan, manage and visualize team work.  
@@ -118,19 +122,53 @@ This approach using the board as a comprehensive documentation and scoping tool 
 ### Environment Structure
 Describe the environments you used in your pipeline:
 
+We utilized a standard three-tier environment strategy, ensuring clear separation of duties and validation stages before releasing the solution to end-users. The Melisa Avci's Environment served as our primary development sandbox.
+
+| Environment Role | Name | Purpose | Characteristics |
+| :--------------- | :--- | ------: |---------------: |
+| Development | Melisa Avci's Environment | The source environment where the "TimescheduleApp" was actively built, customized, and linked to the GitHub repository. | Contains unmanaged solutions that allow free editing and debugging. |
+| Testing | Testing | Used for validating the solution's functionality (e.g., confirming the flow triggers and timetable logic work) before release. | Receives a managed solution copy to mirror Production stability. |
+| Production | Production | The final, live environment where end-users access the functional timetable application. | Includes managed solutions that prevent direct editing and accidental modifications. |
+
 
 ### Pipeline Configuration
-Explain the Power Apps pipeline stages, triggers, and approvals (if any).
 
 **Screenshot(s):** Power Apps pipeline setup (each stage visible).
+<img width="2557" height="1396" alt="image" src="https://github.com/user-attachments/assets/514e0db8-2f11-41fb-ba94-bc2106f9c10e" />
+
 
 **Short Explanation:**
-- What does each stage do?
-- How is deployment triggered?
-- How does this pipeline ensure version control?
+
+#### What does each stage do?
+- Development Stage:
+This is where the application and all its components are initially built, configured, and refined. Developers work with unmanaged solutions, allowing full flexibility for design changes, testing, and iteration.
+- Testing Stage:
+At this point, the solution is deployed as a managed version for evaluation and user testing. The goal is to verify that all features function correctly and that the app behaves as expected before release.
+- Production Stage:
+This final stage hosts the approved solution used by end users. Since it contains managed solutions, direct editing is disabled to protect stability and ensure a consistent production environment.
+
+#### How is deployment triggered?
+Deployments are manually initiated from the Development environment.
+The responsible user selects the desired solution, chooses the “Deploy” option, and designates the next environment (Testing or Production).
+If required, approval steps can be added so that moving a solution into Production must be authorized by an approver before proceeding.
+
+#### How does this pipeline ensure version control?
+Version control is achieved through the use of incremented version numbers for each managed solution deployment.
+Every release must have an updated version identifier, ensuring that changes can be traced, previous versions restored if needed, and consistency maintained across environments.
+This system prevents overwriting and keeps the deployment history transparent and organized.
 
 ### Lessons Learned
-Briefly describe what worked well and any limitations or errors faced during pipeline creation.
+Throughout the creation and configuration of our Power Apps pipeline, we identified several key strengths and challenges.
+
+#### What Worked Well
+- Version Tracking: The requirement to increment the solution version number before deployment ensured we had a clear, traceable history of changes, allowing us to identify and manage the exact version running in each environment.
+- Hosting the pipeline within Melisa Avci’s environment provided a reliable and consistent foundation for deployment and testing activities.
+
+#### Limittations and Challenges
+- Repository Synchronization Failure:
+A significant limitation was that the local changes to the "TimescheduleApp" solution in the Development environment were not updating the Azure DevOps repository automatically. This required manual commits and was attributed to missing institutional dependencies, creating friction in our continuous integration process.
+-  Visibility Restrictions:
+A major collaboration issue was that not every group member could see the created pipelines in the Power Apps Maker Portal from Melisa Avci's environment.
 
 ---
 
@@ -142,11 +180,14 @@ Explain the purpose of your Power Automate flow.
 #### Flow Analysis: Cancel_Course_Notification
 ##### Flow Description
 This instant cloud flow is triggered manually from the Power App (by the professor) to instantly cancel a selected class session in the backend and notify all affected students.
-This flow is triggered instantly from the Power App and updates the course status to 'Cancelled' while sending a push notification to every enrolled student about the schedule change.
+This flow is triggered instantly from the Power App and updates the course status to 'Cancelled'.
 ##### Short Explanation
-- What does the flow automate? The flow automates three critical steps: 1) Updating the course status (Column: “Taking place?”) in the Dataverse Courses table to "No" (Cancelled). 2) Identifying all affected students by querying the Enrollments table. 3) Sending a personalized push notification to the mobile device of every enrolled student.
-- Why is it useful for your solution? This flow directly solves the problem of communication delays and ripple effects caused by manual scheduling changes. It ensures that the database reflects the cancellation immediately, and all stakeholders (students) are notified in real-time, fulfilling the expectation for an automatic, real-time notification system.
-- How did you test it? The flow was tested by executing the final OnSelect logic of the "Select" button in the Power App. We verified that: 1) The flow ran without error. 2) The target course in the Courses table successfully changed its status (e.g., from 'Yes' to 'No'). 3) The test user (student) received the push notification on their mobile device. 4) The timetable block in the Power App immediately displayed the "Cancelled" icon (due to the Visible property logic) after the screen refresh.
+- What does the flow automate? The flow automates one step: 1) Updating the course status (Column: “Taking place?”) in the Dataverse Courses table to "No" (Cancelled). 
+- Why is it useful for your solution? This flow directly solves the problem of communication delays and ripple effects caused by manual scheduling changes. It ensures that the database reflects the cancellation immediately, fulfilling the expectation for an automatic system.
+- How did you test it? The flow was tested by executing the final OnSelect logic of the "Select" button in the Power App. We verified that: 1) The flow ran without error. 2) The target course in the Courses table successfully changed its status (e.g., from 'Yes' to 'No'). 3) The timetable block in the Power App immediately displayed the "Cancelled" icon (due to the Visible property logic) after the screen refresh.
+
+<img width="2559" height="1525" alt="image" src="https://github.com/user-attachments/assets/9c05ca6d-367f-4f30-a910-700772a959f6" />
+
 
 #### Flow Analysis: Reset_Cancelled_Courses_Daily
 ##### Flow Description
@@ -157,8 +198,9 @@ This flow is triggered on a daily recurrence to check for courses marked as 'No'
 - Why is it useful for your solution? This flow solves the issue of manual schedule adjustments and data hygiene. Without it, a course cancelled one Monday would remain marked as 'No' indefinitely, requiring manual intervention to make it appear on the schedule the following week. The flow ensures the timetable remains accurate and future scheduling is unhindered.
 - How did you test it? The flow was tested manually by: 1) Setting a test course's status in Dataverse to 'No'. 2) Manually triggering the scheduled flow. 3) Temporarily adjusting the date and time inside the flow's condition logic to force a comparison with the course's specific Weekday. 4) Verifying that the course's status was successfully updated back to 'Yes' (1).
 
+<img width="2559" height="1394" alt="image" src="https://github.com/user-attachments/assets/330a0983-2b6d-4afe-9fe4-2ae3f5f8a44f" />
+<img width="2554" height="1394" alt="image" src="https://github.com/user-attachments/assets/5026e22c-8a26-4190-b7a4-33eefbc1f708" />
 
-**Flow Diagram or Screenshot:** Flow steps and trigger.
 
 ---
 
@@ -166,16 +208,31 @@ This flow is triggered on a daily recurrence to check for courses marked as 'No'
 
 Reflect on your overall DevOps experience.
 
-- How did **Azure Boards** help organize work and improve efficiency?
-- What went well with **pipeline deployment and automation**?
-- What were the main challenges and lessons learned?
-- How does this DevOps approach differ from your earlier development process?
-
 #### Azure Boards: Organization and Efficiency
 Azure Boards served as our central documentation and visualization tool. While our team often worked collaboratively in meetings and had a flexible assignment style, the platform provided necessary structure:
 - Scoping and Traceability: The hierarchical breakdown into Epics, Issues, and Tasks allowed us to define the complete scope of work clearly. This was invaluable for tracing a functional requirement (e.g., "The user wants to view their timetable") back to the specific tasks.
 - Workflow Visualization: Using the Boards view, we could quickly see what was in progress and what was completed. This gave us definite closure on requirements. Although we often knew a task's status from meetings, the board provided the single source of truth for the final submission checklist.
 - Documentation: For critical logic such as defining the parameters for the two Power Automate flows or detailing the complex Dataverse lookups the work items ensured the logic was captured and available for reference, which was key to troubleshooting many of the integration problems.
+
+#### Pipeline Deployment and Automation 
+##### What went well?
+1. Reliable Core Functionality
+The most significant success was establishing the foundation for a functional Application Lifecycle Management system using Power Platform pipelines.
+
+- Managed Solution Integrity:
+We successfully configured the pipeline to deploy the solution artifact sequentially across environments as a Managed Solution. This guarantees that the exact version validated in Testing is moved to Production, which is crucial for maintaining data integrity and system stability.
+
+- Version Control Enforcement:
+The requirement to increment the solution version number before deployment enforced a critical best practice. This ensures every release is traceable and helps us manage clear tracking and identification of changes.
+
+2. Efficient Task Automation
+We successfully automated two core business requirements using Power Automate Cloud Flows, which directly addressed the problems of manual intervention and communication delays:
+
+- Instant Communication (Cancellation Flow):
+We implemented a flow triggered directly from the Power App that instantly updates the course status to 'Cancelled'. This fulfilled the need for immediate, automatic communication and solved the problem of communication delays.
+
+- Automated Data Hygiene (Reset Flow):
+We created a scheduled flow that runs daily at a specific time (e.g., 23:45) to automatically reset the status of cancelled courses. This solved the problem of manual data maintenance, ensuring that course availability is correctly restored for the following week.
 
 #### Challenges and Lessons Learned
 Our primary struggles were concentrated at the intersection of low-code development and stringent data source requirements.
