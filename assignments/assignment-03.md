@@ -62,7 +62,7 @@ List your **Epics**, **Issues/User Stories**, and **Tasks**.
 | Create the profile page UI | Melisa, Shehab | Done | Create a profile interface with buttons to choose actions as "Change room type", "Log out" and "Cancel class". Also display the user's name, courses, email and role. |
 | Test login flow | Melisa | Doing | Validate successful and failed login attempts. |
 | Implement login logic | Melisa | Done | Build backend endpoints for secure login (email/password) with proper user feedback for invalid credentials or missing fields and connect it to the frontend. |
-| Test logout process | Raphael | To Do | Ensure logout works properly. |
+| Test logout process | Raphael | Doing | Ensure logout works properly. |
 | Implement the logout backend | Raphael | Done | When a user clicks on the logout button their status should change in the database and they should be directed to the log in page. |
 | Create the notification UI | Aleksandra, Melisa | Done | Create a notification component which tells the updated changes in the user's timetable. |
 | Implement routing after successful login | Melisa | Done | When logging in and the user's credential match then they should be navigated to the timetable page. |
