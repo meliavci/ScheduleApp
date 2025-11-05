@@ -6,8 +6,35 @@
 Describe how you created your Azure DevOps (ADO) project and connected it to your GitHub repository.
 Include the name of your Power Apps solution and explain how the integration supports version control.
 
+#### Azure DevOps Project Creation and Setup
+Our initial step was to establish the centralized hub for our project management and source control linking.
+
+1. Project Creation: Melisa created a new project within our organization's Azure DevOps instance. We chose the project name "ScheduleApp".
+2. Member Assignment: Melisa then added all group members to the ADO project team.
+3. Permission Management: As the designated manager for the repository, Melisa ensured that everyone had the same necessary permissions to contribute to the code but we faced an issue with the basic role so that Melisa was the only one who had access to the "Repos" section in our Azure project.
+
+#### GitHub Integration and Solution Binding
+The core of our version control strategy was linking our local Power Apps development environment to the remote Git repository managed through Azure.
+
+1. Source Control Connection
+We initiated the Git connection through two distinct actions:
+- Internal Repository Connection: In Azure DevOps, Melisa connected our newly created ADO project to our internal Git repository where the source code for the project would live.
+- Power Apps Solution Connection: Within the Power Apps Maker Portal, we navigated to our solution, named "TimescheduleApp", and connected it directly to the designated Git repository branch.
+
+2. Version Control Mechanism
+The integration supports version control by formalizing the flow of changes:
+- Local Development: All changes made to the components of the "TimescheduleApp" (such as screens, tables, and custom logic) were saved locally within Power Apps Studio.
+- Committing Changes: When a developer was ready to share their work, the changes were saved in the Power Apps solution and then we needed to manually commit it to the Azure Repo.
+- Synchronization: This commit pushed files representing the solution components (screens, flows, etc.) into the linked Git repository.
+- Centralized Management: Since Melisa was the only one who could initially manage the repository, commits were reviewed by the group before being merged into the main development branch. This process, coupled with the permissions given to ensure equal access for contribution, established a reliable system for tracking every iterative change made to the "TimescheduleApp" solution.
+
+This structured approach ensured that all development work, despite the challenges we faced with manual updates at times, was versioned and synchronized across the entire team environment.
+
 **Screenshot:** Azure DevOps project overview with project stats from the right side of the screen.
 The Git repository address that you used for your apps. I have created a new folder named "powerapps-solution" in your current repository, where you can use to connect to Power Apps.
+<img width="2556" height="1341" alt="image" src="https://github.com/user-attachments/assets/eb5634f0-9643-470b-a9ad-96c8dece5bdf" />
+<img width="2559" height="1524" alt="image" src="https://github.com/user-attachments/assets/50d728d5-8dc1-40ad-a60c-1bf81ba0ff07" />
+
 
 ### Work Items Definition
 List your **Epics**, **Issues/User Stories**, and **Tasks**.
@@ -35,8 +62,8 @@ List your **Epics**, **Issues/User Stories**, and **Tasks**.
 | Create the profile page UI | Melisa, Shehab | Done | Create a profile interface with buttons to choose actions as "Change room type", "Log out" and "Cancel class". Also display the user's name, courses, email and role. |
 | Test login flow | Melisa | Doing | Validate successful and failed login attempts. |
 | Implement login logic | Melisa | Done | Build backend endpoints for secure login (email/password) with proper user feedback for invalid credentials or missing fields and connect it to the frontend. |
-| Test logout process | / | To Do | Ensure logout works properly. |
-| Implement the logout backend | / | To Do | When a user clicks on the logout button their status should change in the database and they should be directed to the log in page. |
+| Test logout process | Raphael | To Do | Ensure logout works properly. |
+| Implement the logout backend | Raphael | Done | When a user clicks on the logout button their status should change in the database and they should be directed to the log in page. |
 | Create the notification UI | Aleksandra, Melisa | Done | Create a notification component which tells the updated changes in the user's timetable. |
 | Implement routing after successful login | Melisa | Done | When logging in and the user's credential match then they should be navigated to the timetable page. |
 | Create scheduled update of the course status everyday | Melisa | Done | Check if the past day has cancelled classes and setting the "Taking place?" column of the courses back to "yes" with a Power Automate flow. |
@@ -47,7 +74,6 @@ List your **Epics**, **Issues/User Stories**, and **Tasks**.
 | Design login page UI | Melisa, Raphael | Done | Create a clean and intuitive interface for user authentication as a new login form component with the fields "email" and "password". |
 | Create frontend component to display timetables | Melisa | Done | Build the visual interface showing a timetable as a new component. |
 | Integrate timetable generation with user data | Melisa | Done | Connect the algorithm to user course selections and preferences from the Dataverse database with a Power Automate flow. |
-| Implement log out logic | / | To do | Navigate the user to the log in page when clicking on the "Log out" button. |
 | Display the generated personalized timetables. | Melisa | Done | Connect the data of each user's generated timetable to their timetable frontend component. |
 | Implement backend logic for class cancellation | Melisa | Done | Create database handling for canceled classes. |
 | Test notification functionality | Melisa | Doing | Confirm the affected users get notified directly when a change in their timetable happens. |
