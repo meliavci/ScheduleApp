@@ -61,14 +61,27 @@ The system implements strict Role Determination by User Authentication:
 ---
 
 ### Data Connection
-Explain how your Copilot connects to Dataverse or another data source.  
-If you used Power Automate, summarize:
-- What flow(s) you created and what they do.
-- Which data is fetched or updated.
-- How this information is used in your Copilot’s responses.
+Our Copilot connects to the Dataverse backend exclusively through Power Automate Cloud Flows (Actions). This architecture was chosen to ensure that complex data manipulations (like secure authentication and status updates) are handled outside of the conversational interface, enforcing strict security and privacy standards.
 
-Example:  
-The Copilot triggers a Power Automate flow that retrieves the student’s program information based on their email address, then replies with their enrollment details.
+#### Connection Strategy
+The Copilot triggers a flow whenever it needs to perform a data lookup, update, or execute conditional logic. This is essential for:
+1. Gated Access: The flows manage access credentials and enforce role restrictions.
+2. Complex Data Handling: The flows handle multi-table lookups (e.g., retrieving a Professor's email by navigating from the Course table) and complex updates (e.g., updating a room lookup field).
+
+#### Implemented Power Automate Flows
+We created a suite of seven specific flows to support the agent's full functionality across the three major user roles:
+| Flow Name | Purpose & Primary Action | Data Fetched/Updated | Copilot Usage |
+|-----------|--------------------------|----------------------|---------------|
+| Authenticate_User_And_Get_Role | Security Check & Role Determination: Verifies user credentials against the People table using an OData filter (cre96_email AND cre96_password). | Fetches: cre96_role (Optionset value). | Returns the role text (Professor, Student) via a Switch action to set the global Global.UserRole variable. |
+| GetProfessorInfoForAbsence | Lookup Professor Details: Retrieves the assigned professor's contact details for a specific course. | Fetches: Professor's cre96_email and cre96_personname by querying the Courses table and using an Expand Query on the Person lookup. | Provides the necessary email and name inputs for the sending_email flow. |
+| sending_email | Automated Communication: Sends a formatted email to the professor regarding a student's absence. | Uses Inputs: professorEmail, courseName, absenceDate, absenceReason, etc.. | Executes the final transactional step of the StudentAbsence topic. | 
+| GetCourseRoomInformation | Initial Room Data: Fetches the current room assignments and details for a course. | Fetches: roomName, roomCapacity, and roomType by querying the Courses table and using an Expand Query on the Room lookup field (cre96_Room2). | Displays current resource details in the Change room topic before allowing modification. |
+| change_room_agent | Resource Search: Lists all available rooms meeting specific criteria. | Fetches: Room details (cre96_roomname, cre96_capacity, cre96_type) from the Rooms table, filtering by cre96_availability eq true. | Returns a structured array of available rooms for the Staff user to select from. |
+| Change room with room update in course | Database Update: Updates the course record with the selected new room. | Updates: The Room (Rooms) lookup field on the specific Course record using the Update a row action. | Confirms the resource assignment transaction is complete in the Change room topic. |
+| getUsername | User Detail Retrieval: Retrieves the user's name based on their email. | Fetches: cre96_personname by querying the People table based on the provided email. | Used in the User Authentication topic to personalize messages with the user's name. |
+
+#### Data Usage Summary
+Information is consistently fetched from Dataverse using List rows with OData filters or Expand Query for relational data (e.g., retrieving professor emails or room names across lookups). This information is then used by the Copilot to either control the conversation flow (e.g., checking if roomName is blank in the Change room topic) or to populate the final communication (e.g., the email body in the StudentAbsence topic). Updates are handled by the transactional flows using the Update a row action to change resource assignments.
 
 ### Include
 - Screenshots showing your Copilot in action (e.g., user queries and responses).
