@@ -18,14 +18,45 @@ Clarify **why** this feature adds value for your users or organization.
 ---
 
 ### Knowledge Provided to the Copilot
-Document the **data knowledge** your Copilot uses to understand and reason:
-- **Business context:** What is the purpose of your app? What type of questions should the Copilot answer?
-- **Structured data:** Which Dataverse tables, columns, or other data sources are connected?
-- **Conversational knowledge:** What kinds of questions can users ask?
-- **Security and permissions:** What data is restricted or read-only?
+The purpose of our Copilot agent is to serve as a secure, role-based backend interface for specific logistical operations within our university timetable application. It acts as a central tool for managing scheduling tasks and mandatory student communications, preventing the need for manual database updates.
 
-Example:  
-The Copilot reads from the "StudentInfo" table to provide program and status details to each logged-in user. It cannot access personal email or address fields.
+#### Business Context
+- Purpose of the App: 
+The primary goal of the application is to create and maintain an optimized, conflict-minimized course timetable and provide real-time updates to all stakeholders (students, staff, and professors).
+- Copilot's Role: 
+The Copilot handles specific, role-gated transactional actions (e.g., reporting absence, changing room assignment) and authentication. It avoids general, non-data-driven conversations.
+
+#### Structured Data
+The Copilot is informed by direct connections to our Dataverse solution components. These tables provide the factual and relational context necessary for the agent's logic.
+- Data Sources: 
+The agent has read/write access to the following Dataverse tables: Break Time, OpeningHour, Course, Person, Enrollment, and Room.
+- Key Columns & Data Used for Logic:
+  - Authentication: People table (cre96_email and cre96_password) for user verification.
+  - Absence Notification: Course table (to find professor's assignment) and Person table (to find professor's email).
+  - Room Change (Staff): Course and Room tables (to find available rooms and update course assignment).
+  - Role Determination: Person table (Role Choice field) to determine the user's security level.
+
+#### Conversational Knowledge
+The Copilot is restricted to performing actions defined by specific Topics, including: Change room, StudentAbsence, End conversation, and User Authentication. Users are expected to ask direct, actionable questions that trigger these specific workflows.
+
+#### Security and Operational Configuration
+We enforced strict security and operational constraints within the agent settings:
+
+##### Security and Permissions
+The system implements strict Role Determination by User Authentication:
+- The agent first requires the user to authenticate against the People table before any functional topic can be accessed.
+- Data Privacy: The agent is strictly prohibited from exposing sensitive data, including passwords, enrollments of other users, or personal emails of other students.
+
+| Role | Access and Limitations | Data Restriction Type | 
+|------|------------------------|-----------------------| 
+| Student | Can only execute the StudentAbsence workflow. | Limited to personal enrollment and course data. | 
+| Professor | Does not have any defined automated actions within the Copilot. | Read-only access to personal status only. | 
+| Staff (Scheduler) | Can execute the Change room workflow for any course. | Full access to institutional course and resource data required for management tasks. |
+
+#### Operational Configuration
+- Generative AI Orchestration: We ensured that the setting "Use generative AI orchestration for your agent's responses" was Disabled. This is a critical security measure because it prevents the bot from relying on Large Language Model (LLM) processing for conversational flow and forces it to strictly adhere to our predefined topics and authentication flow.
+- Web Search: Web search is Disabled. The agent relies exclusively on the internal Dataverse tables for all information and context.
+- Agent's Model: The agent uses the GPT-4.1 (default) model for its underlying language understanding capabilities.
 
 ---
 
