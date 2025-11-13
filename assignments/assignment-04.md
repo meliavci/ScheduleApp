@@ -5,15 +5,55 @@
 ## Copilot Feature
 
 ### Description and Purpose
-Describe the **Copilot feature** you created in your app using **Microsoft Copilot Studio**.  
-Explain what the Copilot is designed to do — for example:
-- Helping users navigate the app or retrieve data,
-- Automating a repetitive task,
-- Providing personalized recommendations or insights.
+Our Copilot, named Scheduler, is built using Microsoft Copilot Studio and is designed to provide secure, role-gated transactional assistance for administrative tasks within our university scheduling system. It utilizes Power Automate flows as secured intermediaries to interact with our Microsoft Dataverse backend. The primary goal is to streamline communication and automate repetitive logistical processes that were previously handled manually.
 
-Clarify **why** this feature adds value for your users or organization.
+The Copilot is designed to execute the following role-specific functions:
+- Automating a repetitive task: For students, it automates the process of sending absence notifications. For staff, it automates the process of finding and assigning a new room.
+- Helping users retrieve and update data: It retrieves real-time course and room data and updates the corresponding records in Dataverse based on user input.
 
-*Tip:* Use simple, clear examples of user interactions that show how the Copilot improves usability or decision-making.
+Due to limitations imposed by our university that prevent us from publishing the agent and connecting it to our app, we used a workaround by creating an icon component. This component acts as a link to the website where you can interact with the chatbot.
+
+Our Copilot offers three core, role-gated functions: User Authentication, Student Absence Reporting, and Room Change for Staff.
+
+#### Feature Breakdown
+##### 1. User Authentication
+When a user begins interacting with the Copilot, it first performs authentication. The Copilot asks for the user’s email and password and verifies these credentials against the Person table in Dataverse. Once authenticated, the user’s role (Student, Professor, or Staff) is identified, and role-specific functions become available. This step is critical as it ensures users can only access the functions associated with their assigned security role.
+
+##### 2. Student Absence Reporting
+If the authenticated user is a Student (the only role with defined actions), the Copilot allows them to easily report an absence. This feature is enabled via a Power Automate flow that fetches the corresponding professor’s email and name from Dataverse and automatically sends a dynamic, pre-formatted email notification.
+
+###### Example interaction:
+- Copilot: “You have the option to give your absence. Do you want to let your professor know?”
+- Student: “Yes.”
+- Copilot: “On which date will you be absent? Written in this format: dd.mm.yyyy or dd.mm.yy”
+- Student: “01.11.2025”
+- Copilot: “Which course will you miss? Please type the course name.”
+- Student: “DevOps and Low-code Development Laboratory”
+- Copilot: “What is the reason for your absence?”
+- Student: “I’m sick”
+- Copilot: “An absence E-Mail got sent to alireza@hiof.no” This feature saves students time and ensures that absence notifications are consistent and properly recorded. It removes the need for students to manually write and send emails to their professors.
+
+##### 3. Room Change (Staff)
+If the logged-in user is Staff, the Copilot offers a Change Room function. The staff member specifies the course that needs a new room. The Copilot retrieves and lists all available rooms from Dataverse. After the user selects one, the system updates the booking — marking the new room as occupied.
+
+###### Example interaction:
+- Copilot: “You have the option to change a room. Do you want to change rooms?”
+- Staff: “Yes”
+- Copilot: “For which course would you like to change the room?”
+- Staff: “DevOps and Low-code Development Laboratory”
+- Copilot: “The selected course 'DevOps and Low-code Development Laboratory' takes place in a Lecture hall (Room B01) and has a capacity for 120 students. Do you want to change it to a different available room?”
+- Staff: “Yes”
+- Copilot: “Available rooms: Room: A01 Capacity: 150 Room Type: Lecture hall Campus: A; Room: A02 Capacity: 140 Room Type: Lecture hall Campus: A; … Which room would you like to change to?”
+- Staff: “A02”
+- Copilot: “Room is now marked as unavailable.”
+
+This automation makes it easy for staff to adjust room assignments quickly — for example, when switching from a lecture hall to a lab.
+
+#### Clarify Why This Feature Adds Value
+The Copilot adds significant value by automating everyday tasks and reducing manual errors.
+- For Students: It simplifies absence communication and ensures their professors are notified promptly and consistently.
+- For Staff: It streamlines room management, saving time and improving scheduling accuracy by leveraging real-time availability data.
+- For the Organization: It promotes efficient data handling through direct Dataverse integration, minimizes reliance on unstructured email communication, and enhances overall productivity in academic operations. Overall, the Copilot improves usability, reduces administrative workload, and ensures a secure, consistent experience across all user roles.
 
 ---
 
@@ -93,21 +133,52 @@ Information is consistently fetched from Dataverse using List rows with OData fi
 ## Testing and Monitoring
 
 ### Automated Tests
-Describe shortly how you used **Power Apps Test Studio** to ensure app quality.  
-Include:
-- The **names of test suites and test cases**.
-- What each test validates (e.g., login, form submission, or Copilot response).
-- Any bugs or issues identified during testing.
+We utilized Power Apps Test Studio to create automated test suites that cover critical user paths, role-based access, and data security integrity. This ensured the reliability of the application's core functionality, especially the dynamic timetable and the multi-role login process.
 
-*Tip:* Tests should focus on core user paths and interactions that affect reliability or data accuracy.
+#### Test Suites and Case Descriptions
+We grouped our test cases into three primary suites focused on authentication, security, and the main cancellation workflow.
+
+| Test Suite Name | Test Case Name | Validation Purpose | Issues Identified |
+|-----------------|----------------|--------------------|-------------------|
+| ScheduleApp | loginAsStudent | Validates successful login and navigation for the Student role. | None |
+| ScheduleApp | loginAsProf | Validates successful login and navigation for the Professor role. | None |
+| ScheduleApp | loginAsStaff | Validates successful login and navigation for the Staff role. | None | 
+| ScheduleApp | loginWithWrongEmail | Validates that the system correctly rejects login attempts using an invalid email format or non-existent account. | None |
+| ScheduleApp | loginWithWrongPassword | Validates that the system correctly rejects login attempts with a valid email but incorrect password. | None |
+| ScheduleApp | loginWithEmptyLabels | Validates that the system handles empty input fields gracefully (e.g., preventing login). | None |
+| ScheduleApp | logout | Validates that users (Student/Staff) can successfully navigate to the profile screen and terminate their session. | None |
+| ScheduleApp | cancelClassAsProf | Validates the Professor's core workflow: successful login, navigation to profile, and toggling the course selection menu. | Critical Bug Identified: Test Studio failed because it could not specify the correct ThisItem context to select the btnSelectCourse inside the nested gallery, leading to a selection error and test failure becuase of Test Studio limitations. | 
+| ScheduleApp | notification | Validates the user's ability to navigate to the profile screen and manually trigger the notification pop-up state. | Limitation Observed: Although the logic worked, the test failed to visually validate the pop-up visibility because Test Studio cannot simulate the necessary context switch required for the varShowPopup property to render the element. |
+
+#### Summary of Testing Usage
+We used Test Studio to simulate user actions (SetProperty, Select, Maps) to verify that the core application functions (authentication, role-based access to the profile screen) executed successfully.
+
+The testing process successfully identified a critical scope bug in the cancellation workflow (cancelClassAsProf failed at step 6). This bug was traced to an inability to select the button inside the course list gallery, highlighting a selection hierarchy or ordering issue that requires code review.
 
 ---
 
 ### Monitoring and Performance
-Use **Power Platform Monitor** to identify performance issues and track user behavior.  
-Explain:
-- What metrics you reviewed.
-- Any bottlenecks found and how they were resolved or improved.
+We utilized the Power Platform Monitor tool to analyze network calls, data operations, and function execution times within the application. This provided visibility into the flow of data during critical user journeys, such as login and course data loading.
+
+#### Metrics 
+We primarily reviewed the following metrics to assess performance and data handling during each transaction:
+- Network Calls (Dataverse getRows): Monitored the time taken for the application to fetch data from the People, Enrollments, and Courses tables.
+- Data Operations (patchRow): Tracked the success and latency of the Patch operation used to update the 'Logged in?' status in the People table during login and the status of the course upon sign-out.
+-Function Execution Time (ClearCollect, Filter): Reviewed the time required for Power Fx functions to execute, especially those building and filtering the necessary collections (colUserEnrollments, colUserCourses, etc.).
+
+#### Bottlenecks and Resolutions
+Across all tested scenarios (successful login, sign-out, and failure conditions), we did not observe any decisive performance issues or extreme network latency that required immediate refactoring. The system performed its synchronous tasks (like fetching rows and updating patches) within acceptable limits for the small dataset used.
+- Improvement: We did not implement any specific performance improvements or refactorings based on Monitor insights, as no decisive bottlenecks were found. The existing complex filter logic (using multiple ClearCollect actions) proved adequately fast for the current application scope.
+
+#### Test Suites and Cases Reviewed in Monitor
+| Test Suite | Case Name Reviewed | Primary Operations Tracked |
+|------------|--------------------|----------------------------|
+| ScheduleApp | loginAsStudent | getRows (People, Enrollments, Courses) and ClearCollect functions. |
+| ScheduleApp | loginAsProf | getRows and ClearCollect for professor data and courses. |
+| ScheduleApp | loginAsStaff | getRows and ClearCollect for staff data and courses. |
+| ScheduleApp | loginWithWrongPassword | getRows (People) to confirm the filter executes quickly even with mismatched credentials. |
+| ScheduleApp | cancelClassAsProf | Network Run call to the Cancel_Course_Notification Power Automate flow. |
+| ScheduleApp | logout | patchRow and Clear functions (clearing collections) upon sign-out. |
 
 To make documentation consistent for grading:
 1. **Save and publish** your test suites in Power Apps Test Studio.
@@ -142,9 +213,24 @@ Verify that the **final version** functions as intended after deployment.
 ## Reflection
 
 ### Reflection and Learning
-Write a short reflection discussing:
-- How integrating a Copilot changed your app’s **functionality**, **efficiency**, or **user experience**.
-- What you learned from **testing and monitoring**, and how it helped you identify improvement opportunities.
-- How **automated deployment** and **AI integration** contributed to the **DevOps lifecycle** of your project.
+#### Copilot Integration: Impact on Functionality and User Experience
+Integrating the Copilot fundamentally shifted the application's functionality from a passive data viewer to an active, role-gated transaction handler.
+- Functionality: The Copilot automated critical administrative communication (Student Absence Reporting) and resource management (Staff Room Change), tasks which previously required manual email drafting or direct data entry. This transformed complex, multi-step processes into simple, natural language interactions.
+- User Experience (UX): The Copilot provided a personalized UX by immediately authenticating the user and restricting available topics based on the Bot.UserRole (Student, Staff). This meant users were never shown irrelevant options, improving efficiency.
+- Key Restriction: A major technical obstacle was the institutional inability to publish the bot, preventing direct integration with the live Power App. This forced us to rely on a workaround (a manual login prompt within the bot and external website link) that complicated the initial user flow, demonstrating a constraint on out-of-the-box integration capabilities.
 
+#### Lessons Learned from Testing and Monitoring
+The testing phase was highly valuable, not for revealing major performance flaws (as Monitor showed no decisive bottlenecks), but for identifying platform-specific limitations:
+- Power Apps Test Studio Limitations: We learned that Test Studio struggles with advanced UI constructs. Specifically, we were unable to reliably test interactions involving nested galleries (failing to select ThisItem buttons) and conditional invisible pop-ups. This highlighted a gap in the automated testing suite for complex low-code interfaces.
+- Tooling and Development Friction: We identified that the Copilot Studio editor lacks native features for easily handling date-to-string conversion, requiring cumbersome Power Fx workarounds (e.g., using FormatDateTime). Furthermore, the co-authoring environment was restrictive, as collaboration was automatically terminated when one co-owner entered the testing studio, interrupting teamwork.
+
+#### Contribution to the DevOps Lifecycle
+Our integrated DevOps strategy leveraged both automated deployment tools and the Copilot agent to contribute across all phases of the lifecycle:
+- Build Phase: The development process was formalized by committing and pushing the solution to Azure DevOps and GitHub before any deployment, establishing source control and traceability for the application components.
+- Release & Deploy Phase: Automated deployment contributed significantly here by utilizing the Power Platform pipeline to systematically move the final version from Development --> Test --> Production.
+- Test Phase: Testing was integrated into the cycle by using the pipeline to enforce the testing phase, ensuring the solution only proceeded to the next environment upon successful verification.
+- Operate Phase (Automated Rollback & AI Support):
+  - Automated Deployment facilitates the Operate phase by allowing for quick rollback to the previous stable version if a post-deployment issue is discovered through the automated pipeline framework.
+  - AI Integration also contributes to the Operate phase by assisting the user with natural-language interaction, automating tasks, and providing intelligent insights based on the app’s data.
+- Plan & Code / Monitor Phases (AI Contribution): AI integration contributes to the Plan & Code phase by providing usage patterns and interactions from the Copilot that can generate valuable data. It also contributes to the Monitor phase when the Copilot design is leveraged to provide “intelligent insights” based on performance or usage data.
 
