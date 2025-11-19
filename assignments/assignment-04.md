@@ -19,6 +19,8 @@ Our Copilot offers three core, role-gated functions: User Authentication, Studen
 ##### 1. User Authentication
 When a user begins interacting with the Copilot, it first performs authentication. The Copilot asks for the user’s email and password and verifies these credentials against the Person table in Dataverse. Once authenticated, the user’s role (Student, Professor, or Staff) is identified, and role-specific functions become available. This step is critical as it ensures users can only access the functions associated with their assigned security role.
 
+See: [Figure 4: The chat about the professor login topic](../assets/Assignment4/Copilot/professorLogin.png)
+
 ##### 2. Student Absence Reporting
 If the authenticated user is a Student (the only role with defined actions), the Copilot allows them to easily report an absence. This feature is enabled via a Power Automate flow that fetches the corresponding professor’s email and name from Dataverse and automatically sends a dynamic, pre-formatted email notification.
 
@@ -32,6 +34,8 @@ If the authenticated user is a Student (the only role with defined actions), the
 - Copilot: “What is the reason for your absence?”
 - Student: “I’m sick”
 - Copilot: “An absence E-Mail got sent to alireza@hiof.no” This feature saves students time and ensures that absence notifications are consistent and properly recorded. It removes the need for students to manually write and send emails to their professors.
+
+See: [Figure 5: The chat about the student absence topic, Part 1](../assets/Assignment4/Copilot/studentAbsence.png), [Figure 6: The chat about the student absence topic, Part 2](../assets/Assignment4/Copilot/studentAbsenceTwo.png)
 
 ##### 3. Room Change (Staff)
 If the logged-in user is Staff, the Copilot offers a Change Room function. The staff member specifies the course that needs a new room. The Copilot retrieves and lists all available rooms from Dataverse. After the user selects one, the system updates the booking — marking the new room as occupied.
@@ -47,7 +51,7 @@ If the logged-in user is Staff, the Copilot offers a Change Room function. The s
 - Staff: “A02”
 - Copilot: “Room is now marked as unavailable.”
 
-([Figure 1: The chat about the change room topic, Part 1](../assets/Assignment4/Copilot/changeRoom.png), [Figure 2: The chat about the change room topic, Part 2](../assets/Assignment4/Copilot/changeRoomTwo.png), [Figure 3: The chat about the change room topic, Part 3](../assets/Assignment4/Copilot/changeRoomThree.png))
+See: [Figure 1: The chat about the change room topic, Part 1](../assets/Assignment4/Copilot/changeRoom.png), [Figure 2: The chat about the change room topic, Part 2](../assets/Assignment4/Copilot/changeRoomTwo.png), [Figure 3: The chat about the change room topic, Part 3](../assets/Assignment4/Copilot/changeRoomThree.png)
 
 This automation makes it easy for staff to adjust room assignments quickly — for example, when switching from a lecture hall to a lab.
 
@@ -190,6 +194,26 @@ To make documentation consistent for grading:
 1. **Save and publish** your test suites in Power Apps Test Studio.
 2. **Commit** your Power Apps solution (with the app + tests) to your connected **Azure DevOps** repository.
 3. **Commit and push** the latest version to **GitHub**.
+
+![Figure 7: Test Studio: cancel class as professor](../assets/Assignment4/Tests/TestStudio/cancelClassAsProf.png)
+![Figure 8: Test Studio: login as professor](../assets/Assignment4/Tests/TestStudio/loginAsProf.png)
+![Figure 9: Test Studio: login as staff](../assets/Assignment4/Tests/TestStudio/loginAsStaff.png)
+![Figure 10: Test Studio: login as student](../assets/Assignment4/Tests/TestStudio/loginAsStudent.png)
+![Figure 11: Test Studio: login with empty labels](../assets/Assignment4/Tests/TestStudio/loginWithEmptyLabels.png)
+![Figure 12: Test Studio: login with wrong email](../assets/Assignment4/Tests/TestStudio/loginWithWrongEmail.png)
+![Figure 13: Test Studio: login with wrong password](../assets/Assignment4/Tests/TestStudio/loginWithWrongPassword.png)
+![Figure 14: Test Studio: logout](../assets/Assignment4/Tests/TestStudio/logout.png)
+![Figure 15: Test Studio: notification](../assets/Assignment4/Tests/TestStudio/notification.png)
+![Figure 16: Live Monitoring: cancel class as professor](../assets/Assignment4/Tests/LiveMonitoring/cancelClassAsProf.png)
+![Figure 17: Live Monitoring: login as professor](../assets/Assignment4/Tests/LiveMonitoring/loginAsProf.png)
+![Figure 18: Live Monitoring: login as staff](../assets/Assignment4/Tests/LiveMonitoring/loginAsStaff.png)
+![Figure 19: Live Monitoring: login as student](../assets/Assignment4/Tests/LiveMonitoring/loginAsStudent.png)
+![Figure 20: Live Monitoring: login with empty labels](../assets/Assignment4/Tests/LiveMonitoring/loginWithEmptyLabels.png)
+![Figure 21: Live Monitoring: login with wrong email](../assets/Assignment4/Tests/LiveMonitoring/loginWithWrongEmail.png)
+![Figure 22: Live Monitoring: login with wrong password](../assets/Assignment4/Tests/LiveMonitoring/loginWithWrongPassword.png)
+![Figure 23: Live Monitoring: logout](../assets/Assignment4/Tests/LiveMonitoring/logout.png)
+![Figure 24: Live Monitoring: notification](../assets/Assignment4/Tests/LiveMonitoring/notification.png)
+
 
 Include:
 - **Screenshot of your monitoring dashboard or metrics**.
