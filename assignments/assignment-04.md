@@ -34,7 +34,7 @@ If the authenticated user is a Student (the only role with defined actions), the
 - Copilot: “An absence E-Mail got sent to alireza@hiof.no” This feature saves students time and ensures that absence notifications are consistent and properly recorded. It removes the need for students to manually write and send emails to their professors.
 
 ##### 3. Room Change (Staff)
-If the logged-in user is Staff, the Copilot offers a Change Room function. The staff member specifies the course that needs a new room. The Copilot retrieves and lists all available rooms from Dataverse. After the user selects one, the system updates the booking — marking the new room as occupied.
+If the logged-in user is Staff, the Copilot offers a Change Room function. The staff member specifies the course that needs a new room. The Copilot retrieves and lists all available rooms from Dataverse. After the user selects one, the system updates the booking — marking the new room as occupied ([Figure 1: The chat about the change room topic, Part 1](../assets/Assignment4/Copilot/changeRoom.png), [Figure 2: The chat about the change room topic, Part 2](../assets/Assignment4/Copilot/changeRoomTwo.png), [Figure 3: The chat about the change room topic, Part 3](../assets/Assignment4/Copilot/changeRoomThree.png)).
 
 ###### Example interaction:
 - Copilot: “You have the option to change a room. Do you want to change rooms?”
@@ -123,10 +123,14 @@ We created a suite of seven specific flows to support the agent's full functiona
 #### Data Usage Summary
 Information is consistently fetched from Dataverse using List rows with OData filters or Expand Query for relational data (e.g., retrieving professor emails or room names across lookups). This information is then used by the Copilot to either control the conversation flow (e.g., checking if roomName is blank in the Change room topic) or to populate the final communication (e.g., the email body in the StudentAbsence topic). Updates are handled by the transactional flows using the Update a row action to change resource assignments.
 
-### Include
-- Screenshots showing your Copilot in action (e.g., user queries and responses).
-- A brief description of your Copilot topic(s) and triggers in Copilot Studio. (If any)
-- **Link to your Copilot** (shared from Copilot Studio).
+![Figure 1: The chat about the change room topic, Part 1](../assets/Assignment4/Copilot/changeRoom.png)
+![Figure 2: The chat about the change room topic, Part 2](../assets/Assignment4/Copilot/changeRoomTwo.png)
+![Figure 3: The chat about the change room topic, Part 3](../assets/Assignment4/Copilot/changeRoomThree.png)
+![Figure 4: The chat about the professor login topic](../assets/Assignment4/Copilot/professorLogin.png)
+![Figure 5: The chat about the student absence topic, Part 1](../assets/Assignment4/Copilot/studentAbsence.png)
+![Figure 6: The chat about the student absence topic, Part 2](../assets/Assignment4/Copilot/studentAbsenceTwo.png)
+
+Link to our Copilot Agent: https://web.powerva.microsoft.com/environments/6484ef4a-54a6-e8b2-81c8-a24f9f8b1849/bots/bba1bea3-41ba-f011-bbd3-6045bda07122/overview
 
 ---
 
