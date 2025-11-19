@@ -192,7 +192,7 @@ Across all tested scenarios (successful login, sign-out, and failure conditions)
 | ScheduleApp | cancelClassAsProf | Network Run call to the Cancel_Course_Notification Power Automate flow. |
 | ScheduleApp | logout | patchRow and Clear functions (clearing collections) upon sign-out. |
 
-The tests are visible in our GitHub repo (e.g., under `/solutions/<SolutionName>/CanvasApps/.../Tests/` and `../assets/Assignment4/Tests/TestStudio`).
+The tests are visible in our GitHub repo (e.g., under `/solutions/canvasapps/schedule_timeschedulerapp_045a7/schedule_timeschedulerapp_045a7_DocumentUri/AppTests` and `../assets/Assignment4/Tests/TestStudio`).
 
 ![Figure 7: Test Studio: cancel class as professor](../assets/Assignment4/Tests/TestStudio/cancelClassAsProf.png)
 ![Figure 8: Test Studio: login as professor](../assets/Assignment4/Tests/TestStudio/loginAsProf.png)
