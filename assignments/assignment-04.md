@@ -34,7 +34,7 @@ If the authenticated user is a Student (the only role with defined actions), the
 - Copilot: “An absence E-Mail got sent to alireza@hiof.no” This feature saves students time and ensures that absence notifications are consistent and properly recorded. It removes the need for students to manually write and send emails to their professors.
 
 ##### 3. Room Change (Staff)
-If the logged-in user is Staff, the Copilot offers a Change Room function. The staff member specifies the course that needs a new room. The Copilot retrieves and lists all available rooms from Dataverse. After the user selects one, the system updates the booking — marking the new room as occupied ([Figure 1: The chat about the change room topic, Part 1](../assets/Assignment4/Copilot/changeRoom.png), [Figure 2: The chat about the change room topic, Part 2](../assets/Assignment4/Copilot/changeRoomTwo.png), [Figure 3: The chat about the change room topic, Part 3](../assets/Assignment4/Copilot/changeRoomThree.png)).
+If the logged-in user is Staff, the Copilot offers a Change Room function. The staff member specifies the course that needs a new room. The Copilot retrieves and lists all available rooms from Dataverse. After the user selects one, the system updates the booking — marking the new room as occupied.
 
 ###### Example interaction:
 - Copilot: “You have the option to change a room. Do you want to change rooms?”
@@ -46,6 +46,8 @@ If the logged-in user is Staff, the Copilot offers a Change Room function. The s
 - Copilot: “Available rooms: Room: A01 Capacity: 150 Room Type: Lecture hall Campus: A; Room: A02 Capacity: 140 Room Type: Lecture hall Campus: A; … Which room would you like to change to?”
 - Staff: “A02”
 - Copilot: “Room is now marked as unavailable.”
+
+([Figure 1: The chat about the change room topic, Part 1](../assets/Assignment4/Copilot/changeRoom.png), [Figure 2: The chat about the change room topic, Part 2](../assets/Assignment4/Copilot/changeRoomTwo.png), [Figure 3: The chat about the change room topic, Part 3](../assets/Assignment4/Copilot/changeRoomThree.png))
 
 This automation makes it easy for staff to adjust room assignments quickly — for example, when switching from a lecture hall to a lab.
 
