@@ -224,14 +224,18 @@ Our deployment adhered to the established three-stage Application Lifecycle Mana
 1. Deployment from Development to Testing:
 - Action: The maker initiated the deployment from the Development environment (Melisa Avci's Environment) by selecting the solution and choosing the Testing stage as the target.
 - Purpose: This deployed the solution as a Managed Solution for User Acceptance Testing (UAT).
-- Status Verification: The Pipeline Run screenshot (Image not provided, but necessary) would show the successful completion of this initial stage, verifying that the artifact moved correctly.
+- Status Verification: The Pipeline Run screenshot ([Figure 26: The app in the production environment](../assets/Assignment4/PipelineRun.png)) would show the successful completion of this initial stage, verifying that the artifact moved correctly.
 
 2. Deployment from Testing to Production:
 - Action: After successful validation in the Testing environment (e.g., verifying that the authentication and scheduling logic performed as expected), the maker initiated the final deployment. This deployment was triggered by selecting "Deploy here" on the Production stage tile.
 - Purpose: This moved the final, approved version of the solution (which should function identically to the tested version) to the live environment for end-user access.
+[Figure 26: The app in the production environment](../assets/Assignment4/PipelineRun.png)
 
 #### Verification of Final Version
-The final version of the application was verified to function as intended after deployment to the Production environment. The App in Production screenshot (Image) would serve as evidence that the application loaded correctly and that the core user interfaces (like the login screen or the main timetable) were accessible in the live environment.
+The final version of the application was verified to function as intended after deployment to the Production environment. The App in Production screenshot ([Figure 26: The app in the production environment](../assets/Assignment4/PipelineRun.png)) would serve as evidence that the application loaded correctly and that the core user interfaces (like the login screen or the main timetable) were accessible in the live environment.
+
+![Figure 25: Pipeline run](../assets/Assignment4/AppInProduction.png)
+![Figure 26: The app in the production environment](../assets/Assignment4/PipelineRun.png)
 
 ---
 
