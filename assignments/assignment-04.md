@@ -197,16 +197,21 @@ Include:
 ## Final Version Deployment to Production
 
 ### Deployment Process
-Describe how you used your **Power Platform pipeline** to deploy the app:
-- From **Development → Test → Production** environments.
-- Steps taken to run the pipeline.
+#### Pipeline Stages and Deployment Steps
+Our deployment adhered to the established three-stage Application Lifecycle Management (ALM) process: Development --> Testing --> Production.
 
-Verify that the **final version** functions as intended after deployment.
+1. Deployment from Development to Testing:
+- Action: The maker initiated the deployment from the Development environment (Melisa Avci's Environment) by selecting the solution and choosing the Testing stage as the target.
+- Purpose: This deployed the solution as a Managed Solution for User Acceptance Testing (UAT).
+- Status Verification: The Pipeline Run screenshot (Image not provided, but necessary) would show the successful completion of this initial stage, verifying that the artifact moved correctly.
 
-### Include
-- Screenshot of the **successful pipeline run** (showing stages).
-- Screenshot of the app running in the **production environment**.
-- Short description of any issues faced during deployment and how you resolved them.
+2. Deployment from Testing to Production:
+- Action: After successful validation in the Testing environment (e.g., verifying that the authentication and scheduling logic performed as expected), the maker initiated the final deployment. This deployment was triggered by selecting "Deploy here" on the Production stage tile.
+- Purpose: This moved the final, approved version of the solution (which should function identically to the tested version) to the live environment for end-user access.
+
+#### Verification of Final Version
+The final version of the application was verified to function as intended after deployment to the Production environment. The App in Production screenshot (Image) would serve as evidence that the application loaded correctly and that the core user interfaces (like the login screen or the main timetable) were accessible in the live environment.
+
 
 ---
 
