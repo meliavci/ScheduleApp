@@ -170,6 +170,8 @@ The testing process successfully identified a critical scope bug in the cancella
 ### Monitoring and Performance
 We utilized the Power Platform Monitor tool to analyze network calls, data operations, and function execution times within the application. This provided visibility into the flow of data during critical user journeys, such as login and course data loading.
 
+The live monitoring is visible in our GitHub repo (e.g., under `../assets/Assignment4/Tests/LiveMonitoring`).
+
 #### Metrics 
 We primarily reviewed the following metrics to assess performance and data handling during each transaction:
 - Network Calls (Dataverse getRows): Monitored the time taken for the application to fetch data from the People, Enrollments, and Courses tables.
@@ -190,10 +192,7 @@ Across all tested scenarios (successful login, sign-out, and failure conditions)
 | ScheduleApp | cancelClassAsProf | Network Run call to the Cancel_Course_Notification Power Automate flow. |
 | ScheduleApp | logout | patchRow and Clear functions (clearing collections) upon sign-out. |
 
-To make documentation consistent for grading:
-1. **Save and publish** your test suites in Power Apps Test Studio.
-2. **Commit** your Power Apps solution (with the app + tests) to your connected **Azure DevOps** repository.
-3. **Commit and push** the latest version to **GitHub**.
+The tests are visible in our GitHub repo (e.g., under `/solutions/<SolutionName>/CanvasApps/.../Tests/` and `../assets/Assignment4/Tests/TestStudio`).
 
 ![Figure 7: Test Studio: cancel class as professor](../assets/Assignment4/Tests/TestStudio/cancelClassAsProf.png)
 ![Figure 8: Test Studio: login as professor](../assets/Assignment4/Tests/TestStudio/loginAsProf.png)
@@ -214,14 +213,6 @@ To make documentation consistent for grading:
 ![Figure 23: Live Monitoring: logout](../assets/Assignment4/Tests/LiveMonitoring/logout.png)
 ![Figure 24: Live Monitoring: notification](../assets/Assignment4/Tests/LiveMonitoring/notification.png)
 
-
-Include:
-- **Screenshot of your monitoring dashboard or metrics**.
-- **Short description** of what you improved based on those insights.
-- List test suite and case names.
-- Add screenshots from Test Studio showing results.
-- Include a note confirming the tests are visible in your GitHub repo (e.g., under `/solutions/<SolutionName>/CanvasApps/.../Tests/`).
-
 ---
 
 ## Final Version Deployment to Production
@@ -241,7 +232,6 @@ Our deployment adhered to the established three-stage Application Lifecycle Mana
 
 #### Verification of Final Version
 The final version of the application was verified to function as intended after deployment to the Production environment. The App in Production screenshot (Image) would serve as evidence that the application loaded correctly and that the core user interfaces (like the login screen or the main timetable) were accessible in the live environment.
-
 
 ---
 
