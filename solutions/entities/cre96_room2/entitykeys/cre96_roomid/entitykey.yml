@@ -1,0 +1,11 @@
+EntityKey:
+  Name: cre96_roomid
+  LogicalName: cre96_roomid
+  IntroducedVersion: 1.0.0.0
+  IsCustomizable: 0
+  EntityKeyAttributes:
+    AttributeName: cre96_roomid
+  displaynames:
+    displayname:
+      '@description': Room ID
+      '@languagecode': 1033

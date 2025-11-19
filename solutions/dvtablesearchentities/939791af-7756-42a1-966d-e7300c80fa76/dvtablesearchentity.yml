@@ -1,0 +1,9 @@
+dvtablesearchentity:
+  '@dvtablesearchentityid': 939791af-7756-42a1-966d-e7300c80fa76
+  dvtablesearch:
+    dvtablesearchid: 4e276f8e-32af-4e69-b942-ef0739fd7672
+  entitylogicalname: cre96_breaktime2
+  iscustomizable: 0
+  name: cre96_BreakTime2
+  statecode: 0
+  statuscode: 1

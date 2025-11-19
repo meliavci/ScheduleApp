@@ -1,0 +1,9 @@
+botcomponent:
+  '@schemaname': cre96_scheduler.topic.ResetConversation
+  componenttype: 9
+  iscustomizable: 0
+  name: Reset Conversation
+  parentbotid:
+    schemaname: cre96_scheduler
+  statecode: 1
+  statuscode: 2

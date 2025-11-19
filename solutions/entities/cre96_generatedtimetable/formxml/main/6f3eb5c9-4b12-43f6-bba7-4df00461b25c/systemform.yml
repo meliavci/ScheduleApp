@@ -1,0 +1,120 @@
+systemform:
+  formid: '{6f3eb5c9-4b12-43f6-bba7-4df00461b25c}'
+  IntroducedVersion: 1.0
+  FormPresentation: 1
+  FormActivationState: 1
+  form:
+    tabs:
+      tab:
+        '@verticallayout': true
+        '@id': '{0abd921e-3a80-4d50-bb63-f2453d5f6bc6}'
+        '@IsUserDefined': 1
+        labels:
+          label:
+            '@description': General
+            '@languagecode': 1033
+        columns:
+          column:
+            '@width': 100%
+            sections:
+              section:
+                '@showlabel': false
+                '@showbar': false
+                '@IsUserDefined': 0
+                '@id': '{cec05865-0787-4844-9c62-b2fa47108413}'
+                labels:
+                  label:
+                    '@description': General
+                    '@languagecode': 1033
+                rows:
+                  row:
+                  - cell:
+                      '@id': '{3718d901-dac2-4334-b9ca-8f2723024327}'
+                      labels:
+                        label:
+                          '@description': ScheduleID
+                          '@languagecode': 1033
+                      control:
+                        '@id': cre96_course_person_id
+                        '@classid': '{4273EDBD-AC1D-40d3-9FB2-095C621B552D}'
+                        '@datafieldname': cre96_course_person_id
+                  - cell:
+                      '@id': '{ea0b6d82-4ea3-404f-8197-e26efffc7517}'
+                      labels:
+                        label:
+                          '@description': Owner
+                          '@languagecode': 1033
+                      control:
+                        '@id': ownerid
+                        '@classid': '{270BD3DB-D9AF-4782-9025-509E298DEC0A}'
+                        '@datafieldname': ownerid
+                  - cell:
+                      '@id': '{036393bc-a57b-4f1c-adf3-66b2e3eb3700}'
+                      labels:
+                        label:
+                          '@description': ScheduledFor
+                          '@languagecode': 1033
+                      control:
+                        '@id': cre96_person2
+                        '@classid': '{270bd3db-d9af-4782-9025-509e298dec0a}'
+                        '@datafieldname': cre96_person2
+                  - cell:
+                      '@id': '{e19719a3-d719-4c8c-97ae-729351d3aa79}'
+                      labels:
+                        label:
+                          '@description': Course
+                          '@languagecode': 1033
+                      control:
+                        '@id': cre96_course2
+                        '@classid': '{270bd3db-d9af-4782-9025-509e298dec0a}'
+                        '@datafieldname': cre96_course2
+                  - cell:
+                      '@id': '{94f8a3aa-48e8-48f1-bced-e43e5b0c967a}'
+                      labels:
+                        label:
+                          '@description': Room
+                          '@languagecode': 1033
+                      control:
+                        '@id': cre96_room2
+                        '@classid': '{270bd3db-d9af-4782-9025-509e298dec0a}'
+                        '@datafieldname': cre96_room2
+                  - cell:
+                      '@id': '{d6aec087-aae1-4e9b-8ac5-ddf72559268c}'
+                      labels:
+                        label:
+                          '@description': Day
+                          '@languagecode': 1033
+                      control:
+                        '@id': cre96_day
+                        '@classid': '{3ef39988-22bb-4f0b-bbbe-64b5a3748aee}'
+                        '@datafieldname': cre96_day
+                  - cell:
+                      '@id': '{dabb4e41-dac4-4116-9d00-707a2837866f}'
+                      labels:
+                        label:
+                          '@description': StartTime
+                          '@languagecode': 1033
+                      control:
+                        '@id': cre96_starttime
+                        '@classid': '{5b773807-9fb2-42db-97c3-7a91eff8adff}'
+                        '@datafieldname': cre96_starttime
+                  - cell:
+                      '@id': '{b0d1e9d7-ea25-44fc-82aa-b79f76369f4b}'
+                      labels:
+                        label:
+                          '@description': EndTime
+                          '@languagecode': 1033
+                      control:
+                        '@id': cre96_endtime
+                        '@classid': '{5b773807-9fb2-42db-97c3-7a91eff8adff}'
+                        '@datafieldname': cre96_endtime
+  IsCustomizable: 1
+  CanBeDeleted: 1
+  LocalizedNames:
+    LocalizedName:
+      '@description': Information
+      '@languagecode': 1033
+  Descriptions:
+    Description:
+      '@description': A form for this entity.
+      '@languagecode': 1033

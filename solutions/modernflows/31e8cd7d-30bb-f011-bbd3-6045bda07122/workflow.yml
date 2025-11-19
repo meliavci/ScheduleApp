@@ -1,0 +1,28 @@
+Workflow:
+  '@WorkflowId': '{31e8cd7d-30bb-f011-bbd3-6045bda07122}'
+  '@Name': Authenticate_User_And_Get_Role
+  JsonFileName: /modernflows/31e8cd7d-30bb-f011-bbd3-6045bda07122/Authenticate_User_And_Get_Role-31E8CD7D-30BB-F011-BBD3-6045BDA07122.json
+  Type: 1
+  Subprocess: 0
+  Category: 5
+  Mode: 0
+  Scope: 4
+  OnDemand: 0
+  TriggerOnCreate: 0
+  TriggerOnDelete: 0
+  AsyncAutodelete: 0
+  SyncWorkflowLogOnFailure: 0
+  StateCode: 1
+  StatusCode: 2
+  RunAs: 1
+  IsTransacted: 1
+  IntroducedVersion: 1.0
+  IsCustomizable: 1
+  BusinessProcessType: 0
+  IsCustomProcessingStepAllowedForOtherPublishers: 1
+  ModernFlowType: 0
+  PrimaryEntity: none
+  LocalizedNames:
+    LocalizedName:
+      '@languagecode': 1033
+      '@description': Authenticate_User_And_Get_Role

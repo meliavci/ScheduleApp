@@ -1,0 +1,10 @@
+botcomponent:
+  '@schemaname': cre96_scheduler.gpt.default
+  componenttype: 15
+  description: A role-based university logistics and scheduling agent designed to provide secure, contextual assistance by directly interacting with the Dataverse scheduling system. This agent handles room assignments and student/faculty communication, adhering strictly to role permissions and data privacy standards.
+  iscustomizable: 0
+  name: Scheduler
+  parentbotid:
+    schemaname: cre96_scheduler
+  statecode: 0
+  statuscode: 1

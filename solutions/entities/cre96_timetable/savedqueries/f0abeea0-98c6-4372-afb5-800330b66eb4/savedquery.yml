@@ -1,0 +1,66 @@
+savedquery:
+  IsCustomizable: 1
+  CanBeDeleted: 0
+  isquickfindquery: 0
+  isprivate: 0
+  isdefault: 1
+  savedqueryid: '{f0abeea0-98c6-4372-afb5-800330b66eb4}'
+  layoutxml:
+    grid:
+      '@name': resultset
+      '@jump': cre96_scheduleid
+      '@select': 1
+      '@icon': 1
+      '@preview': 1
+      row:
+        '@name': result
+        '@id': cre96_timetableid
+        cell:
+        - '@name': cre96_scheduleid
+          '@width': 300
+        - '@name': cre96_day
+          '@width': 150
+        - '@name': cre96_starttime
+          '@width': 150
+        - '@name': cre96_endtime
+          '@width': 150
+        - '@name': cre96_status
+          '@width': 150
+        - '@name': cre96_professor
+          '@width': 150
+        - '@name': cre96_room2
+          '@width': 150
+        - '@name': cre96_course2
+          '@width': 150
+  querytype: 0
+  fetchxml:
+    fetch:
+      '@version': 1.0
+      '@mapping': logical
+      entity:
+        '@name': cre96_timetable
+        attribute:
+        - '@name': cre96_timetableid
+        - '@name': cre96_scheduleid
+        - '@name': createdon
+        - '@name': cre96_day
+        - '@name': cre96_starttime
+        - '@name': cre96_endtime
+        - '@name': cre96_status
+        - '@name': cre96_professor
+        - '@name': cre96_room2
+        - '@name': cre96_course2
+        order:
+          '@attribute': cre96_scheduleid
+          '@descending': false
+        filter:
+          '@type': and
+          condition:
+            '@attribute': statecode
+            '@operator': eq
+            '@value': 0
+  IntroducedVersion: 1.0
+  LocalizedNames:
+    LocalizedName:
+      '@description': Active Timetables
+      '@languagecode': 1033

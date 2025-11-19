@@ -1,0 +1,47 @@
+savedquery:
+  IsCustomizable: 1
+  CanBeDeleted: 0
+  isquickfindquery: 0
+  isprivate: 0
+  isdefault: 1
+  savedqueryid: '{f2364042-a528-4d41-aa6f-9fb65d7fa664}'
+  layoutxml:
+    grid:
+      '@name': cre96_timetables
+      '@jump': cre96_scheduleid
+      '@select': 1
+      '@icon': 1
+      '@preview': 1
+      row:
+        '@name': cre96_timetable
+        '@id': cre96_timetableid
+        cell:
+        - '@name': cre96_scheduleid
+          '@width': 300
+        - '@name': createdon
+          '@width': 125
+  querytype: 2
+  fetchxml:
+    fetch:
+      '@version': 1.0
+      '@mapping': logical
+      entity:
+        '@name': cre96_timetable
+        attribute:
+        - '@name': cre96_timetableid
+        - '@name': cre96_scheduleid
+        - '@name': createdon
+        order:
+          '@attribute': cre96_scheduleid
+          '@descending': false
+        filter:
+          '@type': and
+          condition:
+            '@attribute': statecode
+            '@operator': eq
+            '@value': 0
+  IntroducedVersion: 1.0
+  LocalizedNames:
+    LocalizedName:
+      '@description': Timetable Associated View
+      '@languagecode': 1033

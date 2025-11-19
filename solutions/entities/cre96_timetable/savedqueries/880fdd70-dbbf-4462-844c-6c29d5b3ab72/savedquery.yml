@@ -1,0 +1,47 @@
+savedquery:
+  IsCustomizable: 1
+  CanBeDeleted: 0
+  isquickfindquery: 0
+  isprivate: 0
+  isdefault: 0
+  savedqueryid: '{880fdd70-dbbf-4462-844c-6c29d5b3ab72}'
+  layoutxml:
+    grid:
+      '@name': resultset
+      '@jump': cre96_scheduleid
+      '@select': 1
+      '@icon': 1
+      '@preview': 1
+      row:
+        '@name': result
+        '@id': cre96_timetableid
+        cell:
+        - '@name': cre96_scheduleid
+          '@width': 300
+        - '@name': createdon
+          '@width': 125
+  querytype: 0
+  fetchxml:
+    fetch:
+      '@version': 1.0
+      '@mapping': logical
+      entity:
+        '@name': cre96_timetable
+        attribute:
+        - '@name': cre96_timetableid
+        - '@name': cre96_scheduleid
+        - '@name': createdon
+        order:
+          '@attribute': cre96_scheduleid
+          '@descending': false
+        filter:
+          '@type': and
+          condition:
+            '@attribute': statecode
+            '@operator': eq
+            '@value': 1
+  IntroducedVersion: 1.0
+  LocalizedNames:
+    LocalizedName:
+      '@description': Inactive Timetables
+      '@languagecode': 1033

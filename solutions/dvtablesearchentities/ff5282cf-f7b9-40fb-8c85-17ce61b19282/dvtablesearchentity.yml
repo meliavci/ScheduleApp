@@ -1,0 +1,9 @@
+dvtablesearchentity:
+  '@dvtablesearchentityid': ff5282cf-f7b9-40fb-8c85-17ce61b19282
+  dvtablesearch:
+    dvtablesearchid: 4e276f8e-32af-4e69-b942-ef0739fd7672
+  entitylogicalname: cre96_room2
+  iscustomizable: 0
+  name: cre96_Room2
+  statecode: 0
+  statuscode: 1

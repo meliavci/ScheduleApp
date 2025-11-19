@@ -1,0 +1,56 @@
+systemform:
+  formid: '{a1584f0c-b067-43ff-833d-6e9c4fdafcb1}'
+  IntroducedVersion: 1.0
+  FormPresentation: 1
+  FormActivationState: 1
+  form:
+    tabs:
+      tab:
+        '@verticallayout': true
+        '@id': '{b74d9a19-6009-484d-9899-a85fac28ced6}'
+        '@IsUserDefined': 1
+        labels:
+          label:
+            '@description': ''
+            '@languagecode': 1033
+        columns:
+          column:
+            '@width': 100%
+            sections:
+              section:
+                '@showlabel': false
+                '@showbar': false
+                '@IsUserDefined': 0
+                '@id': '{d52e0a31-21b4-407f-a82f-af3ae8199110}'
+                labels:
+                  label:
+                    '@description': GENERAL
+                    '@languagecode': 1033
+                rows:
+                  row:
+                  - cell:
+                      '@id': '{3a349c46-33fb-475d-9723-18380d01f06d}'
+                      labels:
+                        label:
+                          '@description': ScheduleID
+                          '@languagecode': 1033
+                      control:
+                        '@id': cre96_scheduleid
+                        '@classid': '{4273EDBD-AC1D-40d3-9FB2-095C621B552D}'
+                        '@datafieldname': cre96_scheduleid
+                  - cell:
+                      '@id': '{fb13e493-9b67-47d4-90a8-6ab5bebb3362}'
+                      labels:
+                        label:
+                          '@description': Owner
+                          '@languagecode': 1033
+                      control:
+                        '@id': ownerid
+                        '@classid': '{270BD3DB-D9AF-4782-9025-509E298DEC0A}'
+                        '@datafieldname': ownerid
+  IsCustomizable: 1
+  CanBeDeleted: 1
+  LocalizedNames:
+    LocalizedName:
+      '@description': Information
+      '@languagecode': 1033

@@ -1,0 +1,28 @@
+Workflow:
+  '@WorkflowId': '{6d283014-1cb8-f011-bbd3-6045bda07122}'
+  '@Name': Cancel_Course_Notification
+  JsonFileName: /modernflows/6d283014-1cb8-f011-bbd3-6045bda07122/Cancel_Course_Notification-6D283014-1CB8-F011-BBD3-6045BDA07122.json
+  Type: 1
+  Subprocess: 0
+  Category: 5
+  Mode: 0
+  Scope: 4
+  OnDemand: 0
+  TriggerOnCreate: 0
+  TriggerOnDelete: 0
+  AsyncAutodelete: 0
+  SyncWorkflowLogOnFailure: 0
+  StateCode: 1
+  StatusCode: 2
+  RunAs: 1
+  IsTransacted: 1
+  IntroducedVersion: 1.0
+  IsCustomizable: 1
+  BusinessProcessType: 0
+  IsCustomProcessingStepAllowedForOtherPublishers: 1
+  ModernFlowType: 0
+  PrimaryEntity: none
+  LocalizedNames:
+    LocalizedName:
+      '@languagecode': 1033
+      '@description': Cancel_Course_Notification

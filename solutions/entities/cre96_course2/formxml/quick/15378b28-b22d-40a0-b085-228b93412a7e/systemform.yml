@@ -1,0 +1,56 @@
+systemform:
+  formid: '{15378b28-b22d-40a0-b085-228b93412a7e}'
+  IntroducedVersion: 1.0
+  FormPresentation: 1
+  FormActivationState: 1
+  form:
+    tabs:
+      tab:
+        '@verticallayout': true
+        '@id': '{3ecfff41-0505-4710-ba6c-02ab7ae8b9b0}'
+        '@IsUserDefined': 1
+        labels:
+          label:
+            '@description': ''
+            '@languagecode': 1033
+        columns:
+          column:
+            '@width': 100%
+            sections:
+              section:
+                '@showlabel': false
+                '@showbar': false
+                '@IsUserDefined': 0
+                '@id': '{d103cc4d-91e7-4fa2-b0c0-ee0250aa1da2}'
+                labels:
+                  label:
+                    '@description': GENERAL
+                    '@languagecode': 1033
+                rows:
+                  row:
+                  - cell:
+                      '@id': '{b1291123-c8f0-4b14-ab84-3d1be55581db}'
+                      labels:
+                        label:
+                          '@description': Course Name
+                          '@languagecode': 1033
+                      control:
+                        '@id': cre96_coursename
+                        '@classid': '{4273EDBD-AC1D-40d3-9FB2-095C621B552D}'
+                        '@datafieldname': cre96_coursename
+                  - cell:
+                      '@id': '{5f967428-ee61-48ac-b16e-0ae600875364}'
+                      labels:
+                        label:
+                          '@description': Owner
+                          '@languagecode': 1033
+                      control:
+                        '@id': ownerid
+                        '@classid': '{270BD3DB-D9AF-4782-9025-509E298DEC0A}'
+                        '@datafieldname': ownerid
+  IsCustomizable: 1
+  CanBeDeleted: 1
+  LocalizedNames:
+    LocalizedName:
+      '@description': Information
+      '@languagecode': 1033

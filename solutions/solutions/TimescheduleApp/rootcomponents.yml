@@ -1,0 +1,38 @@
+RootComponents:
+  RootComponent:
+  - '@type': 1
+    '@schemaName': cre96_course2
+    '@behavior': 0
+  - '@type': 1
+    '@schemaName': cre96_enrollment
+    '@behavior': 0
+  - '@type': 1
+    '@schemaName': cre96_generatedtimetable
+    '@behavior': 0
+  - '@type': 1
+    '@schemaName': cre96_person2
+    '@behavior': 0
+  - '@type': 1
+    '@schemaName': cre96_room2
+    '@behavior': 0
+  - '@type': 1
+    '@schemaName': cre96_timetable
+    '@behavior': 0
+  - '@type': 9
+    '@schemaName': cre96_status
+    '@behavior': 0
+  - '@type': 9
+    '@schemaName': cre96_weekday
+    '@behavior': 0
+  - '@type': 29
+    '@id': '{31e8cd7d-30bb-f011-bbd3-6045bda07122}'
+    '@behavior': 0
+  - '@type': 29
+    '@id': '{6d283014-1cb8-f011-bbd3-6045bda07122}'
+    '@behavior': 0
+  - '@type': 29
+    '@id': '{779b48b5-36bb-f011-bbd3-6045bda07122}'
+    '@behavior': 0
+  - '@type': 300
+    '@schemaName': schedule_timeschedulerapp_045a7
+    '@behavior': 0

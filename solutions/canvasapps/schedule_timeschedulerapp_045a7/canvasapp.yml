@@ -1,0 +1,39 @@
+CanvasApp:
+  Name: schedule_timeschedulerapp_045a7
+  AppVersion: 2025-11-19T14:47:17.0000000Z
+  Status: Ready
+  CreatedByClientVersion: 3.25111.6.0
+  MinClientVersion: 3.25111.6.0
+  Tags: '{"primaryDeviceWidth":"640","primaryDeviceHeight":"1136","sienaVersion":"20251112T154503Z-3.25103.13.0","deviceCapabilities":"","supportsPortrait":"true","supportsLandscape":"true","primaryFormFactor":"Phone","publisherVersion":"3.25111.6","minimumRequiredApiVersion":"2.2.0","hasComponent":"true","hasUnlockedComponent":"true","optimizedForTeamsMeeting":"false","showStatusBar":"false","isUnifiedRootApp":"false","coauthoringEnabled":"true","multipleWritersEnabled":"true","acceptedCoauthoringTerms":"true"}'
+  IsCdsUpgraded: 0
+  GalleryItemId:
+    '@xsi:nil': true
+    '@xmlns:xsi': http://www.w3.org/2001/XMLSchema-instance
+  BackgroundColor: RGBA(0,176,240,1)
+  DisplayName: Time scheduler app
+  Description:
+    '@xsi:nil': true
+    '@xmlns:xsi': http://www.w3.org/2001/XMLSchema-instance
+  CommitMessage: Enabling coauthoring for app.
+  Publisher:
+    '@xsi:nil': true
+    '@xmlns:xsi': http://www.w3.org/2001/XMLSchema-instance
+  AuthorizationReferences: '[{"resourceId":"https://orga824f659.crm4.dynamics.com/"}]'
+  ConnectionReferences: '{"d319682f-11bc-4bed-a888-025d35f6aff7":{"id":"/providers/microsoft.powerapps/apis/shared_logicflows","displayName":"Logic flows","iconUri":"https://conn-afd-prod-endpoint-bmc9bqahasf3grgk.b01.azurefd.net/v1.0.1774/1.0.1774.4397/logicflows/icon.png","dataSources":["Cancel_Course_Notification"],"dependencies":["b4aac219-3134-4ee7-9175-4a3981e00c54","abaf65a7-d4ea-498e-8d93-405f7fa9c371"],"dependents":[],"parameterHints":{"workflowName":{"value":"457ba35f-4df8-405d-b639-0ba83af81a99"},"workflowEntityId":{"value":"6d283014-1cb8-f011-bbd3-6045bda07122"},"workflowDisplayName":{"value":"Cancel_Course_Notification"},"b4aac219-3134-4ee7-9175-4a3981e00c54":{"value":"shared_commondataserviceforapps"},"abaf65a7-d4ea-498e-8d93-405f7fa9c371":{"value":"shared_powerappsnotification"}},"parameterHintsV2":{"workflowName":{"value":"457ba35f-4df8-405d-b639-0ba83af81a99"},"workflowEntityId":{"value":"6d283014-1cb8-f011-bbd3-6045bda07122"},"workflowDisplayName":{"value":"Cancel_Course_Notification"},"shared_commondataserviceforapps":{"value":"b4aac219-3134-4ee7-9175-4a3981e00c54"},"shared_powerappsnotification":{"value":"abaf65a7-d4ea-498e-8d93-405f7fa9c371"}},"isOnPremiseConnection":false,"bypassConsent":false,"dataSets":{},"apiTier":"Standard","actions":["Run"]},"b4aac219-3134-4ee7-9175-4a3981e00c54":{"id":"/providers/microsoft.powerapps/apis/shared_commondataserviceforapps","displayName":"Microsoft Dataverse","iconUri":"https://conn-afd-prod-endpoint-bmc9bqahasf3grgk.b01.azurefd.net/v1.0.1778/1.0.1778.4417/commondataserviceforapps/icon.png","dataSources":[],"dependencies":[],"dependents":["d319682f-11bc-4bed-a888-025d35f6aff7","16df079f-867a-492c-89d1-d42f06690651"],"parameterHints":{},"parameterHintsV2":{},"isOnPremiseConnection":false,"bypassConsent":false,"dataSets":{},"apiTier":"Premium","authenticationType":"Oauth"},"abaf65a7-d4ea-498e-8d93-405f7fa9c371":{"id":"/providers/microsoft.powerapps/apis/shared_powerappsnotification","xrmConnectionReferenceLogicalName":"new_sharedpowerappsnotification_fc426","displayName":"Power Apps Notification","executionRestrictions":{"version":1,"modifiedOn":"2025-11-19 14:47:14","appVer":"3.25111.6","apiId":"unknown","policy":"{\"type\":\"unused\"}"},"iconUri":"https://conn-afd-prod-endpoint-bmc9bqahasf3grgk.b01.azurefd.net/v1.0.1778/1.0.1778.4417/powerappsnotification/icon.png","dataSources":[],"dependencies":[],"dependents":["d319682f-11bc-4bed-a888-025d35f6aff7"],"parameterHints":{},"parameterHintsV2":{},"isOnPremiseConnection":false,"sharedConnectionId":"bdcd3f8e-2244-40bc-9758-309eaf5a1b2a","bypassConsent":false,"dataSets":{},"apiTier":"Standard"},"16df079f-867a-492c-89d1-d42f06690651":{"id":"/providers/microsoft.powerapps/apis/shared_logicflows","displayName":"Logic flows","iconUri":"https://conn-afd-prod-endpoint-bmc9bqahasf3grgk.b01.azurefd.net/v1.0.1774/1.0.1774.4397/logicflows/icon.png","dataSources":["Change_room"],"dependencies":["b4aac219-3134-4ee7-9175-4a3981e00c54"],"dependents":[],"parameterHints":{"workflowName":{"value":"6013e6e7-8a96-417b-82eb-650f68935812"},"workflowEntityId":{"value":"779b48b5-36bb-f011-bbd3-6045bda07122"},"workflowDisplayName":{"value":"Change_room"},"b4aac219-3134-4ee7-9175-4a3981e00c54":{"value":"shared_commondataserviceforapps"}},"parameterHintsV2":{"workflowName":{"value":"6013e6e7-8a96-417b-82eb-650f68935812"},"workflowEntityId":{"value":"779b48b5-36bb-f011-bbd3-6045bda07122"},"workflowDisplayName":{"value":"Change_room"},"shared_commondataserviceforapps":{"value":"b4aac219-3134-4ee7-9175-4a3981e00c54"}},"isOnPremiseConnection":false,"bypassConsent":false,"dataSets":{},"apiTier":"Standard"}}'
+  DatabaseReferences: '{"6484ef4a-54a6-e8b2-81c8-a24f9f8b1849":{"databaseDetails":{"referenceType":"Environmental","environmentName":"6484ef4a-54a6-e8b2-81c8-a24f9f8b1849","overrideValues":{"status":"NotSpecified"}},"dataSources":{"Enrollments":{"entitySetName":"cre96_enrollments","logicalName":"cre96_enrollment"},"Rooms":{"entitySetName":"cre96_room2s","logicalName":"cre96_room2"},"People":{"entitySetName":"cre96_person2s","logicalName":"cre96_person2"},"Courses":{"entitySetName":"cre96_course2s","logicalName":"cre96_course2"}}}}'
+  AppComponents: '[]'
+  AppComponentDependencies: '[]'
+  CanConsumeAppPass: 1
+  CanvasAppType: 0
+  BypassConsent: 0
+  AdminControlBypassConsent: 0
+  EmbeddedApp:
+    '@xsi:nil': true
+    '@xmlns:xsi': http://www.w3.org/2001/XMLSchema-instance
+  IntroducedVersion: 1.0
+  CdsDependencies: '{"cdsdependencies":[{"dependencyid":"6d283014-1cb8-f011-bbd3-6045bda07122","componenttype":29,"componenttypeplatformname":"Workflow"},{"dependencyid":"779b48b5-36bb-f011-bbd3-6045bda07122","componenttype":29,"componenttypeplatformname":"Workflow"},{"logicalname":"new_sharedpowerappsnotification_fc426","componenttype":10146,"componenttypeplatformname":"ConnectionReference"}]}'
+  IsCustomizable: 1
+  BackgroundImageUri: /canvasapps/schedule_timeschedulerapp_045a7/schedule_timeschedulerapp_045a7_BackgroundImageUri
+  DocumentUri: /canvasapps/schedule_timeschedulerapp_045a7/schedule_timeschedulerapp_045a7_DocumentUri.msapp
+  AdditionalUris:
+    AdditionalUri: /canvasapps/schedule_timeschedulerapp_045a7/schedule_timeschedulerapp_045a7_AdditionalUris0_identity.json

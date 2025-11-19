@@ -1,0 +1,9 @@
+dvtablesearchentity:
+  '@dvtablesearchentityid': 6ffbe388-0565-4347-8842-27fbfdefb3e2
+  dvtablesearch:
+    dvtablesearchid: 4e276f8e-32af-4e69-b942-ef0739fd7672
+  entitylogicalname: cre96_openinghour1
+  iscustomizable: 0
+  name: cre96_OpeningHour1
+  statecode: 0
+  statuscode: 1

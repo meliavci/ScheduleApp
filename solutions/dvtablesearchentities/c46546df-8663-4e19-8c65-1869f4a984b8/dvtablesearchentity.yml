@@ -1,0 +1,9 @@
+dvtablesearchentity:
+  '@dvtablesearchentityid': c46546df-8663-4e19-8c65-1869f4a984b8
+  dvtablesearch:
+    dvtablesearchid: 4e276f8e-32af-4e69-b942-ef0739fd7672
+  entitylogicalname: cre96_course2
+  iscustomizable: 0
+  name: cre96_Course2
+  statecode: 0
+  statuscode: 1

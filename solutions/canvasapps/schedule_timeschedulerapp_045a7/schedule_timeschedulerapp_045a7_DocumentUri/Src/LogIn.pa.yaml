@@ -1,0 +1,113 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  LogIn:
+    Properties:
+      Fill: =RGBA(2, 65, 79, 1)
+      ImagePosition: =ImagePosition.Fill
+      LoadingSpinnerColor: =RGBA(100, 118, 132, 1)
+    Children:
+      - BackgroundLogInScreen:
+          Control: HtmlViewer@2.1.0
+          Properties:
+            AutoHeight: =true
+            Font: =Font.'Open Sans'
+            Height: =App.Height
+            HtmlText: |-
+              =$"<div style='width:100%;height:{App.Height}px;background: linear-gradient(180deg,rgba(30, 33, 43, 1) 0%, rgba(27, 49, 75, 1) 100%)'></div>"
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Width: =App.Width
+      - SignInButton:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =ColorFade(Self.Fill, -15%)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(128, 147, 168, 1)
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(100, 118, 132, 1), -2%)
+            OnSelect: "=Set(\r\n    matchedUser,\r\n    LookUp(\r\n        People,\r\n        Email = txtEmailInput.Text &&\r\n        Password = Trim(txtPasswordInput.Text)\r\n    )\r\n);\r\n\r\nIf(\r\n    !IsBlank(matchedUser),\r\n    ClearCollect(\r\n        colUserEnrollments,\r\n        Filter(\r\n            Enrollments,\r\n            Person.Email = matchedUser.Email\r\n        )\r\n    );\r\n\r\n    ClearCollect(\r\n        colCourseNames,\r\n        AddColumns(\r\n            colUserEnrollments,\r\n            CourseNameText,\r\n            Course.'Course Name'\r\n        )\r\n    );\r\n    \r\n    ClearCollect(\r\n        colUserCourses,\r\n        Filter(\r\n            Courses,\r\n            'Course Name' in colCourseNames.CourseNameText \r\n        )\r\n    );\r\n    \r\n    Set(\r\n        varCancelledCount, \r\n        CountRows(\r\n            Filter(\r\n                colUserCourses, \r\n                'Taking place?' = false \r\n            )\r\n        )\r\n    );\r\n    \r\n    Patch(People, matchedUser, { 'Logged in?': true });\r\n    Notify(\"Login successful\", NotificationType.Success);\r\n    Navigate(Homescreen_1, ScreenTransition.Fade),\r\n\r\n    Notify(\"Account does not exist. Please check your credentials.\", NotificationType.Error)\r\n);"
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            RadiusBottomLeft: =15
+            RadiusBottomRight: =15
+            RadiusTopLeft: =15
+            RadiusTopRight: =15
+            Size: =26
+            Text: ="Sign in"
+            Width: =507
+            X: =65
+            Y: =651
+      - txtPasswordInput:
+          Control: Classic/TextInput@2.3.2
+          Properties:
+            BorderColor: =RGBA(62, 74, 83, 1)
+            BorderThickness: =0
+            Color: =RGBA(62, 74, 83, 1)
+            Default: =
+            DisabledColor: =RGBA(62, 74, 83, 1)
+            DisabledFill: =RGBA(216, 219, 221, 1)
+            Fill: =RGBA(237, 237, 237, 1)
+            Font: =Font.Lato
+            HintText: ="Password"
+            HoverBorderColor: =RGBA(216, 219, 221, 1)
+            HoverColor: =RGBA(62, 74, 83, 1)
+            HoverFill: =RGBA(216, 219, 221, 1)
+            Mode: =TextMode.Password
+            PaddingLeft: =33
+            RadiusBottomLeft: =15
+            RadiusBottomRight: =15
+            RadiusTopLeft: =15
+            RadiusTopRight: =15
+            Size: =18
+            Width: =507
+            X: =65
+            Y: =536
+      - txtEmailInput:
+          Control: Classic/TextInput@2.3.2
+          Properties:
+            BorderColor: =RGBA(62, 74, 83, 1)
+            BorderThickness: =0
+            Color: =RGBA(62, 74, 83, 1)
+            Default: =
+            DisabledBorderColor: =RGBA(237, 237, 237, 1)
+            Fill: =RGBA(237, 237, 237, 1)
+            Font: =Font.Lato
+            HintText: ="E-Mail"
+            HoverBorderColor: =RGBA(216, 219, 221, 1)
+            HoverColor: =RGBA(62, 74, 83, 1)
+            HoverFill: =RGBA(216, 219, 221, 1)
+            PaddingLeft: |+
+              =33
+            RadiusBottomLeft: =15
+            RadiusBottomRight: =15
+            RadiusTopLeft: =15
+            RadiusTopRight: =15
+            Size: =18
+            Width: =507
+            X: =65
+            Y: =428
+      - SignInLabel:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(197, 203, 207, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.Lato
+            Size: =40
+            Text: ="Sign in"
+            X: =38
+            Y: =256

@@ -1,0 +1,50 @@
+savedquery:
+  IsCustomizable: 1
+  CanBeDeleted: 0
+  isquickfindquery: 0
+  isprivate: 0
+  isdefault: 1
+  savedqueryid: '{5d660064-1583-4278-ad2b-ecbfc3054b14}'
+  layoutxml:
+    grid:
+      '@name': cre96_room2s
+      '@jump': cre96_roomname
+      '@select': 1
+      '@icon': 1
+      '@preview': 1
+      row:
+        '@name': cre96_room2
+        '@id': cre96_room2id
+        cell:
+        - '@name': cre96_roomname
+          '@width': 300
+        - '@name': createdon
+          '@width': 125
+        - '@name': cre96_roomid
+          '@width': 100
+  querytype: 2
+  fetchxml:
+    fetch:
+      '@version': 1.0
+      '@mapping': logical
+      entity:
+        '@name': cre96_room2
+        attribute:
+        - '@name': cre96_room2id
+        - '@name': cre96_roomname
+        - '@name': createdon
+        - '@name': cre96_roomid
+        order:
+          '@attribute': cre96_roomname
+          '@descending': false
+        filter:
+          '@type': and
+          condition:
+            '@attribute': statecode
+            '@operator': eq
+            '@value': 0
+  IntroducedVersion: 1.0
+  LocalizedNames:
+    LocalizedName:
+      '@description': Room Associated View
+      '@languagecode': 1033

@@ -1,0 +1,73 @@
+optionset:
+  '@Name': cre96_weekday
+  '@localizedName': Weekday
+  OptionSetType: picklist
+  IsGlobal: 1
+  IntroducedVersion: 1.0.0.0
+  IsCustomizable: 1
+  ExternalTypeName: ''
+  displaynames:
+    displayname:
+      '@description': Weekday
+      '@languagecode': 1033
+  Descriptions:
+    Description:
+      '@description': ''
+      '@languagecode': 1033
+  options:
+    option:
+    - '@value': 336290000
+      '@ExternalValue': ''
+      '@IsHidden': 0
+      labels:
+        label:
+          '@description': Monday
+          '@languagecode': 1033
+      Descriptions:
+        Description:
+          '@description': ''
+          '@languagecode': 1033
+    - '@value': 336290001
+      '@ExternalValue': ''
+      '@IsHidden': 0
+      labels:
+        label:
+          '@description': Tuesday
+          '@languagecode': 1033
+      Descriptions:
+        Description:
+          '@description': ''
+          '@languagecode': 1033
+    - '@value': 336290002
+      '@ExternalValue': ''
+      '@IsHidden': 0
+      labels:
+        label:
+          '@description': Wednesday
+          '@languagecode': 1033
+      Descriptions:
+        Description:
+          '@description': ''
+          '@languagecode': 1033
+    - '@value': 336290003
+      '@ExternalValue': ''
+      '@IsHidden': 0
+      labels:
+        label:
+          '@description': Thursday
+          '@languagecode': 1033
+      Descriptions:
+        Description:
+          '@description': ''
+          '@languagecode': 1033
+    - '@value': 336290004
+      '@ExternalValue': ''
+      '@IsHidden': 0
+      labels:
+        label:
+          '@description': Friday
+          '@languagecode': 1033
+      Descriptions:
+        Description:
+          '@description': ''
+          '@languagecode': 1033

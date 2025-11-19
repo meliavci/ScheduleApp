@@ -1,0 +1,130 @@
+systemform:
+  formid: '{fee605a9-36ff-4fc8-84e1-fd374fa1a85b}'
+  IntroducedVersion: 1.0
+  FormPresentation: 1
+  FormActivationState: 1
+  form:
+    tabs:
+      tab:
+        '@verticallayout': true
+        '@id': '{df88a98b-e14e-482e-b1c8-4308f98ee4b6}'
+        '@IsUserDefined': 1
+        labels:
+          label:
+            '@description': General
+            '@languagecode': 1033
+        columns:
+          column:
+            '@width': 100%
+            sections:
+              section:
+                '@showlabel': false
+                '@showbar': false
+                '@IsUserDefined': 0
+                '@id': '{e24e54b0-038f-4811-a01a-e12024f3bd84}'
+                labels:
+                  label:
+                    '@description': General
+                    '@languagecode': 1033
+                rows:
+                  row:
+                  - cell:
+                      '@id': '{fac0fed6-9540-427f-aa33-e4b5b6e9b437}'
+                      labels:
+                        label:
+                          '@description': ScheduleID
+                          '@languagecode': 1033
+                      control:
+                        '@id': cre96_scheduleid
+                        '@classid': '{4273EDBD-AC1D-40d3-9FB2-095C621B552D}'
+                        '@datafieldname': cre96_scheduleid
+                  - cell:
+                      '@id': '{62f403bb-a75e-4527-bf51-aab5320459d0}'
+                      labels:
+                        label:
+                          '@description': Owner
+                          '@languagecode': 1033
+                      control:
+                        '@id': ownerid
+                        '@classid': '{270BD3DB-D9AF-4782-9025-509E298DEC0A}'
+                        '@datafieldname': ownerid
+                  - cell:
+                      '@id': '{6315f6ba-61d7-4dd0-86b9-df7f8e1653c6}'
+                      labels:
+                        label:
+                          '@description': Day
+                          '@languagecode': 1033
+                      control:
+                        '@id': cre96_day
+                        '@classid': '{3ef39988-22bb-4f0b-bbbe-64b5a3748aee}'
+                        '@datafieldname': cre96_day
+                  - cell:
+                      '@id': '{9e5a4d1f-402e-4b79-92c1-cc58b905ae28}'
+                      labels:
+                        label:
+                          '@description': StartTime
+                          '@languagecode': 1033
+                      control:
+                        '@id': cre96_starttime
+                        '@classid': '{5b773807-9fb2-42db-97c3-7a91eff8adff}'
+                        '@datafieldname': cre96_starttime
+                  - cell:
+                      '@id': '{7553686b-f0fe-4a76-bca5-6104ea42f897}'
+                      labels:
+                        label:
+                          '@description': EndTime
+                          '@languagecode': 1033
+                      control:
+                        '@id': cre96_endtime
+                        '@classid': '{5b773807-9fb2-42db-97c3-7a91eff8adff}'
+                        '@datafieldname': cre96_endtime
+                  - cell:
+                      '@id': '{f21279ca-272e-4f48-81ac-d0c0b8861953}'
+                      labels:
+                        label:
+                          '@description': Status
+                          '@languagecode': 1033
+                      control:
+                        '@id': cre96_status
+                        '@classid': '{3ef39988-22bb-4f0b-bbbe-64b5a3748aee}'
+                        '@datafieldname': cre96_status
+                  - cell:
+                      '@id': '{6d3c8ce9-e438-457a-9531-484f0e3f5afc}'
+                      labels:
+                        label:
+                          '@description': Professor
+                          '@languagecode': 1033
+                      control:
+                        '@id': cre96_professor
+                        '@classid': '{270bd3db-d9af-4782-9025-509e298dec0a}'
+                        '@datafieldname': cre96_professor
+                  - cell:
+                      '@id': '{2aa9208f-9746-43b2-8d42-56046cdeb987}'
+                      labels:
+                        label:
+                          '@description': Room
+                          '@languagecode': 1033
+                      control:
+                        '@id': cre96_room2
+                        '@classid': '{270bd3db-d9af-4782-9025-509e298dec0a}'
+                        '@datafieldname': cre96_room2
+                  - cell:
+                      '@id': '{b69ff5d0-0e03-400a-8cb0-4b5f053e0f4b}'
+                      labels:
+                        label:
+                          '@description': Course
+                          '@languagecode': 1033
+                      control:
+                        '@id': cre96_course2
+                        '@classid': '{270bd3db-d9af-4782-9025-509e298dec0a}'
+                        '@datafieldname': cre96_course2
+  IsCustomizable: 1
+  CanBeDeleted: 1
+  LocalizedNames:
+    LocalizedName:
+      '@description': Information
+      '@languagecode': 1033
+  Descriptions:
+    Description:
+      '@description': A form for this entity.
+      '@languagecode': 1033

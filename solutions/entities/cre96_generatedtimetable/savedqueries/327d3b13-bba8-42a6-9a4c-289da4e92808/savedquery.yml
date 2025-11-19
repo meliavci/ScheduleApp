@@ -1,0 +1,63 @@
+savedquery:
+  IsCustomizable: 1
+  CanBeDeleted: 0
+  isquickfindquery: 0
+  isprivate: 0
+  isdefault: 1
+  savedqueryid: '{327d3b13-bba8-42a6-9a4c-289da4e92808}'
+  layoutxml:
+    grid:
+      '@name': resultset
+      '@jump': cre96_course_person_id
+      '@select': 1
+      '@icon': 1
+      '@preview': 1
+      row:
+        '@name': result
+        '@id': cre96_generatedtimetableid
+        cell:
+        - '@name': cre96_course_person_id
+          '@width': 300
+        - '@name': cre96_person2
+          '@width': 150
+        - '@name': cre96_course2
+          '@width': 150
+        - '@name': cre96_room2
+          '@width': 150
+        - '@name': cre96_day
+          '@width': 150
+        - '@name': cre96_starttime
+          '@width': 150
+        - '@name': cre96_endtime
+          '@width': 150
+  querytype: 0
+  fetchxml:
+    fetch:
+      '@version': 1.0
+      '@mapping': logical
+      entity:
+        '@name': cre96_generatedtimetable
+        attribute:
+        - '@name': cre96_generatedtimetableid
+        - '@name': cre96_course_person_id
+        - '@name': createdon
+        - '@name': cre96_person2
+        - '@name': cre96_course2
+        - '@name': cre96_room2
+        - '@name': cre96_day
+        - '@name': cre96_starttime
+        - '@name': cre96_endtime
+        order:
+          '@attribute': cre96_course_person_id
+          '@descending': false
+        filter:
+          '@type': and
+          condition:
+            '@attribute': statecode
+            '@operator': eq
+            '@value': 0
+  IntroducedVersion: 1.0
+  LocalizedNames:
+    LocalizedName:
+      '@description': Active GeneratedTimetables
+      '@languagecode': 1033

@@ -1,0 +1,66 @@
+savedquery:
+  IsCustomizable: 1
+  CanBeDeleted: 0
+  isquickfindquery: 0
+  isprivate: 0
+  isdefault: 1
+  savedqueryid: '{d93fed7d-6708-4888-a063-f7504f217678}'
+  layoutxml:
+    grid:
+      '@name': resultset
+      '@jump': cre96_coursename
+      '@select': 1
+      '@icon': 1
+      '@preview': 1
+      row:
+        '@name': result
+        '@id': cre96_course2id
+        cell:
+        - '@name': cre96_coursename
+          '@width': 300
+        - '@name': cre96_durationminutes
+          '@width': 150
+        - '@name': cre96_type
+          '@width': 150
+        - '@name': cre96_takingplace
+          '@width': 150
+        - '@name': cre96_person2
+          '@width': 150
+        - '@name': cre96_startingtime
+          '@width': 150
+        - '@name': cre96_endingtime
+          '@width': 150
+        - '@name': cre96_room2
+          '@width': 150
+  querytype: 0
+  fetchxml:
+    fetch:
+      '@version': 1.0
+      '@mapping': logical
+      entity:
+        '@name': cre96_course2
+        attribute:
+        - '@name': cre96_course2id
+        - '@name': cre96_coursename
+        - '@name': createdon
+        - '@name': cre96_durationminutes
+        - '@name': cre96_type
+        - '@name': cre96_takingplace
+        - '@name': cre96_person2
+        - '@name': cre96_startingtime
+        - '@name': cre96_endingtime
+        - '@name': cre96_room2
+        order:
+          '@attribute': cre96_coursename
+          '@descending': false
+        filter:
+          '@type': and
+          condition:
+            '@attribute': statecode
+            '@operator': eq
+            '@value': 0
+  IntroducedVersion: 1.0
+  LocalizedNames:
+    LocalizedName:
+      '@description': Active Courses
+      '@languagecode': 1033

@@ -1,0 +1,40 @@
+optionset:
+  '@Name': cre96_status
+  '@localizedName': Status
+  OptionSetType: picklist
+  IsGlobal: 1
+  IntroducedVersion: 1.0.0.0
+  IsCustomizable: 1
+  ExternalTypeName: ''
+  displaynames:
+    displayname:
+      '@description': Status
+      '@languagecode': 1033
+  Descriptions:
+    Description:
+      '@description': ''
+      '@languagecode': 1033
+  options:
+    option:
+    - '@value': 336290000
+      '@ExternalValue': ''
+      '@IsHidden': 0
+      labels:
+        label:
+          '@description': Scheduled
+          '@languagecode': 1033
+      Descriptions:
+        Description:
+          '@description': ''
+          '@languagecode': 1033
+    - '@value': 336290001
+      '@ExternalValue': ''
+      '@IsHidden': 0
+      labels:
+        label:
+          '@description': Cancelled
+          '@languagecode': 1033
+      Descriptions:
+        Description:
+          '@description': ''
+          '@languagecode': 1033

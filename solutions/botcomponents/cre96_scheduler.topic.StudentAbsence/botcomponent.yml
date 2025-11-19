@@ -1,0 +1,9 @@
+botcomponent:
+  '@schemaname': cre96_scheduler.topic.StudentAbsence
+  componenttype: 9
+  iscustomizable: 0
+  name: StudentAbsence
+  parentbotid:
+    schemaname: cre96_scheduler
+  statecode: 0
+  statuscode: 1

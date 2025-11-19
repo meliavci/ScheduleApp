@@ -1,0 +1,56 @@
+systemform:
+  formid: '{852df08a-a796-4648-ba4e-40818bd9de4a}'
+  IntroducedVersion: 1.0
+  FormPresentation: 1
+  FormActivationState: 1
+  form:
+    tabs:
+      tab:
+        '@verticallayout': true
+        '@id': '{85b162c5-ab14-4e0a-ac97-95faa19c89ef}'
+        '@IsUserDefined': 1
+        labels:
+          label:
+            '@description': ''
+            '@languagecode': 1033
+        columns:
+          column:
+            '@width': 100%
+            sections:
+              section:
+                '@showlabel': false
+                '@showbar': false
+                '@IsUserDefined': 0
+                '@id': '{3f727f01-908b-4557-8b67-eebe124ed31a}'
+                labels:
+                  label:
+                    '@description': GENERAL
+                    '@languagecode': 1033
+                rows:
+                  row:
+                  - cell:
+                      '@id': '{33906604-72ad-4384-9637-1ee80b138fad}'
+                      labels:
+                        label:
+                          '@description': Room Name
+                          '@languagecode': 1033
+                      control:
+                        '@id': cre96_roomname
+                        '@classid': '{4273EDBD-AC1D-40d3-9FB2-095C621B552D}'
+                        '@datafieldname': cre96_roomname
+                  - cell:
+                      '@id': '{37e12750-460e-459b-ab34-4d1e8886a318}'
+                      labels:
+                        label:
+                          '@description': Owner
+                          '@languagecode': 1033
+                      control:
+                        '@id': ownerid
+                        '@classid': '{270BD3DB-D9AF-4782-9025-509E298DEC0A}'
+                        '@datafieldname': ownerid
+  IsCustomizable: 1
+  CanBeDeleted: 1
+  LocalizedNames:
+    LocalizedName:
+      '@description': Information
+      '@languagecode': 1033

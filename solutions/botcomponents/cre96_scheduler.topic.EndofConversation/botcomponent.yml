@@ -1,0 +1,13 @@
+botcomponent:
+  '@schemaname': cre96_scheduler.topic.EndofConversation
+  componenttype: 9
+  description: >-
+    This system topic is only triggered by a redirect action,
+
+    and guides the user through rating their conversation with the agent.
+  iscustomizable: 0
+  name: End of Conversation
+  parentbotid:
+    schemaname: cre96_scheduler
+  statecode: 1
+  statuscode: 2

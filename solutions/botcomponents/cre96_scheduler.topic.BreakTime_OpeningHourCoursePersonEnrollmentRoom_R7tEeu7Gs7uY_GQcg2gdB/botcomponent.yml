@@ -1,0 +1,10 @@
+botcomponent:
+  '@schemaname': cre96_scheduler.topic.BreakTime_OpeningHourCoursePersonEnrollmentRoom_R7tEeu7Gs7uY_GQcg2gdB
+  componenttype: 16
+  description: 'This knowledge source answers questions found in the following Dataverse items: Break Time, OpeningHour, Course, Person, Enrollment, Room'
+  iscustomizable: 0
+  name: Break Time, OpeningHour, Course, Person, Enrollment, Room
+  parentbotid:
+    schemaname: cre96_scheduler
+  statecode: 0
+  statuscode: 1

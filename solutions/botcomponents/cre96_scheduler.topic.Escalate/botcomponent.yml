@@ -1,0 +1,15 @@
+botcomponent:
+  '@schemaname': cre96_scheduler.topic.Escalate
+  componenttype: 9
+  description: >-
+    This system topic is triggered when the user indicates they would like to speak to a representative.
+
+    You can configure how the agent will handle human hand-off scenarios in the agent settings..
+
+    If your agent does not handle escalations, this topic should be disabled.
+  iscustomizable: 0
+  name: Escalate
+  parentbotid:
+    schemaname: cre96_scheduler
+  statecode: 1
+  statuscode: 2

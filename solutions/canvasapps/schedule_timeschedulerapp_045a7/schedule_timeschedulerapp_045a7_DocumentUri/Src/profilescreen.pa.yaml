@@ -1,0 +1,356 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  profilescreen:
+    Properties:
+      Fill: =RGBA(108, 165, 245, 0.39)
+      ImagePosition: =ImagePosition.Fill
+      LoadingSpinnerColor: =RGBA(100, 118, 132, 1)
+      OnVisible: |+
+        =Set(varFirstCourse, First(colUserCourses));
+        UpdateContext({varShowCourseSelection: false})
+      Width: |
+        =Max(App.Width, App.MinScreenWidth)
+    Children:
+      - Background:
+          Control: HtmlViewer@2.1.0
+          Properties:
+            AutoHeight: =true
+            Font: =Font.'Open Sans'
+            Height: =App.Height
+            HtmlText: |-
+              =
+              $"<div style='width:100%;height:{App.Height}px;background: linear-gradient(180deg,rgba(30, 33, 43, 1) 0%, rgba(27, 49, 75, 1) 100%)'></div>"
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Width: =App.Width
+      - Component2_1:
+          Control: CanvasComponent
+          ComponentName: Component2
+          Properties:
+            IsCancelledAlert: =true
+            Y: =496
+            navigateToBot: '=Launch("https://web.powerva.microsoft.com/environments/6484ef4a-54a6-e8b2-81c8-a24f9f8b1849/bots/bba1bea3-41ba-f011-bbd3-6045bda07122/overview") '
+            navigateToProfile: =Navigate(profilescreen)
+            navigatetoSchedule: =Navigate(Homescreen_1)
+      - RectRole:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =ColorFade(Self.Fill, -15%)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(100, 118, 132, 1)
+            Font: =Font.'Open Sans'
+            Height: =80
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            RadiusBottomLeft: =15
+            RadiusBottomRight: =15
+            RadiusTopLeft: =15
+            RadiusTopRight: =15
+            Text: =
+            Width: =Parent.Width - 48
+            X: =24
+            Y: =RectHeader.Y + RectHeader.Height + 20
+      - IconRole:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(197, 203, 207, 1)
+            Color: =RGBA(237, 237, 237, 1)
+            Height: =50
+            Icon: =Icon.LogJournal
+            Width: =50
+            X: =RectRole.X + 20
+            Y: =RectRole.Y + 15
+      - lblRole:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(197, 203, 207, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Lato Light'
+            Size: =14
+            Text: |
+              =matchedUser.Role
+            Width: =391
+            X: =IconRole.X + IconRole.Width + 20
+            Y: '=RectRole.Y '
+      - RectHeader:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =ColorFade(Self.Fill, -15%)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(100, 118, 132, 1)
+            Font: =Font.'Open Sans'
+            Height: =90
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            RadiusBottomLeft: =15
+            RadiusBottomRight: =15
+            RadiusTopLeft: =15
+            RadiusTopRight: =15
+            Text: =
+            Width: |+
+              =Parent.Width - 48
+            X: =24
+            Y: =40
+      - IconUser:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(197, 203, 207, 1)
+            Color: =RGBA(237, 237, 237, 1)
+            Height: =50
+            Icon: =Icon.Person
+            Width: =50
+            X: =RectHeader.X + 20
+            Y: =RectHeader.Y + 20
+      - lblName:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(197, 203, 207, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Size: =18
+            Text: =matchedUser.'Person Name'
+            Width: =391
+            X: =IconUser.X + IconUser.Width + 20
+            Y: '=RectHeader.Y '
+      - lblEmail:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(197, 203, 207, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Lato Light'
+            Size: =12
+            Text: =matchedUser.Email
+            Width: =391
+            X: =lblName.X
+            Y: =lblName.Y + 25
+      - RectCourses:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =ColorValue("#647684")
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(100, 118, 132, 1)
+            Font: =Font.'Open Sans'
+            Height: =400
+            HoverBorderColor: =RGBA(0, 0, 0, 0.1)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(0, 0, 0, 0.1)
+            PressedBorderColor: =ColorValue("#647684")
+            PressedColor: =Self.Fill
+            PressedFill: =RGBA(0, 0, 0, 0.2)
+            RadiusBottomLeft: =15
+            RadiusBottomRight: =15
+            RadiusTopLeft: =15
+            RadiusTopRight: =15
+            Text: =
+            Width: =Parent.Width - 48
+            X: =24
+            Y: =RectRole.Y + RectRole.Height + 20
+      - galCourses:
+          Control: Gallery@2.15.0
+          Variant: BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0
+          Properties:
+            BorderColor: =RGBA(197, 203, 207, 1)
+            Height: =400
+            Items: =colUserCourses
+            TemplateSize: =40
+            Width: =Parent.Width - 48
+            X: =24
+            Y: =RectRole.Y + RectRole.Height + 40
+          Children:
+            - Title1:
+                Control: Label@2.5.1
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Color: =RGBA(255, 255, 255, 1)
+                  Font: =Font.Lato
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =Self.Size * 1.8
+                  OnSelect: =Select(Parent)
+                  Size: =14
+                  Text: =ThisItem.'Course Name'
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =Parent.TemplateWidth - 173
+                  X: =24
+                  Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + Title1.Size * 1.8)) / 2
+            - Separator1:
+                Control: Rectangle@2.3.0
+                Properties:
+                  BorderColor: =RGBA(197, 203, 207, 1)
+                  DisplayMode: =DisplayMode.View
+                  Fill: =RGBA(255, 255, 255, 1)
+                  Height: =1
+                  OnSelect: =Select(Parent)
+                  Width: =Parent.TemplateWidth - 48
+                  X: =24
+                  Y: =Parent.TemplateHeight - 1
+      - btnCancelClass:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =ColorFade(Self.Fill, -15%)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(100, 118, 132, 1)
+            Font: =Font.Lato
+            Height: =50
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+            OnSelect: |-
+              =UpdateContext({varShowCourseSelection: !varShowCourseSelection})
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            Size: =14
+            Text: ="Cancel class"
+            Visible: "=If(\r\n    !IsBlank(matchedUser.Role),\r\n    \r\n    Text(matchedUser.Role) = \"Professor\",\r\n    \r\n    false \r\n)"
+            Width: =200
+            X: =251
+            Y: =670
+      - galProfCourseSelection:
+          Control: Gallery@2.15.0
+          Variant: BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0
+          Properties:
+            BorderColor: =RGBA(197, 203, 207, 1)
+            Height: =200
+            Items: =colUserCourses
+            TemplateSize: =50
+            Visible: =varShowCourseSelection
+            Width: =Parent.Width - 48
+            X: =24
+            Y: =galCourses.Y + galCourses.Height + btnCancelClass.Height +20
+          Children:
+            - Title3:
+                Control: Label@2.5.1
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Color: =RGBA(255, 255, 255, 1)
+                  Font: =Font.Lato
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =Self.Size * 1.8
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =14
+                  Text: =ThisItem.'Course Name'
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =Parent.TemplateWidth - 120
+                  X: =10
+                  Y: |+
+                    =10
+            - Separator2:
+                Control: Rectangle@2.3.0
+                Properties:
+                  BorderColor: =RGBA(197, 203, 207, 1)
+                  Fill: =RGBA(255, 255, 255, 1)
+                  Height: =1
+                  OnSelect: =Select(Parent)
+                  Width: |+
+                    =Parent.TemplateWidth 
+                  X: =10
+                  Y: =Parent.TemplateHeight - Self.Height
+            - btnSelectCourse:
+                Control: Classic/Button@2.2.0
+                Properties:
+                  BorderColor: =ColorFade(Self.Fill, -15%)
+                  Color: =RGBA(255, 255, 255, 1)
+                  DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                  Fill: =RGBA(100, 118, 132, 1)
+                  Font: =Font.Lato
+                  FontWeight: =FontWeight.Normal
+                  Height: =40
+                  HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                  HoverColor: =RGBA(255, 255, 255, 1)
+                  HoverFill: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+                  OnSelect: |-
+                    =Set(varCourseToCancel, ThisItem);
+
+                    'Cancel_Course_Notification'.Run(
+                        varCourseToCancel.Course,        
+                        varCourseToCancel.'Course Name',
+                        matchedUser.Email                
+                    );
+
+
+                    Refresh(Courses); 
+
+
+                    ClearCollect(
+                        colUserCourses,
+                        Filter(Courses, ThisRecord.'Course Name' in colCourseNames.CourseNameText)
+                    );
+
+
+                    UpdateContext({varShowCourseSelection: false});
+                    Notify("Cancellation successfully initiated. Students will be notified.", NotificationType.Success)
+                  PressedBorderColor: =Self.Fill
+                  PressedColor: =Self.Fill
+                  PressedFill: =Self.Color
+                  RadiusBottomLeft: =6
+                  RadiusBottomRight: =6
+                  RadiusTopLeft: =6
+                  RadiusTopRight: =6
+                  Size: =14
+                  Text: ="Select"
+                  Width: =100
+                  X: =Parent.TemplateWidth - Self.Width - 5
+                  Y: =5
+      - SignOutButton:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =ColorFade(Self.Fill, -15%)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(100, 118, 132, 1)
+            Font: =Font.Lato
+            Height: =50
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+            OnSelect: |-
+              =Patch(People, matchedUser, { 'Logged in?': false });
+
+              Set(matchedUser, Blank());
+              Clear(colUserEnrollments);
+              Clear(colCourseNames);
+              Clear(colUserCourses);
+              Set(varCancelledCount, Blank());
+
+              Reset(txtEmailInput);
+              Reset(txtPasswordInput);
+
+              Navigate(LogIn, ScreenTransition.Fade);
+              Notify("Logout successful", NotificationType.Success);
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            Size: =14
+            Text: ="Sign out"
+            Width: =200
+            X: =24
+            Y: =670

@@ -1,0 +1,10 @@
+botcomponent:
+  '@schemaname': cre96_scheduler.topic.OnError
+  componenttype: 9
+  description: This system topic triggers when the agent encounters an error. When using the test chat pane, the full error description is displayed.
+  iscustomizable: 0
+  name: On Error
+  parentbotid:
+    schemaname: cre96_scheduler
+  statecode: 1
+  statuscode: 2

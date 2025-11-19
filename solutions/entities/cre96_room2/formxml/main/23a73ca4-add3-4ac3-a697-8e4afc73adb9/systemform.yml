@@ -1,0 +1,172 @@
+systemform:
+  formid: '{23a73ca4-add3-4ac3-a697-8e4afc73adb9}'
+  IntroducedVersion: 1.0
+  FormPresentation: 1
+  FormActivationState: 1
+  form:
+    tabs:
+      tab:
+        '@verticallayout': true
+        '@id': '{147a5d5c-40d0-443a-80e2-cddc0b32b913}'
+        '@IsUserDefined': 1
+        labels:
+          label:
+            '@description': General
+            '@languagecode': 1033
+        columns:
+          column:
+            '@width': 100%
+            sections:
+              section:
+                '@showlabel': false
+                '@showbar': false
+                '@IsUserDefined': 0
+                '@id': '{856acad7-b78e-40ae-9f7b-273d90e1f265}'
+                labels:
+                  label:
+                    '@description': General
+                    '@languagecode': 1033
+                rows:
+                  row:
+                  - cell:
+                      '@id': '{7036b6a2-d8b0-4e82-936b-b53b90c4c46f}'
+                      labels:
+                        label:
+                          '@description': Room Name
+                          '@languagecode': 1033
+                      control:
+                        '@id': cre96_roomname
+                        '@classid': '{4273EDBD-AC1D-40d3-9FB2-095C621B552D}'
+                        '@datafieldname': cre96_roomname
+                  - cell:
+                      '@id': '{01691c57-84a6-4d02-80cf-ad662a9349db}'
+                      labels:
+                        label:
+                          '@description': Owner
+                          '@languagecode': 1033
+                      control:
+                        '@id': ownerid
+                        '@classid': '{270BD3DB-D9AF-4782-9025-509E298DEC0A}'
+                        '@datafieldname': ownerid
+                  - cell:
+                      '@id': '{b617507f-e188-44ae-8f08-305522bf6845}'
+                      labels:
+                        label:
+                          '@description': Type
+                          '@languagecode': 1033
+                      control:
+                        '@id': cre96_type
+                        '@classid': '{3ef39988-22bb-4f0b-bbbe-64b5a3748aee}'
+                        '@datafieldname': cre96_type
+                  - cell:
+                      '@id': '{6246dafc-2773-43a0-a67b-24ae950a7572}'
+                      labels:
+                        label:
+                          '@description': Availibility
+                          '@languagecode': 1033
+                      control:
+                        '@id': cre96_availibility
+                        '@classid': '{67fac785-cd58-4f9f-abb3-4b7ddc6ed5ed}'
+                        '@datafieldname': cre96_availibility
+                  - cell:
+                      '@id': '{a758efc9-cae3-411e-b050-73810a77069b}'
+                      labels:
+                        label:
+                          '@description': Capacity
+                          '@languagecode': 1033
+                      control:
+                        '@id': cre96_capacity
+                        '@classid': '{c6d124ca-7eda-4a60-aea9-7fb8d318b68f}'
+                        '@datafieldname': cre96_capacity
+                  - cell:
+                      '@id': '{7d2e2c0b-65cd-4c21-bfca-eb73a793b4bb}'
+                      labels:
+                        label:
+                          '@description': Campus Name
+                          '@languagecode': 1033
+                      control:
+                        '@id': cre96_campusname
+                        '@classid': '{4273edbd-ac1d-40d3-9fb2-095c621b552d}'
+                        '@datafieldname': cre96_campusname
+                  - cell:
+                      '@id': '{f1532050-72f5-4a03-b80a-6fba6bdbf006}'
+                      '@locklevel': 0
+                      '@rowspan': 1
+                      '@colspan': 1
+                      labels:
+                        label:
+                          '@description': RoomId
+                          '@languagecode': 1033
+                      control:
+                        '@id': cre96_roomid
+                        '@classid': '{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}'
+                        '@datafieldname': cre96_roomid
+                        '@disabled': false
+    header:
+      '@id': '{5fbb6d7f-450b-4fc8-b2d3-40038a7f9583}'
+      '@celllabelposition': Top
+      '@columns': 111
+      '@labelwidth': 115
+      '@celllabelalignment': Left
+      rows:
+        row:
+          cell:
+          - '@id': '{e9e1ec74-6c5f-44c6-97f5-733b75bfeb97}'
+            '@showlabel': false
+            labels:
+              label:
+                '@description': ''
+                '@languagecode': 1033
+          - '@id': '{326851f8-18fe-4b7a-b485-0b0d44b66d4d}'
+            '@showlabel': false
+            labels:
+              label:
+                '@description': ''
+                '@languagecode': 1033
+          - '@id': '{df1a9872-ba72-4cea-9243-9a32d1c57433}'
+            '@showlabel': false
+            labels:
+              label:
+                '@description': ''
+                '@languagecode': 1033
+    footer:
+      '@id': '{a0764e55-b2ee-4b90-9941-4c978507bb67}'
+      '@celllabelposition': Top
+      '@columns': 111
+      '@labelwidth': 115
+      '@celllabelalignment': Left
+      rows:
+        row:
+          cell:
+          - '@id': '{740692b9-bd44-4b83-9c7a-17afd887ee46}'
+            '@showlabel': false
+            labels:
+              label:
+                '@description': ''
+                '@languagecode': 1033
+          - '@id': '{2aa79e00-78ac-4d84-8693-6b6fbf17296b}'
+            '@showlabel': false
+            labels:
+              label:
+                '@description': ''
+                '@languagecode': 1033
+          - '@id': '{00c53c7c-c131-4a83-823a-12f4de0bb34d}'
+            '@showlabel': false
+            labels:
+              label:
+                '@description': ''
+                '@languagecode': 1033
+    DisplayConditions:
+      '@Order': 0
+      '@FallbackForm': true
+      Everyone: 
+  IsCustomizable: 1
+  CanBeDeleted: 1
+  LocalizedNames:
+    LocalizedName:
+      '@description': Information
+      '@languagecode': 1033
+  Descriptions:
+    Description:
+      '@description': A form for this entity.
+      '@languagecode': 1033

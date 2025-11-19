@@ -1,0 +1,47 @@
+savedquery:
+  IsCustomizable: 1
+  CanBeDeleted: 0
+  isquickfindquery: 0
+  isprivate: 0
+  isdefault: 1
+  savedqueryid: '{517f62f1-8224-4357-8360-c22fef1a65c7}'
+  layoutxml:
+    grid:
+      '@name': cre96_course2s
+      '@jump': cre96_coursename
+      '@select': 1
+      '@icon': 1
+      '@preview': 1
+      row:
+        '@name': cre96_course2
+        '@id': cre96_course2id
+        cell:
+        - '@name': cre96_coursename
+          '@width': 300
+        - '@name': createdon
+          '@width': 125
+  querytype: 2
+  fetchxml:
+    fetch:
+      '@version': 1.0
+      '@mapping': logical
+      entity:
+        '@name': cre96_course2
+        attribute:
+        - '@name': cre96_course2id
+        - '@name': cre96_coursename
+        - '@name': createdon
+        order:
+          '@attribute': cre96_coursename
+          '@descending': false
+        filter:
+          '@type': and
+          condition:
+            '@attribute': statecode
+            '@operator': eq
+            '@value': 0
+  IntroducedVersion: 1.0
+  LocalizedNames:
+    LocalizedName:
+      '@description': Course Associated View
+      '@languagecode': 1033

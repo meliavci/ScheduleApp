@@ -1,0 +1,9 @@
+botcomponent:
+  '@schemaname': cre96_scheduler.topic.UserAuthentication
+  componenttype: 9
+  iscustomizable: 0
+  name: User Authentication
+  parentbotid:
+    schemaname: cre96_scheduler
+  statecode: 0
+  statuscode: 1

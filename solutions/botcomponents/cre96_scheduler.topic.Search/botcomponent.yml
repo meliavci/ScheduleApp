@@ -1,0 +1,10 @@
+botcomponent:
+  '@schemaname': cre96_scheduler.topic.Search
+  componenttype: 9
+  description: Create generative answers from knowledge sources.
+  iscustomizable: 0
+  name: Conversational boosting
+  parentbotid:
+    schemaname: cre96_scheduler
+  statecode: 1
+  statuscode: 2

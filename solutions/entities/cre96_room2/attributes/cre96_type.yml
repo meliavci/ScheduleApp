@@ -1,0 +1,165 @@
+attribute:
+  '@PhysicalName': cre96_Type
+  Type: picklist
+  Name: cre96_type
+  LogicalName: cre96_type
+  RequiredLevel: required
+  DisplayMask: ValidForForm|ValidForGrid
+  ImeMode: auto
+  ValidForUpdateApi: 1
+  ValidForReadApi: 1
+  ValidForCreateApi: 1
+  IsCustomField: 1
+  IsAuditEnabled: 1
+  IsSecured: 0
+  IntroducedVersion: 1.0
+  IsCustomizable: 1
+  IsRenameable: 1
+  CanModifySearchSettings: 1
+  CanModifyRequirementLevelSettings: 1
+  CanModifyAdditionalSettings: 1
+  SourceType: 0
+  IsGlobalFilterEnabled: 0
+  IsSortableEnabled: 0
+  CanModifyGlobalFilterSettings: 1
+  CanModifyIsSortableSettings: 1
+  IsDataSourceSecret: 0
+  IsSearchable: 0
+  IsFilterable: 0
+  IsRetrievable: 0
+  IsLocalizable: 0
+  AppDefaultValue: 336290000
+  optionset:
+    '@Name': cre96_room2_cre96_type
+    OptionSetType: picklist
+    IntroducedVersion: 1.0
+    IsCustomizable: 1
+    ExternalTypeName: ''
+    displaynames:
+      displayname:
+        '@description': Type
+        '@languagecode': 1033
+    Descriptions:
+      Description:
+        '@description': ''
+        '@languagecode': 1033
+    options:
+      option:
+      - '@value': 336290000
+        '@ExternalValue': ''
+        '@IsHidden': 0
+        labels:
+          label:
+            '@description': Computer Lab
+            '@languagecode': 1033
+        Descriptions:
+          Description:
+            '@description': ''
+            '@languagecode': 1033
+      - '@value': 336290001
+        '@ExternalValue': ''
+        '@IsHidden': 0
+        labels:
+          label:
+            '@description': Seminar room
+            '@languagecode': 1033
+        Descriptions:
+          Description:
+            '@description': ''
+            '@languagecode': 1033
+      - '@value': 336290002
+        '@ExternalValue': ''
+        '@IsHidden': 0
+        labels:
+          label:
+            '@description': Lecture hall
+            '@languagecode': 1033
+        Descriptions:
+          Description:
+            '@description': ''
+            '@languagecode': 1033
+      - '@value': 336290003
+        '@ExternalValue': ''
+        '@IsHidden': 0
+        labels:
+          label:
+            '@description': Meeting room
+            '@languagecode': 1033
+        Descriptions:
+          Description:
+            '@description': ''
+            '@languagecode': 1033
+      - '@value': 336290004
+        '@ExternalValue': ''
+        '@IsHidden': 0
+        labels:
+          label:
+            '@description': Laboratory
+            '@languagecode': 1033
+        Descriptions:
+          Description:
+            '@description': ''
+            '@languagecode': 1033
+      - '@value': 336290005
+        '@ExternalValue': ''
+        '@IsHidden': 0
+        labels:
+          label:
+            '@description': Studio
+            '@languagecode': 1033
+        Descriptions:
+          Description:
+            '@description': ''
+            '@languagecode': 1033
+      - '@value': 336290006
+        '@ExternalValue': ''
+        '@IsHidden': 0
+        labels:
+          label:
+            '@description': Office
+            '@languagecode': 1033
+        Descriptions:
+          Description:
+            '@description': ''
+            '@languagecode': 1033
+      - '@value': 336290007
+        '@ExternalValue': ''
+        '@IsHidden': 0
+        labels:
+          label:
+            '@description': Library
+            '@languagecode': 1033
+        Descriptions:
+          Description:
+            '@description': ''
+            '@languagecode': 1033
+      - '@value': 336290008
+        '@ExternalValue': ''
+        '@IsHidden': 0
+        labels:
+          label:
+            '@description': Staff room
+            '@languagecode': 1033
+        Descriptions:
+          Description:
+            '@description': ''
+            '@languagecode': 1033
+      - '@value': 336290009
+        '@ExternalValue': ''
+        '@IsHidden': 0
+        labels:
+          label:
+            '@description': Canteen
+            '@languagecode': 1033
+        Descriptions:
+          Description:
+            '@description': ''
+            '@languagecode': 1033
+  displaynames:
+    displayname:
+      '@description': Type
+      '@languagecode': 1033
+  Descriptions:
+    Description:
+      '@description': ''
+      '@languagecode': 1033

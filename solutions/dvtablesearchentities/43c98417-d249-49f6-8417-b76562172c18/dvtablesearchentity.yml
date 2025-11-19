@@ -1,0 +1,9 @@
+dvtablesearchentity:
+  '@dvtablesearchentityid': 43c98417-d249-49f6-8417-b76562172c18
+  dvtablesearch:
+    dvtablesearchid: 4e276f8e-32af-4e69-b942-ef0739fd7672
+  entitylogicalname: cre96_person2
+  iscustomizable: 0
+  name: cre96_Person2
+  statecode: 0
+  statuscode: 1

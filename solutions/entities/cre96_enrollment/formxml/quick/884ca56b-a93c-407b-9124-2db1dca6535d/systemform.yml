@@ -1,0 +1,56 @@
+systemform:
+  formid: '{884ca56b-a93c-407b-9124-2db1dca6535d}'
+  IntroducedVersion: 1.0
+  FormPresentation: 1
+  FormActivationState: 1
+  form:
+    tabs:
+      tab:
+        '@verticallayout': true
+        '@id': '{51040e0d-ced5-4173-8f59-c01efa9930ad}'
+        '@IsUserDefined': 1
+        labels:
+          label:
+            '@description': ''
+            '@languagecode': 1033
+        columns:
+          column:
+            '@width': 100%
+            sections:
+              section:
+                '@showlabel': false
+                '@showbar': false
+                '@IsUserDefined': 0
+                '@id': '{7d9f4d45-14eb-4e90-9757-7679bbb25e9b}'
+                labels:
+                  label:
+                    '@description': GENERAL
+                    '@languagecode': 1033
+                rows:
+                  row:
+                  - cell:
+                      '@id': '{240ce045-6782-483e-8f19-b942cde8caca}'
+                      labels:
+                        label:
+                          '@description': Enrollment ID
+                          '@languagecode': 1033
+                      control:
+                        '@id': cre96_enrollmentid2
+                        '@classid': '{4273EDBD-AC1D-40d3-9FB2-095C621B552D}'
+                        '@datafieldname': cre96_enrollmentid2
+                  - cell:
+                      '@id': '{c5c94639-318e-48c9-84f6-f15056bfb589}'
+                      labels:
+                        label:
+                          '@description': Owner
+                          '@languagecode': 1033
+                      control:
+                        '@id': ownerid
+                        '@classid': '{270BD3DB-D9AF-4782-9025-509E298DEC0A}'
+                        '@datafieldname': ownerid
+  IsCustomizable: 1
+  CanBeDeleted: 1
+  LocalizedNames:
+    LocalizedName:
+      '@description': Information
+      '@languagecode': 1033

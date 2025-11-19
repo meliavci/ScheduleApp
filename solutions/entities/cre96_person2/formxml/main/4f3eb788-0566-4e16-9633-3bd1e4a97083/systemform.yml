@@ -1,0 +1,100 @@
+systemform:
+  formid: '{4f3eb788-0566-4e16-9633-3bd1e4a97083}'
+  IntroducedVersion: 1.0
+  FormPresentation: 1
+  FormActivationState: 1
+  form:
+    tabs:
+      tab:
+        '@verticallayout': true
+        '@id': '{53da8692-51a6-4cd5-8981-69ecdb3854fe}'
+        '@IsUserDefined': 1
+        labels:
+          label:
+            '@description': General
+            '@languagecode': 1033
+        columns:
+          column:
+            '@width': 100%
+            sections:
+              section:
+                '@showlabel': false
+                '@showbar': false
+                '@IsUserDefined': 0
+                '@id': '{0e303d23-6a78-4549-8998-e50d3feb20ad}'
+                labels:
+                  label:
+                    '@description': General
+                    '@languagecode': 1033
+                rows:
+                  row:
+                  - cell:
+                      '@id': '{c0f2d26c-4afd-40a0-8f81-1c198c81dabb}'
+                      labels:
+                        label:
+                          '@description': Person Name
+                          '@languagecode': 1033
+                      control:
+                        '@id': cre96_personname
+                        '@classid': '{4273EDBD-AC1D-40d3-9FB2-095C621B552D}'
+                        '@datafieldname': cre96_personname
+                  - cell:
+                      '@id': '{2caf6b9f-71fa-4068-af70-f7c3bb3435d5}'
+                      labels:
+                        label:
+                          '@description': Owner
+                          '@languagecode': 1033
+                      control:
+                        '@id': ownerid
+                        '@classid': '{270BD3DB-D9AF-4782-9025-509E298DEC0A}'
+                        '@datafieldname': ownerid
+                  - cell:
+                      '@id': '{4bc71ad2-8053-4fb1-bb91-da85046332d3}'
+                      labels:
+                        label:
+                          '@description': Email
+                          '@languagecode': 1033
+                      control:
+                        '@id': cre96_email
+                        '@classid': '{4273edbd-ac1d-40d3-9fb2-095c621b552d}'
+                        '@datafieldname': cre96_email
+                  - cell:
+                      '@id': '{b8f83450-547a-4684-b248-097c1aee212c}'
+                      labels:
+                        label:
+                          '@description': Role
+                          '@languagecode': 1033
+                      control:
+                        '@id': cre96_role
+                        '@classid': '{3ef39988-22bb-4f0b-bbbe-64b5a3748aee}'
+                        '@datafieldname': cre96_role
+                  - cell:
+                      '@id': '{e3cc883c-2d48-4b93-91d6-d433fe96b2c3}'
+                      labels:
+                        label:
+                          '@description': Logged in?
+                          '@languagecode': 1033
+                      control:
+                        '@id': cre96_loggedin
+                        '@classid': '{67fac785-cd58-4f9f-abb3-4b7ddc6ed5ed}'
+                        '@datafieldname': cre96_loggedin
+                  - cell:
+                      '@id': '{c3735dc3-2454-4933-a8d9-b54f06713ef6}'
+                      labels:
+                        label:
+                          '@description': Password
+                          '@languagecode': 1033
+                      control:
+                        '@id': cre96_password
+                        '@classid': '{4273edbd-ac1d-40d3-9fb2-095c621b552d}'
+                        '@datafieldname': cre96_password
+  IsCustomizable: 1
+  CanBeDeleted: 1
+  LocalizedNames:
+    LocalizedName:
+      '@description': Information
+      '@languagecode': 1033
+  Descriptions:
+    Description:
+      '@description': A form for this entity.
+      '@languagecode': 1033

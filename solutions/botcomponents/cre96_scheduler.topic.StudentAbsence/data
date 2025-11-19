@@ -1,0 +1,93 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent: {}
+  actions:
+    - kind: ConditionGroup
+      id: ConditionGroup_VzFhWG
+      conditions:
+        - id: ConditionItem_OjyKrL
+          condition: =Global.UserRole = "Student"
+          actions:
+            - kind: Question
+              id: Question_CvDhL0
+              variable: Topic.absenceDate
+              prompt: "On which date will you be absent? Written in this format: dd.mm.yyyy or dd.mm.yy"
+              entity: StringPrebuiltEntity
+
+            - kind: Question
+              id: Question_RAwDg4
+              variable: Topic.courseName
+              prompt: Which course will you miss? Please type the course name.
+              entity:
+                kind: StringPrebuiltEntity
+                sensitivityLevel: None
+
+            - kind: InvokeFlowAction
+              id: invokeFlowAction_34qxQR
+              input:
+                binding:
+                  text: =Topic.courseName
+
+              output:
+                binding:
+                  professoremail: Topic.professorEmail
+                  professorname: Topic.professorName
+
+              flowId: 3ac4a756-e1bb-f011-bbd3-6045bda07122
+
+            - kind: ConditionGroup
+              id: conditionGroup_rWcTFy
+              conditions:
+                - id: conditionItem_C6wYwl
+                  condition: =IsBlank(Topic.professorEmail) && IsBlank(Topic.professorName)
+                  actions:
+                    - kind: SendActivity
+                      id: sendActivity_r4XsQZ
+                      activity: I couldn’t find a course called {Topic.courseName}. Please enter the correct course name you’re going to miss.
+
+                    - kind: GotoAction
+                      id: W4biMn
+                      actionId: Question_RAwDg4
+
+            - kind: Question
+              id: Question_GRXFSf
+              variable: Topic.absenceReason
+              prompt: What is the reason for your absence?
+              entity:
+                kind: StringPrebuiltEntity
+                sensitivityLevel: None
+
+            - kind: SendActivity
+              id: SendActivity_fhVrIr
+              activity: An absence E-Mail got sent to {Topic.professorEmail}
+
+            - kind: InvokeFlowAction
+              id: invokeFlowAction_x2mlEW
+              input:
+                binding:
+                  text: =Topic.professorEmail
+                  text_1: =Topic.courseName
+                  text_2: =Topic.absenceDate
+                  text_3: =Topic.absenceReason
+                  text_4: =Global.userName
+                  text_5: =Topic.professorName
+
+              output: {}
+              flowId: aaae3f0d-aac0-f011-bbd3-6045bda07122
+
+        - id: conditionItem_H0kCDo
+          condition: =Global.UserRole = "Professor"
+          actions:
+            - kind: SendActivity
+              id: sendActivity_Jbd7a9
+              activity: Only students can report absences. This topic will now end.
+
+      elseActions:
+        - kind: SendActivity
+          id: sendActivity_40pgWk
+          activity: Role information is unavailable. Please authenticate to use this feature.
+
+inputType: {}
+outputType: {}

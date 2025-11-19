@@ -1,0 +1,80 @@
+systemform:
+  formid: '{28929fa8-11e2-4f51-a6b8-15caf28afdef}'
+  IntroducedVersion: 1.0
+  FormPresentation: 1
+  FormActivationState: 1
+  form:
+    tabs:
+      tab:
+        '@verticallayout': true
+        '@id': '{2c819d59-5970-4ee0-b6d3-be0ef10eaf1d}'
+        '@IsUserDefined': 1
+        labels:
+          label:
+            '@description': General
+            '@languagecode': 1033
+        columns:
+          column:
+            '@width': 100%
+            sections:
+              section:
+                '@showlabel': false
+                '@showbar': false
+                '@IsUserDefined': 0
+                '@id': '{22b7bd9c-ab23-4d9e-bacf-957ecaaad1c6}'
+                labels:
+                  label:
+                    '@description': General
+                    '@languagecode': 1033
+                rows:
+                  row:
+                  - cell:
+                      '@id': '{4d7c3230-32af-4167-8499-e6aa115e37a6}'
+                      labels:
+                        label:
+                          '@description': Enrollment ID
+                          '@languagecode': 1033
+                      control:
+                        '@id': cre96_enrollmentid2
+                        '@classid': '{4273EDBD-AC1D-40d3-9FB2-095C621B552D}'
+                        '@datafieldname': cre96_enrollmentid2
+                  - cell:
+                      '@id': '{abbb0bca-17a2-4cbd-8dde-015571a4e7c2}'
+                      labels:
+                        label:
+                          '@description': Owner
+                          '@languagecode': 1033
+                      control:
+                        '@id': ownerid
+                        '@classid': '{270BD3DB-D9AF-4782-9025-509E298DEC0A}'
+                        '@datafieldname': ownerid
+                  - cell:
+                      '@id': '{610a039a-bb3d-4338-883f-9a4b72669aa4}'
+                      labels:
+                        label:
+                          '@description': Course
+                          '@languagecode': 1033
+                      control:
+                        '@id': cre96_course2
+                        '@classid': '{270bd3db-d9af-4782-9025-509e298dec0a}'
+                        '@datafieldname': cre96_course2
+                  - cell:
+                      '@id': '{2a12fa33-6626-4f54-a3a4-ea9ec1e2833b}'
+                      labels:
+                        label:
+                          '@description': Person
+                          '@languagecode': 1033
+                      control:
+                        '@id': cre96_person2
+                        '@classid': '{270bd3db-d9af-4782-9025-509e298dec0a}'
+                        '@datafieldname': cre96_person2
+  IsCustomizable: 1
+  CanBeDeleted: 1
+  LocalizedNames:
+    LocalizedName:
+      '@description': Information
+      '@languagecode': 1033
+  Descriptions:
+    Description:
+      '@description': A form for this entity.
+      '@languagecode': 1033

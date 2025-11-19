@@ -1,0 +1,4 @@
+botcomponent_workflow:
+  '@botcomponentid.schemaname': cre96_scheduler.topic.UserAuthentication
+  '@workflowid.workflowid': 31e8cd7d-30bb-f011-bbd3-6045bda07122
+  iscustomizable: 1

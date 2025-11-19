@@ -1,0 +1,57 @@
+savedquery:
+  IsCustomizable: 1
+  CanBeDeleted: 0
+  isquickfindquery: 0
+  isprivate: 0
+  isdefault: 1
+  savedqueryid: '{7c32cd29-1921-40ba-b925-15bb9ba65a7f}'
+  layoutxml:
+    grid:
+      '@name': resultset
+      '@jump': cre96_personname
+      '@select': 1
+      '@icon': 1
+      '@preview': 1
+      row:
+        '@name': result
+        '@id': cre96_person2id
+        cell:
+        - '@name': cre96_personname
+          '@width': 300
+        - '@name': cre96_email
+          '@width': 150
+        - '@name': cre96_role
+          '@width': 150
+        - '@name': cre96_loggedin
+          '@width': 150
+        - '@name': cre96_password
+          '@width': 150
+  querytype: 0
+  fetchxml:
+    fetch:
+      '@version': 1.0
+      '@mapping': logical
+      entity:
+        '@name': cre96_person2
+        attribute:
+        - '@name': cre96_person2id
+        - '@name': cre96_personname
+        - '@name': createdon
+        - '@name': cre96_email
+        - '@name': cre96_role
+        - '@name': cre96_loggedin
+        - '@name': cre96_password
+        order:
+          '@attribute': cre96_personname
+          '@descending': false
+        filter:
+          '@type': and
+          condition:
+            '@attribute': statecode
+            '@operator': eq
+            '@value': 0
+  IntroducedVersion: 1.0
+  LocalizedNames:
+    LocalizedName:
+      '@description': Active People
+      '@languagecode': 1033

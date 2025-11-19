@@ -1,0 +1,9 @@
+dvtablesearchentity:
+  '@dvtablesearchentityid': 9e04de5e-79f4-4cba-92e7-783a13d43aa2
+  dvtablesearch:
+    dvtablesearchid: 4e276f8e-32af-4e69-b942-ef0739fd7672
+  entitylogicalname: cre96_enrollment
+  iscustomizable: 0
+  name: cre96_Enrollment
+  statecode: 0
+  statuscode: 1

@@ -1,0 +1,44 @@
+savedquery:
+  IsCustomizable: 1
+  CanBeDeleted: 0
+  isquickfindquery: 0
+  isprivate: 0
+  isdefault: 1
+  savedqueryid: '{91495495-8bb6-437d-a0dc-43137298b811}'
+  layoutxml:
+    grid:
+      '@name': cre96_enrollments
+      '@jump': cre96_enrollmentid2
+      '@select': 1
+      '@icon': 1
+      '@preview': 0
+      row:
+        '@name': cre96_enrollment
+        '@id': cre96_enrollmentid
+        cell:
+        - '@name': cre96_enrollmentid2
+          '@width': 300
+        - '@name': createdon
+          '@width': 125
+  querytype: 64
+  fetchxml:
+    fetch:
+      '@version': 1.0
+      '@mapping': logical
+      entity:
+        '@name': cre96_enrollment
+        attribute:
+        - '@name': cre96_enrollmentid
+        - '@name': cre96_enrollmentid2
+        - '@name': createdon
+        filter:
+          '@type': and
+          condition:
+            '@attribute': statecode
+            '@operator': eq
+            '@value': 0
+  IntroducedVersion: 1.0
+  LocalizedNames:
+    LocalizedName:
+      '@description': Enrollment Lookup View
+      '@languagecode': 1033
