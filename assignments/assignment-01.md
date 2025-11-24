@@ -114,17 +114,37 @@ The **TO-BE** process focuses on automation and role-based data handling. The wo
     *   Upon confirmation, the system updates the database immediately.
 6.  **Automated Notification:** All affected students receive an instant push notification regarding the change, eliminating communication delays.
 
-- **Ishikawa Diagram**:
-We identified the weaknesses of the process through the Lean perspective. Based on that, we have created an Ishikawa diagram including the following four categories: Machine, Data, Human and method. This Ishikawa diagram shows what factors could cause difficulties in the current process. 
+- **Ishikawa Diagram (Root Cause Analysis)**:  
 
-Humans aren’t perfect by nature, mistakes are hard to avoid, especially when tasks are done manually. Even with the right knowledge and experience, errors are bound to happen. Another issue is resistance to change, which often makes it difficult to introduce and use new systems or processes, even if there are improvements.
+To understand the underlying causes of **Scheduling Conflicts & Inefficiencies**, we applied a Root Cause Analysis using the Ishikawa (Fishbone) diagram. As illustrated in the diagram below, we categorized the causes into **Machine, Method, Human, and Data**.
 
-The method for creating timetables also matters a lot. It has to follow the university’s policies, regulations and scheduling guidelines. It should also make sure that certain groups like students with special needs are given priority. If the rules are unclear, incomplete, or applied differently by different people, conflicts and inefficiencies can occur.
-
-The timetable software is another important factor. If the system has limitations, errors, or requires too much manual input, the process becomes less efficient and error prone. Problems like downtime, slow performance or poor update notifications can make things worse. If the software is not well designed, a lot of the work will be manual, which increases the chance of mistakes and wastes time.
-
-Finally, the quality of the data used is essential. If the information is incomplete or wrong, it makes the timetable unreliable. For example, student data might have errors like duplicate names or wrong roles, room data might lack details about capacity or accessibility and lecturer data might be missing information about availability or preferences. Without good and reliable data, the timetable will not work properly, no matter how good the people, methods or systems are.
 ![Ishikawa](../assets/ishikawa.png)
+
+*Figure 1: Ishikawa Diagram illustrating the root causes of scheduling inefficiencies.*
+
+**1. Machine (Technology & Tools)**
+The technological infrastructure often hinders rather than helps the process.
+*   **Lack of Automation:** The most critical failure is the **lack of automatic conflict detection**. The system does not alert users in real-time when a room is double-booked.
+*   **System Fragmentation:** There are synchronization errors between systems, leading to discrepancies. Furthermore, the system does not update in real-time, forcing schedulers to rely on non-validated tools like **Excel spreadsheets or paper notes**, which removes the "single source of truth."
+*   **Software Limitations:** The current software has limited support for special cases (e.g., specific accessibility needs), requiring manual workarounds.
+
+**2. Method (Process & Policies)**
+Even with perfect tools, the current workflow contains procedural flaws.
+*   **Manual Data Transfer:** A major bottleneck is the manual transfer of data between the "Felles Studentsystem" (FS) and the scheduling system (TP). This manual step is slow and introduces transcription errors.
+*   **Lack of Standardization:** There is **no standardized process for change requests**, and rules for prioritizing conflicts are unclear. For example, there is a lack of priority in room booking, leading to "first-come-first-served" issues rather than "need-based" allocation.
+*   **Planning Sequence:** There is an incorrect sequence in the planning process, specifically the **absence of a "lock-in" period** before the semester starts. This allows changes to happen too close to the deadline, causing chaos.
+
+**3. Data (Information Quality)**
+Reliable scheduling is impossible without accurate input ("Garbage In, Garbage Out").
+*   **Incomplete Attributes:** Critical information is often missing, such as specific **equipment requirements** (e.g., projectors, lab tools) or correct **room capacities**.
+*   **Outdated Information:** The schedulers frequently work with outdated student lists or incorrect teacher availability data, leading to schedules that work in theory but fail in reality.
+
+**4. Human (People & Culture)**
+Human factors introduce variability and error into the system.
+*   **Behavioral Delays:** Professors frequently submit their requirements late, forcing schedulers to rush the planning phase.
+*   **Manual Errors:** Due to fatigue or lack of oversight, administrators often overlook conflict alerts or make manual entry errors.
+*   **Training & Resistance:** There is insufficient training on the system, particularly for temporary staff who are unfamiliar with procedures. Additionally, there is a general **resistance to change**, keeping the university locked in inefficient manual habits.
+
 
 - **BPMN Diagrams**: 
 Our BPMN diagram begins with the task “Retrieve data”. Since we do not have an actual database connected, we modeled this as a standard task instead of an SQL task. The next step uses a DMN table filled with dummy data to create the time schedule.
