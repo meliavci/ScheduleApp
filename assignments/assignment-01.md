@@ -151,22 +151,42 @@ Human factors introduce variability and error into the system.
 
 
 ## BPMN Diagram 
-Our BPMN diagram begins with the task “Retrieve data”. Since we do not have an actual database connected, we modeled this as a standard task instead of an SQL task. The next step uses a DMN table filled with dummy data to create the time schedule.
+The BPMN diagram illustrates the automated **TO-BE** process for the new "ScheduleApp" system. Unlike the manual AS-IS process, this workflow distinguishes clearly between automated system tasks, user interface interactions, and role-specific human actions. The process is divided into five distinct swimlanes: **System**, **Timeschedule System (User Interface)**, **Professor**, **Student**, and **Staff**.
 
-After this, the login process starts. Two exclusive gateways check whether the email exists in the data and whether the password is correct. For our demonstration, we used dummy login data: Email: “a@hiof.de” and password: “12345”. Only with these credentials can the professor log in successfully.
+![BPMN Diagram](../assets/bpmn.png)
+*Figure 2: BPMN Diagram illustrating the automated scheduling and user interaction flow.*
 
-Once logged in, the system generates a personalized timetable from the dummy DMN data. At this point, the professor can choose between different actions. Possible actions include:
-- Change room type (restricted to users with the teacher role)
-- Cancel class (restricted to users with the teacher role)
-- Show timetable in application (available to all users)
-- Close the app (available to all users)
+**1. System Initialization and Data Retrieval**
+The process is triggered automatically by the system one week before the start of the semester.
+*   **Retrieve Data:** The system connects to the university database to retrieve comprehensive **course information, student enrollments, and professor data**.
+*   **Create Time Schedules:** Using the retrieved data, the system generates the master timetable for the university. This happens *before* any user logs in, ensuring the foundation is ready.
 
-The teacher role is verified through an additional gateway to ensure that only professors can modify room types or cancel classes by inputting it in taskforms. These modifications trigger the system to regenerate the timetable and notify users about the changes. Afterwards, the process returns to the “Choose action” task, allowing the professor to continue with further actions.
+**2. User Authentication**
+Once the master schedule exists, users can access the **Timeschedule System**. The login process is modeled with exclusive gateways to validate credentials:
+*   The user enters their credentials in the **Log in into the application** task.
+*   **Validation:** The system checks if the **Email exists** and if the **Password is correct**. If either fails, the user is returned to the login screen.
+*   **Demo Credentials:** For testing this prototype, the following credentials are accepted (Password for all is `12345`):
+    *   **Professor:** `a@hiof.de`
+    *   **Student:** `b@hiof.de`
+    *   **Staff:** `c@hiof.de`
 
-We decided to model “Show timetable in application” as a user task, even though the system performs the action, because we wanted it to represent the visualization step in the process.
+**3. Personalization and Data Filtering**
+Upon successful login, the system performs specific backend tasks to tailor the experience:
+*   **Retrieve User Profile and Permissions:** The system identifies whether the user is a Student, Professor, or Staff member.
+*   **Filtering Courses:** The system takes the master schedule and filters it against the specific **Enrollment** data of the logged-in user. This generates a **Filtered Course Data** object, ensuring users only see the classes relevant to them.
 
-The process ends when the user selects the action “Close the app.”
-![BPMN](../assets/bpmn.png)
+**4. Role-Based Interactions**
+A "Role" gateway routes the user to their specific swimlane, defining what actions they can perform:
+
+*   **Student & Staff Lanes:**
+    *   These users have **read-only access**. They can perform the task **Show timetable in application** to view their personalized schedule.
+    *   When finished, they proceed to **Close the app**, ending the process.
+
+*   **Professor Lane:**
+    *   Professors have **write permissions** for managing their specific lectures.
+    *   **Show timetable:** They can view their schedule like other users.
+    *   **Cancel Class / Change Room Type:** If a professor selects these actions, the system triggers a feedback loop.
+    *   **System Update Loop:** When a professor modifies a class, the system executes **Filtering courses for logged in user** again to update the view and triggers **Notify users about changes**. This ensures that if a professor cancels a class, the system immediately updates the database and notifies relevant students before the process ends.
 
 ---
 
