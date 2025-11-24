@@ -29,7 +29,7 @@ jobs:
 
       - name: Download Eisvogel Template
         run: |
-          wget https://github.com/Wandmalfarbe/pandoc-latex-template/releases/download/v2.4.0/eisvogel.latex -O eisvogel.latex
+          wget https://raw.githubusercontent.com/Wandmalfarbe/pandoc-latex-template/v2.4.0/eisvogel.tex -O eisvogel.latex
 
       - name: Build DOCX
         run: |
