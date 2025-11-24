@@ -94,12 +94,16 @@ Implementing this system represents a significant **Operational and Managerial C
 ---
 
 # Business Process Analysis
-- **AS-IS Description**: 
-The AS-IS process contains inefficiencies, redundancies, and manual work. At our university, the process is as follows: The school (timetable maker) sends information to the professors, informing them that the class information for the next semester must be submitted by a given date. After this, the school collects data from the courses in the “Felles studentsystem” and transfers it to their own timetable system, called “TP”. Next, they group students based on their department and try to minimize scheduling clashes. Once they receive the class information, they begin planning the timetables. Some parts of this process are done manually, while others are handled automatically. Lectures can only be scheduled between 8 a.m. and 4 p.m. Students with special needs are given priority - for example, ensuring that the room is wheelchair accessible. After this, external professors are assigned to their preferred times. The timetables are then created in order: first-year students first, followed by second- and third-year students. The allocation of rooms depends on several factors, such as class size and whether a specialized room is required.
+## AS-IS Description
+The AS-IS process contains inefficiencies, redundancies, and manual work. At our university, the process is as follows: 
+
+The school (timetable maker) sends information to the professors, informing them that the class information for the next semester must be submitted by a given date. After this, the school collects data from the courses in the “Felles studentsystem” and transfers it to their own timetable system, called “TP”. Next, they group students based on their department and try to minimize scheduling clashes. 
+
+Once they receive the class information, they begin planning the timetables. Some parts of this process are done manually, while others are handled automatically. Lectures can only be scheduled between 8 a.m. and 4 p.m. Students with special needs are given priority—for example, ensuring that the room is wheelchair accessible. After this, external professors are assigned to their preferred times. The timetables are then created in order: first-year students first, followed by second- and third-year students. The allocation of rooms depends on several factors, such as class size and whether a specialized room is required.
 
 However, at other universities, the system might not be as efficient. There may be even more manual work if the university does not have the resources for a robust system. For example, timetables might be created in Excel, with no systematic comparison across courses, leading to conflicts between courses, rooms, and even professors.
 
-- **TO-BE Description**: 
+## TO-BE Description
 The **TO-BE** process focuses on automation and role-based data handling. The workflow proceeds as follows:
 
 1.  **Data Retrieval:** The system automatically fetches course, student, and room data from the university's central database. No manual entry is required by the scheduler.
@@ -114,7 +118,7 @@ The **TO-BE** process focuses on automation and role-based data handling. The wo
     *   Upon confirmation, the system updates the database immediately.
 6.  **Automated Notification:** All affected students receive an instant push notification regarding the change, eliminating communication delays.
 
-- **Ishikawa Diagram (Root Cause Analysis)**:  
+## Ishikawa Diagram (Root Cause Analysis)  
 
 To understand the underlying causes of **Scheduling Conflicts & Inefficiencies**, we applied a Root Cause Analysis using the Ishikawa (Fishbone) diagram. As illustrated in the diagram below, we categorized the causes into **Machine, Method, Human, and Data**.
 
@@ -146,7 +150,7 @@ Human factors introduce variability and error into the system.
 *   **Training & Resistance:** There is insufficient training on the system, particularly for temporary staff who are unfamiliar with procedures. Additionally, there is a general **resistance to change**, keeping the university locked in inefficient manual habits.
 
 
-- **BPMN Diagrams**: 
+## BPMN Diagram 
 Our BPMN diagram begins with the task “Retrieve data”. Since we do not have an actual database connected, we modeled this as a standard task instead of an SQL task. The next step uses a DMN table filled with dummy data to create the time schedule.
 
 After this, the login process starts. Two exclusive gateways check whether the email exists in the data and whether the password is correct. For our demonstration, we used dummy login data: Email: “a@hiof.de” and password: “12345”. Only with these credentials can the professor log in successfully.
