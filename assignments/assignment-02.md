@@ -87,12 +87,12 @@ The MVP includes:
 ## 4. Data Model
 **Entities & Attributes Table**
 
-![Course](assets/Course.png)
-![Person](assets/Person.png)
-![Breaktime](assets/Breaktime.png)
-![Enrollment](assets/Enrolllment.png)
-![Room](assets/Room.png)
-![OpeningHours](assets/OpeningHours.png)
+![Course](../assets/Course.png)
+![Person](../assets/Person.png)
+![Breaktime](../assets/Breaktime.png)
+![Enrollment](../assets/Enrollment.png)
+![Room](../assets/Room.png)
+![OpeningHours](../assets/OpeningHours.png)
 
 ## 5. App Prototype
 ### Screens Implemented
