@@ -1,5 +1,5 @@
 ---
-title: "Assignment 1: <Problem Discovery & Initial Design>"
+Assignment 1: "Problem Discovery & Initial Design"
 ---
 
 # 📑 Cover Page
@@ -147,153 +147,140 @@ The process ends when the user selects the action “Close the app.”
 ---
 
 # AI Collaboration
-**Prompt Log:**
 
-1.  *Prompt:* "Give me business or organizational settings where a workflow or process can be improved by a BIS (Data-oriented app). Examples: construction project document hub, facility maintenance..."
-    *   *Utility:* Helped identify diverse use cases before settling on university scheduling.
-2.  *Prompt:* "You are a scheduler from a university and we were thinking about the problems you’re probably facing... Is there anything you would add to it?"
-    *   *Utility:* Expanded our understanding of the problem space, specifically highlighting "Resource Allocation" and "Communication Delays" beyond just scheduling clashes.
-3.  *Prompt:* "You are the most inefficient time scheduler... what tools do you use that make it so inefficient?"
-    *   *Utility:* Provided a creative "anti-persona" that helped us clearly define the AS-IS problems (e.g., sticky notes, whiteboard scheduling).
+### Prompt Log
 
+1.  **Prompt:** "Give me business or organizational settings where a workflow or process can be improved by a BIS (Data-oriented app). Examples: construction project document hub, facility maintenance..."
+    *   **Utility:** Helped identify diverse use cases before settling on university scheduling.
+2.  **Prompt:** "You are a scheduler from a university and we were thinking about the problems you’re probably facing... Is there anything you would add to it?"
+    *   **Utility:** Expanded our understanding of the problem space, specifically highlighting "Resource Allocation" and "Communication Delays" beyond just scheduling clashes.
+3.  **Prompt:** "You are the most inefficient time scheduler... what tools do you use that make it so inefficient?"
+    *   **Utility:** Provided a creative "anti-persona" that helped us clearly define the AS-IS problems (e.g., sticky notes, whiteboard scheduling).
 
-**Outputs**: 
-1.  *Output:* Here’s a list of business or organizational settings where a Business Information System (BIS) / data-oriented app could significantly improve workflows or processes:
+***
 
-📂 Document & Information Management
-Legal firms → Case file management, legal document versioning, compliance tracking.
-Research institutions → Centralized research data hub for collaboration, experiment tracking, and versioned datasets.
-Publishing companies → Manuscript submission and review workflows.
+### Outputs
 
-🏗️ Operations & Logistics
-Construction companies → Construction project document hub (your example), equipment scheduling, and safety inspection reporting.
-Logistics & transportation → Fleet tracking, route optimization, cargo documentation.
-Warehousing → Inventory tracking, restocking workflows, real-time demand dashboards.
+1.  **Output:** Here’s a list of business or organizational settings where a Business Information System (BIS) / data-oriented app could significantly improve workflows or processes:
 
-🏥 Healthcare & Social Services
-Hospitals/clinics → Patient record case management, staff scheduling, treatment tracking.
-Public health departments → Vaccination campaign registration and monitoring.
-Non-profits/NGOs → Case tracking for aid distribution, donor data management.
+    *   **📂 Document & Information Management**
+        *   Legal firms → Case file management, legal document versioning, compliance tracking.
+        *   Research institutions → Centralized research data hub for collaboration, experiment tracking, and versioned datasets.
+        *   Publishing companies → Manuscript submission and review workflows.
 
-🎓 Education & Campus Life
-Universities → Student event registration (your example), course registration optimization, exam room scheduling.
-Training organizations → Learning management system for certification and skills tracking.
-Research labs → Lab equipment booking, experiment logs, safety protocol tracking.
+    *   **🏗️ Operations & Logistics**
+        *   Construction companies → Construction project document hub (your example), equipment scheduling, and safety inspection reporting.
+        *   Logistics & transportation → Fleet tracking, route optimization, cargo documentation.
+        *   Warehousing → Inventory tracking, restocking workflows, real-time demand dashboards.
 
-🏢 Corporate/HR
-Human resources → Employee onboarding, leave requests, performance reviews.
-Recruitment agencies → Candidate pipeline management, interview scheduling.
-Consulting firms → Project resource allocation and deliverable tracking.
+    *   **🏥 Healthcare & Social Services**
+        *   Hospitals/clinics → Patient record case management, staff scheduling, treatment tracking.
+        *   Public health departments → Vaccination campaign registration and monitoring.
+        *   Non-profits/NGOs → Case tracking for aid distribution, donor data management.
 
-🏬 Customer-Facing Services
-Hospitality → Hotel facility maintenance (your example), guest request tracking, room service workflows.
-Retail → Returns/exchange management, loyalty program data tracking, supply chain analytics.
-Event management companies → Ticketing, vendor coordination, volunteer scheduling.
+    *   **🎓 Education & Campus Life**
+        *   Universities → Student event registration (your example), course registration optimization, exam room scheduling.
+        *   Training organizations → Learning management system for certification and skills tracking.
+        *   Research labs → Lab equipment booking, experiment logs, safety protocol tracking.
 
-⚙️ Government & Public Sector
-Municipal services → Permit applications, building inspections, citizen issue reporting (e.g., potholes, broken streetlights).
-Courts → Case assignment, evidence tracking, scheduling of hearings.
-Libraries/archives → Digital cataloguing, lending management, research requests.
+    *   **🏢 Corporate/HR**
+        *   Human resources → Employee onboarding, leave requests, performance reviews.
+        *   Recruitment agencies → Candidate pipeline management, interview scheduling.
+        *   Consulting firms → Project resource allocation and deliverable tracking.
 
-👉 A useful heuristic: A BIS is especially powerful where there are repetitive, data-heavy processes with multiple stakeholders (documents, approvals, scheduling, compliance, case tracking).
+    *   **🏬 Customer-Facing Services**
+        *   Hospitality → Hotel facility maintenance (your example), guest request tracking, room service workflows.
+        *   Retail → Returns/exchange management, loyalty program data tracking, supply chain analytics.
+        *   Event management companies → Ticketing, vendor coordination, volunteer scheduling.
 
-Internal Business Operations
-Procurement departments → Supplier database, purchase orders, and contract renewal tracking.
-Accounting firms → Client invoice hub, tax document workflow, expense reimbursement tracking.
-IT departments → Asset inventory, incident/ticketing system, license renewals.
-R&D divisions → Idea submission and evaluation pipeline, patent documentation management.
+    *   **⚙️ Government & Public Sector**
+        *   Municipal services → Permit applications, building inspections, citizen issue reporting (e.g., potholes, broken streetlights).
+        *   Courts → Case assignment, evidence tracking, scheduling of hearings.
+        *   Libraries/archives → Digital cataloguing, lending management, research requests.
 
-🏥 Healthcare & Wellness
-Mental health clinics → Client intake forms, therapy progress tracking, case notes.
-Pharmacies → Prescription management, drug stock tracking, regulatory compliance reporting.
-Fitness centers → Member management, trainer schedules, class registration, performance data.
+    *   **👉 A useful heuristic:**
+        *   A BIS is especially powerful where there are repetitive, data-heavy processes with multiple stakeholders (documents, approvals, scheduling, compliance, case tracking).
 
-🎓 Education & Training
-K-12 schools → Parent-teacher meeting scheduler, student attendance/behavior dashboard.
-Universities → Thesis submission and review workflows, lab equipment booking system.
-Corporate training → Certification progress tracker, mandatory compliance training hub.
+    *   **Internal Business Operations**
+        *   Procurement departments → Supplier database, purchase orders, and contract renewal tracking.
+        *   Accounting firms → Client invoice hub, tax document workflow, expense reimbursement tracking.
+        *   IT departments → Asset inventory, incident/ticketing system, license renewals.
+        *   R&D divisions → Idea submission and evaluation pipeline, patent documentation management.
 
-🏗️ Field Services & Maintenance
-Utilities companies → Maintenance scheduling (pipes, power lines, meters), outage tracking.
-Real estate/property managers → Tenant request system, rent collection dashboards, maintenance logs.
-Cleaning/janitorial services → Task assignment, inspection reports, supply inventory.
+    *   **🏥 Healthcare & Wellness**
+        *   Mental health clinics → Client intake forms, therapy progress tracking, case notes.
+        *   Pharmacies → Prescription management, drug stock tracking, regulatory compliance reporting.
+        *   Fitness centers → Member management, trainer schedules, class registration, performance data.
 
-🚚 Logistics & Supply Chain
-Import/export companies → Customs document tracking, shipment compliance.
-Food distributors → Expiry date tracking, supplier audits, delivery routing.
-E-commerce fulfillment → Order processing workflow, returns/exchange hub.
+    *   **🎓 Education & Training**
+        *   K-12 schools → Parent-teacher meeting scheduler, student attendance/behavior dashboard.
+        *   Universities → Thesis submission and review workflows, lab equipment booking system.
+        *   Corporate training → Certification progress tracker, mandatory compliance training hub.
 
-🎭 Events & Community
-Conference organizers → Attendee registration, session scheduling, speaker submissions.
-Sports clubs → Player availability, training attendance, match statistics tracking.
-Non-profits/volunteer groups → Volunteer shift management, donation/event tracking.
+    *   **🏗️ Field Services & Maintenance**
+        *   Utilities companies → Maintenance scheduling (pipes, power lines, meters), outage tracking.
+        *   Real estate/property managers → Tenant request system, rent collection dashboards, maintenance logs.
+        *   Cleaning/janitorial services → Task assignment, inspection reports, supply inventory.
 
-⚖️ Government & Civic Services
-Police departments → Case management, evidence chain-of-custody, officer scheduling.
-City planning offices → Zoning application workflows, land use data management.
-Public libraries → Special event registrations, rare book/archive lending requests.
+    *   **🚚 Logistics & Supply Chain**
+        *   Import/export companies → Customs document tracking, shipment compliance.
+        *   Food distributors → Expiry date tracking, supplier audits, delivery routing.
+        *   E-commerce fulfillment → Order processing workflow, returns/exchange hub.
 
-🌱 Specialized & Niche
-Museums → Collection inventory, loan/borrowing agreements, exhibit scheduling.
-Farms/agriculture → Crop yield tracking, equipment usage logs, pesticide application records.
-Labs/biotech → Sample tracking, experiment workflow automation, compliance logs.
-Environmental NGOs → Wildlife sightings data collection, conservation project tracking.
+    *   **🎭 Events & Community**
+        *   Conference organizers → Attendee registration, session scheduling, speaker submissions.
+        *   Sports clubs → Player availability, training attendance, match statistics tracking.
+        *   Non-profits/volunteer groups → Volunteer shift management, donation/event tracking.
 
-👉 The common thread: anywhere with recurring requests, approvals, scheduling, or regulated documentation → a BIS can replace messy spreadsheets and email threads.
-Would you like me to turn this into a master list of 30–40 BIS app scenarios, each with:
-Core process (what it improves)
-Key entities/data (what’s stored)
-Workflow example (how it runs)?
-That way, you’d have a catalog of use cases ready for inspiration or project pitching.
+    *   **⚖️ Government & Civic Services**
+        *   Police departments → Case management, evidence chain-of-custody, officer scheduling.
+        *   City planning offices → Zoning application workflows, land use data management.
+        *   Public libraries → Special event registrations, rare book/archive lending requests.
 
-2.  *Output:* Yes 👌 You’re already hitting the core pain points. If I put myself in the shoes of a university scheduler, I’d add a few more problems that usually come up:
+    *   **🌱 Specialized & Niche**
+        *   Museums → Collection inventory, loan/borrowing agreements, exhibit scheduling.
+        *   Farms/agriculture → Crop yield tracking, equipment usage logs, pesticide application records.
+        *   Labs/biotech → Sample tracking, experiment workflow automation, compliance logs.
+        *   Environmental NGOs → Wildlife sightings data collection, conservation project tracking.
 
-✅ Additional Problems
-Room availability & capacity limits → Sometimes two classes are scheduled in the same room, or a room is too small for the enrolled students.
-Professor availability → Professors may be double-booked, or schedules ignore their teaching preferences/office hours.
-Last-minute changes → When a professor cancels, a room becomes unavailable, or a course is added late, it’s hard to update the schedule without causing ripple effects.
-Different student groups → Electives and cross-program courses often overlap, making it hard for students who want to take both.
-Manual processes → Many universities still rely on Excel or even paper-based scheduling, which is slow and error-prone.
-Exam scheduling conflicts → Students may have two exams at the same time or multiple exams in one day.
-Communication delays → Even when the schedule is finalized, updates may not reach students and professors quickly (leading to confusion).
-Resource allocation → Some courses need special equipment (labs, projectors), and those rooms may not be managed efficiently.
-👉 So, in short: it’s not just about clashes — it’s also about resources, fairness, last-minute changes, and communication.
+    *   **👉 The common thread:**
+        *   Anywhere with recurring requests, approvals, scheduling, or regulated documentation → a BIS can replace messy spreadsheets and email threads.
+        *   *Would you like me to turn this into a master list of 30–40 BIS app scenarios, each with: Core process (what it improves), Key entities/data (what’s stored), Workflow example (how it runs)? That way, you’d have a catalog of use cases ready for inspiration or project pitching.*
 
-3.  *Output:* If I were the most inefficient university time scheduler, my “tools” and methods would be the exact opposite of what good scheduling software or practices use. Here’s what would make me terrible at it:
-Inefficient Tools & Practices
-Paper and Sticky Notes
+2.  **Output:** Yes 👌 You’re already hitting the core pain points. If I put myself in the shoes of a university scheduler, I’d add a few more problems that usually come up:
 
-Using scraps of paper and sticky notes instead of a proper system.
-Notes fall off, get lost, or overlap, so no one knows when their class really is.
-Excel with No Structure
-A giant, unformatted spreadsheet with random colors, merged cells, and no filters.
-No validation to prevent double-bookings.
-Professors and rooms typed inconsistently (“Dr. Smith” in one cell, “Smith, Dr.” in another).
-Email Chains & Word Docs
-Asking each lecturer to send their availability in long email threads.
-Copy-pasting conflicting schedules into Word tables with no automatic conflict detection.
-Whiteboard Erased Daily
-Writing all classes on a whiteboard with no backup.
-Someone erases a section, and suddenly three classes are missing from the schedule.
-Random Number Generator
-Assigning times and rooms based on dice rolls, coin flips, or a randomizer app.
-Leads to classes overlapping, being scheduled at 3 a.m., or crammed into broom closets.
-Outdated Software
-Using an ancient DOS program from the 1980s that only runs on one old PC.
-Requires manual re-entry for every tiny change, with no undo function.
-Manual Wall Calendar
-Filling in a giant wall calendar by hand, and every time a change is made, crossing things out until the page is unreadable.
-Result: impossible to tell which schedule is current.
-No Centralized Database
-Each department keeps their own schedule in different formats (Word, Excel, Google Docs).
-No one compares them, so conflicts between courses, rooms, and professors are guaranteed.
+    *   **✅ Additional Problems**
+        *   **Room availability & capacity limits** → Sometimes two classes are scheduled in the same room, or a room is too small for the enrolled students.
+        *   **Professor availability** → Professors may be double-booked, or schedules ignore their teaching preferences/office hours.
+        *   **Last-minute changes** → When a professor cancels, a room becomes unavailable, or a course is added late, it’s hard to update the schedule without causing ripple effects.
+        *   **Different student groups** → Electives and cross-program courses often overlap, making it hard for students who want to take both.
+        *   **Manual processes** → Many universities still rely on Excel or even paper-based scheduling, which is slow and error-prone.
+        *   **Exam scheduling conflicts** → Students may have two exams at the same time or multiple exams in one day.
+        *   **Communication delays** → Even when the schedule is finalized, updates may not reach students and professors quickly (leading to confusion).
+        *   **Resource allocation** → Some courses need special equipment (labs, projectors), and those rooms may not be managed efficiently.
 
-- **Reflection**: 
-We've used ChatGPT for brainstorming. Furthermore, we tried to get some help from the AI while working with Camunda Modeler but it wasn't helpful. 
-We tried not to use that much AI, so we could decide on our own how the system should work, resulting in a bigger learning process. Though ChatGPT helped us by getting ideas or the perspective of different roles. 
-For example, we've used it to tell us what tools could use some improvements or rework out of the scheduler's point of view who is using a less efficient system. The knowledge he gave us was something we didn't have so we either get it from the experience of our scheduler or the AI. 
-Because we've already talked to our university about it we only knew about one way to do the creation of the time schedules. ChatGPT on the other hand extended our perspective by adding different scenarios to it. 
-In our case we found out that using the AI is usefull for general questions but the AI struggles in more specific scenarios for example in the case of Camunda Modeler it was not able to give us clear structured answers. 
+    > **👉 So, in short:** it’s not just about clashes — it’s also about resources, fairness, last-minute changes, and communication.
+
+3.  **Output:** If I were the most inefficient university time scheduler, my “tools” and methods would be the exact opposite of what good scheduling software or practices use. Here’s what would make me terrible at it:
+
+    *   **Inefficient Tools & Practices**
+        *   **Paper and Sticky Notes:** Using scraps of paper and sticky notes instead of a proper system. Notes fall off, get lost, or overlap, so no one knows when their class really is.
+        *   **Excel with No Structure:** A giant, unformatted spreadsheet with random colors, merged cells, and no filters. No validation to prevent double-bookings. Professors and rooms typed inconsistently (“Dr. Smith” in one cell, “Smith, Dr.” in another).
+        *   **Email Chains & Word Docs:** Asking each lecturer to send their availability in long email threads. Copy-pasting conflicting schedules into Word tables with no automatic conflict detection.
+        *   **Whiteboard Erased Daily:** Writing all classes on a whiteboard with no backup. Someone erases a section, and suddenly three classes are missing from the schedule.
+        *   **Random Number Generator:** Assigning times and rooms based on dice rolls, coin flips, or a randomizer app. Leads to classes overlapping, being scheduled at 3 a.m., or crammed into broom closets.
+        *   **Outdated Software:** Using an ancient DOS program from the 1980s that only runs on one old PC. Requires manual re-entry for every tiny change, with no undo function.
+        *   **Manual Wall Calendar:** Filling in a giant wall calendar by hand, and every time a change is made, crossing things out until the page is unreadable. Result: impossible to tell which schedule is current.
+        *   **No Centralized Database:** Each department keeps their own schedule in different formats (Word, Excel, Google Docs). No one compares them, so conflicts between courses, rooms, and professors are guaranteed.
+
+***
+
+### Reflection
+We've used ChatGPT for brainstorming. Furthermore, we tried to get some help from the AI while working with Camunda Modeler but it wasn't helpful. We tried not to use that much AI, so we could decide on our own how the system should work, resulting in a bigger learning process. Though ChatGPT helped us by getting ideas or the perspective of different roles.
+
+For example, we've used it to tell us what tools could use some improvements or rework out of the scheduler's point of view who is using a less efficient system. The knowledge he gave us was something we didn't have so we either get it from the experience of our scheduler or the AI.
+
+Because we've already talked to our university about it we only knew about one way to do the creation of the time schedules. ChatGPT on the other hand extended our perspective by adding different scenarios to it. In our case we found out that using the AI is useful for general questions but the AI struggles in more specific scenarios for example in the case of Camunda Modeler it was not able to give us clear structured answers.
 
 ---
 
