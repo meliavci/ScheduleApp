@@ -85,11 +85,11 @@ To understand how our system adds value, we apply the Data-Information-Knowledge
     *   **Fairness:** It ensures that the schedule is equitable, balancing the preferences of professors with the educational needs of students.
     *   *Relevance:* This is the ultimate goal of the project. It transforms the Scheduler’s role from a "data entry clerk" to a "decision manager," allowing the university to operate with higher efficiency and student satisfaction.
 
-### Nature of Change
+*   **Nature of Change:**
 Implementing this system represents a significant **Operational and Managerial Change**.
 
-*   **Operational Change:** The daily workflow shifts from manual data entry and cross-referencing spreadsheets to automated data retrieval and algorithmic sorting. Tasks that previously took weeks (manual conflict checking) will now take minutes.
-*   **Managerial Change:** The role of the "Timetable Scheduler" evolves from a data entry role to a supervisory role. Instead of building the schedule, they manage the parameters of the algorithm. This shifts the organizational focus from *maintenance* (keeping the schedule running) to *optimization* (improving the quality of education delivery). While this does not necessarily remove the department, it fundamentally changes *how* the department creates value.
+    *   **Operational Change:** The daily workflow shifts from manual data entry and cross-referencing spreadsheets to automated data retrieval and algorithmic sorting. Tasks that previously took weeks (manual conflict checking) will now take minutes.
+    *   **Managerial Change:** The role of the "Timetable Scheduler" evolves from a data entry role to a supervisory role. Instead of building the schedule, they manage the parameters of the algorithm. This shifts the organizational focus from *maintenance* (keeping the schedule running) to *optimization* (improving the quality of education delivery). While this does not necessarily remove the department, it fundamentally changes *how* the department creates value.
 
 ---
 
@@ -100,13 +100,19 @@ The AS-IS process contains inefficiencies, redundancies, and manual work. At our
 However, at other universities, the system might not be as efficient. There may be even more manual work if the university does not have the resources for a robust system. For example, timetables might be created in Excel, with no systematic comparison across courses, leading to conflicts between courses, rooms, and even professors.
 
 - **TO-BE Description**: 
-Our goal is to develop a system that generates the best possible timetables for all students and professors at a university, while minimizing scheduling conflicts. To achieve this, the system evaluates given data about rooms, people, courses, and other relevant resources. Using an algorithm, it then creates the timetable for each course.
+The **TO-BE** process focuses on automation and role-based data handling. The workflow proceeds as follows:
 
-We want users to have a clear overview of their courses and always stay up to date. To access the application, they log in with their school account, which the system automatically validates. During this process, the system detects whether the user is a professor, a student, or even a member of the university. If a customer does not have a school account, they cannot use the system to its full extent.
-
-With a valid account, users gain access to features tailored to their role. For students, the system automatically fetches their courses, ensuring they can always view their current timetable. Professors have similar access but with additional options. For example, they can cancel classes on specific dates or change the type of room if certain equipment is needed for a lecture. The system then automatically checks for suitable rooms that meet the requirements and books them.
-
-Whenever changes are made to a timetable, all affected users are notified through the application in time, so they won’t miss any updates.
+1.  **Data Retrieval:** The system automatically fetches course, student, and room data from the university's central database. No manual entry is required by the scheduler.
+2.  **Algorithmic Generation:** The Scheduler initiates the optimization engine. The system evaluates constraints (room capacity, professor availability, student groups) and generates a clash-free timetable draft.
+3.  **Validation & Publication:** The Scheduler reviews the draft. If valid, the schedule is published instantly to the application.
+4.  **User Access:**
+    *   **Students** log in via university SSO. The system filters data to show *only* their specific courses.
+    *   **Professors** log in to view their teaching schedule.
+5.  **Dynamic Management:**
+    *   If a **Professor** needs to cancel a class or change a room, they select the option in the app.
+    *   The system checks availability in real-time. If a room change is requested, the system suggests only available rooms with the necessary equipment.
+    *   Upon confirmation, the system updates the database immediately.
+6.  **Automated Notification:** All affected students receive an instant push notification regarding the change, eliminating communication delays.
 
 - **Ishikawa Diagram**:
 We identified the weaknesses of the process through the Lean perspective. Based on that, we have created an Ishikawa diagram including the following four categories: Machine, Data, Human and method. This Ishikawa diagram shows what factors could cause difficulties in the current process. 
@@ -141,15 +147,18 @@ The process ends when the user selects the action “Close the app.”
 ---
 
 # AI Collaboration
-- **Prompt Log**: 
-First prompt: Give me business or organizational settings where a workflow or process can be improved by a BIS (Data-oriented app). Examples: construction project document hub, facility maintenance, student event registration, healthcare case management.
+**Prompt Log:**
 
-Second prompt: You are a scheduler from a university and we were thinking about the problems you're probably facing so we made a list: -Hard for universities to create schedules for students -A lot of times the selected courses clash -There might not be a system that checks if courses clash→ not efficient and time consuming Is there anything you would add to it?
+1.  *Prompt:* "Give me business or organizational settings where a workflow or process can be improved by a BIS (Data-oriented app). Examples: construction project document hub, facility maintenance..."
+    *   *Utility:* Helped identify diverse use cases before settling on university scheduling.
+2.  *Prompt:* "You are a scheduler from a university and we were thinking about the problems you’re probably facing... Is there anything you would add to it?"
+    *   *Utility:* Expanded our understanding of the problem space, specifically highlighting "Resource Allocation" and "Communication Delays" beyond just scheduling clashes.
+3.  *Prompt:* "You are the most inefficient time scheduler... what tools do you use that make it so inefficient?"
+    *   *Utility:* Provided a creative "anti-persona" that helped us clearly define the AS-IS problems (e.g., sticky notes, whiteboard scheduling).
 
-Third prompt: you are the most inefficient time scheduler where students schedules clash for a university, what tools do you use that make it so inefficient.
 
-- **Outputs**: 
-First output: Here’s a list of business or organizational settings where a Business Information System (BIS) / data-oriented app could significantly improve workflows or processes:
+**Outputs**: 
+1.  *Output:* Here’s a list of business or organizational settings where a Business Information System (BIS) / data-oriented app could significantly improve workflows or processes:
 
 📂 Document & Information Management
 Legal firms → Case file management, legal document versioning, compliance tracking.
@@ -237,7 +246,7 @@ Key entities/data (what’s stored)
 Workflow example (how it runs)?
 That way, you’d have a catalog of use cases ready for inspiration or project pitching.
 
-Second output: Yes 👌 You’re already hitting the core pain points. If I put myself in the shoes of a university scheduler, I’d add a few more problems that usually come up:
+2.  *Output:* Yes 👌 You’re already hitting the core pain points. If I put myself in the shoes of a university scheduler, I’d add a few more problems that usually come up:
 
 ✅ Additional Problems
 Room availability & capacity limits → Sometimes two classes are scheduled in the same room, or a room is too small for the enrolled students.
@@ -250,7 +259,7 @@ Communication delays → Even when the schedule is finalized, updates may not re
 Resource allocation → Some courses need special equipment (labs, projectors), and those rooms may not be managed efficiently.
 👉 So, in short: it’s not just about clashes — it’s also about resources, fairness, last-minute changes, and communication.
 
-Third output: If I were the most inefficient university time scheduler, my “tools” and methods would be the exact opposite of what good scheduling software or practices use. Here’s what would make me terrible at it:
+3.  *Output:* If I were the most inefficient university time scheduler, my “tools” and methods would be the exact opposite of what good scheduling software or practices use. Here’s what would make me terrible at it:
 Inefficient Tools & Practices
 Paper and Sticky Notes
 
@@ -289,11 +298,11 @@ In our case we found out that using the AI is usefull for general questions but 
 ---
 
 # References
-- ProcessMaker by Larissa Lewis (2020, November 2). Decision model and notation tutorial | DMN examples. ProcessMaker. https://www.processmaker.com/blog/decision-model-and-notation-dmn-tutorial-examples/
-- FSAT. (n.d.). Felles studentsystem (FS) – English pages. Felles studentsystem. https://www.fellesstudentsystem.no/english/index.html
-- Wikipedia contributors. (2023, December 30). Student information system. In Wikipedia. https://en.wikipedia.org/wiki/Student_information_system
-- Camunda. (2025, January 29). BPMN Gateways and How to Use Them in Camunda [Video]. YouTube. https://youtu.be/yfOXFGlMKjI 
-- Camunda. (2021, Juli 01). Camunda Platform 7 Tutorial: Building a Process and Adding Forms in Camunda Run [Video]. YouTube. https://youtu.be/J_ut6-7GUkQ 
-- TEKKY TALKS. (2023, January 29). Adding form to user task - Camunda 8 - Camunda BPMN [Video]. YouTube. https://youtu.be/iAbzQSeAgIU
-- DecisionSkills . (2014, November 10). How to Solve a Problem in Four Steps: The IDEA Model [Video]. YouTube. https://www.youtube.com/watch?v=QOjTJAFyNrU&t
-- i-nexus strategy software. (2018, may 25). The Classic & Reverse Fishbone Diagram | A Whiteboard Training Video  [Video]. YouTube. https://www.youtube.com/watch?v=XinW5dwuKsI 
+*   ProcessMaker by Larissa Lewis (2020, November 2). *Decision model and notation tutorial | DMN examples.* ProcessMaker. [ProcessMaker](https://www.processmaker.com/blog/decision-model-and-notation-dmn-tutorial-examples/)
+*   FSAT. (n.d.). *Felles studentsystem (FS) – English pages.* Felles studentsystem. [FSAT.](https://www.fellesstudentsystem.no/english/index.html)
+*   Wikipedia contributors. (2023, December 30). *Student information system.* Wikipedia. [Wikipedia](https://en.wikipedia.org/wiki/Student_information_system)
+*   Camunda. (2025, January 29). *BPMN Gateways and How to Use Them in Camunda* [Video](https://youtu.be/yfOXFGlMKjI) 
+*   Camunda. (2021, Juli 01). *Camunda Platform 7 Tutorial: Building a Process and Adding Forms in Camunda Run* [Video](https://youtu.be/J_ut6-7GUkQ) 
+*  TEKKY TALKS. (2023, January 29). *Adding form to user task - Camunda 8 - Camunda BPMN* [Video](https://youtu.be/iAbzQSeAgIU)
+*   DecisionSkills. (2014, November 10). *How to Solve a Problem in Four Steps: The IDEA Model* [Video](https://www.youtube.com/watch?v=QOjTJAFyNrU&t)
+*   i-nexus strategy software. (2018, May 25). *The Classic & Reverse Fishbone Diagram* [Video](https://www.youtube.com/watch?v=XinW5dwuKsI)
