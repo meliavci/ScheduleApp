@@ -1,10 +1,14 @@
-title: "Final Report"
+title: "DevOps and Low-Code Final Delivery"
+subtitle: "Group 3 Submission"
 Group: "Group 3"
 author: "Melisa Avci, Victor Wilhelmsen, Aleksandra Wos, Raphael Tam-Dao, Shehab Wael Abozied Abdelhamed"
+author: [Melisa Avci, Victor Wilhelmsen, Aleksandra Wos, Raphael Tam-Dao, Shehab Wael Abozied Abdelhamed]
 course: "DevOps and Low-Code Development in Cloud"
 semester: "Autumn 2025"
 institution: "Østfold University College"
 date: "2025-12-15"
+lang: "en"
+titlepage: true
 # Optional PDF metadata
 keywords: [DevOps, Low-code, Cloud, Course Report]
 # Optional: set header image/logo (reference in template header if desired)
