@@ -3,21 +3,22 @@
 ## 1. Introduction
 Which part(s) of the process are in scope for this prototype.  
 Team roles and responsibilities (who did what).  
+This prototype focuses on the Timeschedule System section of the BPMN model. It covers the student/professor interface and includes:
+- Basic UI structure
+- Login and role identification
+- Displaying a dummy timetable
+- Displaying a dummy notification panel
 
-This prototype focuses on the Timeschedule System shown in the BPMN diagram.
-It includes the following core process steps:
-- Basic structur of the UI
-- Logging into the system (authentication and role identification).
-- Viewing the dummy timetable and dummy notification
-
+It does not include the full scheduling engine. The emphasis is on usability, accessibility, and preliminary data integration.
 The prototype implements the student/professor app interface—not the full scheduler back-end. The focus is on usability, accessibility, and data integration.
 
 #### Team Roles and Responsibilities ####
-- Melisa: UI creation in Power Apps (Timeschedule), Creation of the tables in Dataverse, Connecting the data to the Login and making it functionable
-- Raphael: UI creation in Power Apps (Login, Notification), Navbar Component navigation
-- Victor: UI creation in Power Apps (Navbar), Navbar Component navigation
-- Aleksandra: UI creation in Power Apps (Notification)
-- Shehab: UI creation in Power Apps (Profile)
+- Melisa: Built the **Timeschedule UI** in Power Apps,Created and configured **Dataverse tables**,Connected data to the **Login screen** and implemented functional logic,Supported navigation and component communication  
+- Raphael: Developed the Login screen UI,Worked on the **Notification UI**,Contributed to navbar component navigation
+- Victor: Developed the Navbar component UI,Worked jointly on **navigation logic** across screens  
+- Aleksandra: Designed and refined the **Notification UI**,Assisted with layout adjustments and component visuals  
+- Shehab: Created the **Profile screen UI**,Implemented structure for displaying user information  
+
 
 Every group member paticipated in every group meeting and we've done the template all together.
 
