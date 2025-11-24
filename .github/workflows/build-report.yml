@@ -31,9 +31,14 @@ jobs:
         run: |
           wget https://raw.githubusercontent.com/Wandmalfarbe/pandoc-latex-template/v2.4.0/eisvogel.tex -O eisvogel.latex
 
-      - name: Create Patch for Pandoc 3.2
+      - name: Create Patch for Pandoc 3.x
         run: |
+          # 1. Fix "\pandocbounded" error
           echo '\providecommand{\pandocbounded}[1]{#1}' > pandoc-patch.tex
+          # 2. Fix "No counter 'none' defined" error in tables
+          echo '\newcounter{none}' >> pandoc-patch.tex
+          # 3. Ensure 'calc' package is loaded for table width calculations
+          echo '\usepackage{calc}' >> pandoc-patch.tex
 
       - name: Build DOCX
         run: |
