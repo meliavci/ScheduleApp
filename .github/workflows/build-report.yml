@@ -30,8 +30,10 @@ jobs:
       - name: Download Eisvogel Template
         run: |
           wget https://raw.githubusercontent.com/Wandmalfarbe/pandoc-latex-template/v2.4.0/eisvogel.tex -O eisvogel.latex
-          # This line fixes the "\pandocbounded" error by defining the missing command
-          sed -i '/\\begin{document}/i \\providecommand{\\pandocbounded}[1]{#1}' eisvogel.latex
+
+      - name: Create Patch for Pandoc 3.2
+        run: |
+          echo '\providecommand{\pandocbounded}[1]{#1}' > pandoc-patch.tex
 
       - name: Build DOCX
         run: |
@@ -59,6 +61,7 @@ jobs:
             --resource-path=.:assets:assignments \
             --pdf-engine=xelatex \
             --template=./eisvogel.latex \
+            --include-in-header=pandoc-patch.tex \
             --listings \
             --toc --toc-depth=2 --number-sections \
             -V book=true \
