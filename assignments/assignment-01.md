@@ -122,7 +122,7 @@ The **TO-BE** process focuses on automation and role-based data handling. The wo
 
 To understand the underlying causes of **Scheduling Conflicts & Inefficiencies**, we applied a Root Cause Analysis using the Ishikawa (Fishbone) diagram. As illustrated in the diagram below, we categorized the causes into **Machine, Method, Human, and Data**.
 
-![Ishikawa](../assets/ishikawa.png)
+![Ishikawa](../assets/IshikawaDiagram.png)
 
 *Figure 1: Ishikawa Diagram illustrating the root causes of scheduling inefficiencies.*
 
@@ -153,7 +153,7 @@ Human factors introduce variability and error into the system.
 ## BPMN Diagram 
 The BPMN diagram illustrates the automated **TO-BE** process for the new "ScheduleApp" system. Unlike the manual AS-IS process, this workflow distinguishes clearly between automated system tasks, user interface interactions, and role-specific human actions. The process is divided into five distinct swimlanes: **System**, **Timeschedule System (User Interface)**, **Professor**, **Student**, and **Staff**.
 
-![BPMN Diagram](../assets/bpmn.png)
+![BPMN Diagram](../assets/BPMNDiagram.png)
 *Figure 2: BPMN Diagram illustrating the automated scheduling and user interaction flow.*
 
 **1. System Initialization and Data Retrieval**
