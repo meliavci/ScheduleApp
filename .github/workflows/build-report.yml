@@ -63,7 +63,6 @@ jobs:
             -V classoption=oneside \
             -V geometry:margin=2.5cm \
             -V titlepage=true \
-            -V titlepage-background=assets/cover-bg.png \
             -V titlepage-color=3E4349 \
             -V titlepage-text-color=FFFFFF \
             -V titlepage-rule-height=0 \
