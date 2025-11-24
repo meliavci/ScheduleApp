@@ -2,7 +2,7 @@
 Assignment 1: "Problem Discovery & Initial Design"
 ---
 
-# 📑 Cover Page
+# Cover Page
 - **Group Number**: Group 3
 - **Student Names**: Melisa Avci, Raphael Tam-Dao, Victor Wilhelmsen, Shehab Wael Abozied Abdelhamed, Aleksandra Wos
 - **Course**: DevOps and Low-Code Development
