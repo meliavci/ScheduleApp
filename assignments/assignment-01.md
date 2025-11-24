@@ -11,74 +11,85 @@ title: "Assignment 1: <Problem Discovery & Initial Design>"
 ---
 
 # Introduction
-- **Purpose of the Report**: 
-This report provides an introduction to the fundamentals of Business Information Systems (BIS), business process modeling (BPMN), and Lean analysis. Its purpose is to identify real-world problems, analyze them using BIS concepts, and propose an initial system and process design that will be modeled and executed in Camunda.
-- **Structure**: 
-Section 1. Problem statement & Context 
-This section contains a problem statement description, identification of stakeholders and their experience and explanation of our process with the BIS relevance. At the same time we explain what raw data we capture, how the data is useful to the stakeholders, linking it to the DIKW hierarchy and why it’s critical to solving our chosen problem.
+## Purpose of the Report 
+This report establishes the foundation for a Business Information System (BIS) designed to revolutionize university timetable scheduling. By utilizing Business Process Modeling (BPMN) and Lean analysis, we identify inefficiencies in the current manual scheduling processes. The purpose is to analyze these real-world problems using BIS concepts and propose an automated, data-driven system design that will subsequently be modeled and executed in Camunda and Power Apps.
 
-Section 2. Theoretical Alignment 
-This section classifies the problem into the types of Business Information Systems. We place the system in context and show how data, information, knowledge and wisdom applies by putting it into the DIKW framework. Furthermore we describe the type of change.
-
-Section 3. Business Process Analysis  
-This section contains the AS-IS description of the current process. We identified the weaknesses of the process through Lean perspective. We have also created an Ishikawa diagram including four categories: Machine, Data, Human and method. This Ishikawa diagram shows what factors could cause difficulties in the current process. 
-Furthermore, we have the TO-BE description, how we would change the current process, where we used Camunda Modeler to make a BPMN model of the new process.     
-
-Section 4. AI Collaboration
-This section contains all our logs of the usage of AI as well as a reflection of the usefulness and limitations of AI in our work. 
-
-Section 5. References
-This section contains all of our references of the material that we've used for completing this assignment.
+## Structure 
+*   **Section 1: Problem Statement & Context.** We define the core scheduling challenges, identify the key stakeholders—specifically the schedulers, professors, and students—and explain the raw data captured. This is linked to the Data-Information-Knowledge-Wisdom (DIKW) hierarchy to demonstrate how raw inputs are transformed into scheduling solutions.
+*   **Section 2: Theoretical Alignment.** This section classifies the proposed solution within the types of Business Information Systems (TPS, MIS, DSS). We analyze the nature of the change—focusing on Operational and Managerial improvements—and further apply the DIKW framework.
+*   **Section 3: Business Process Analysis.** We detail the **AS-IS** (current) process, highlighting weaknesses through a Lean perspective and a Root Cause Analysis (Ishikawa Diagram). We then define the **TO-BE** (future) process, describing the step-by-step automated workflow that replaces manual efforts.
+*   **Section 4: AI Collaboration.** This section documents our use of AI tools for brainstorming and refinement, including a reflection on the limitations encountered.
+*   **Section 5: References.** Contains all references.
 
 ---
 
 # Problem Statement & Context
-- **Problem Description**: 
-Universities and their students face a lot of different challenges in the process of schedule creation. The current system is often managed manually, which makes it both inefficient and time consuming. As a result, timetables are frequently unoptimized and prone to course clashes, especially when students select multiple electives or cross-program courses. This overlap reduces flexibility and limits opportunities for students who want to combine courses from different programs.
+## Problem Description 
+Universities and their students face significant challenges in the process of schedule creation. 
 
-Limited room availability and capacity are an additional problem. It is not uncommon for the assigned room to be too small to accommodate the number of students who enrolled in the chosen course. Communication issues further complicate the situation: delays and last-minute changes often prevent updates from reaching students and professors in time, leading to confusion. When a room suddenly becomes unavailable, a professor cancels a class or a new course is added late, making adjustments without creating ripple effects throughout the timetable is particularly difficult.
+The current system often relies on manual management, which makes it both inefficient and time-consuming. This results in timetables that are frequently unoptimized and prone to course clashes, especially when students select multiple electives or cross-program courses. This overlap reduces flexibility and limits opportunities for students who want to combine courses from different programs. 
 
-Another problem lies in the outdated tools many universities still rely on. Despite being slow and error-prone, Excel files and even paper-based scheduling are still in use.
+Limited room availability and capacity are an additional problem, as the assigned room is often too small to accommodate the number of enrolled students. 
 
-- **Stakeholders**: The stakeholders at the university are students who expect transparency and fairness with as few collisions as possible, professors who expect respect of their availability and management/administration who expect reduced manual work and less time expenditure. They all expect to have a system that is efficient and a system that automatically updates schedules in cases such as cancelled classes, with an automatic real-time notification system.
-- **BIS Relevance**: 
-The people involved when creating the timetables don’t have any IT expertise. They are schedulers which are only trained to make timetables manually and partly automatically with the given system and by only using data that’s received. The problem now is that the current process is inefficient and they are not capable of improving it because they don’t have all the abilities and tools to do so. The system is working but needs improvement to prevent more clashes. Furthermore, the fact that the university is still partly doing it manually even though they could use algorithms and technologies for it, shows how limited they are in their actions. 
+Communication issues further complicate the situation: delays and last-minute changes often prevent updates from reaching students and professors in time, leading to confusion. When a room suddenly becomes unavailable, a professor cancels a class, or a new course is added late, making adjustments without creating ripple effects throughout the timetable is particularly difficult. 
+
+Another problem lies in the outdated tools many universities still rely on, such as slow and error-prone Excel files or even paper-based scheduling.
+
+## Stakeholders 
+The stakeholders involved and their core expectations are clearly defined by their role in or reliance on the scheduling process:
+  - __Timetable Schedulers/Staff (Primary Users)__: 
+  They are the core users whose existing manual workflow is directly targeted for replacement. They expect a significant  reduction in manual work and less time expenditure. They rely on the system to efficiently handle the complex task of minimizing clashes and assigning resources automatically.
+  - __Professors__: They expect respect of their availability and automatically updated schedules in cases such as cancelled classes. They also require an automatic real-time notification system for any changes.
+  - __Students__: They expect transparency and fairness with as few collisions as possible. They also expect a system that automatically updates schedules and provides real-time notifications for schedule or class changes.
+
+## BIS Relevance
+The individuals currently creating timetables often lack specialized IT expertise and are trained only to maintain the status quo using legacy tools. The problem is not a lack of effort, but a lack of **tool capability**. The current process captures raw data (course lists, room numbers), but fails to efficiently process it into useful information. By introducing a BIS, we bridge the gap between raw data availability and actionable scheduling wisdom, utilizing algorithms to perform tasks that are currently done manually.
 
 ---
 
 # Theoretical Alignment
-- **BIS Classification**: 
-In our system we use the Transaction Processing System (TPS) to handle routine, day-to-day transactions for example by sending notifications, validating accounts at login or updating the timetables when changes happen. All of these operational tasks are processed automatically. 
+## BIS Classification
+Our proposed solution integrates features from three distinct types of information systems:
 
-The Management Information System (MIS) summarizes and reports data to monitor and control operations. So in our case the system gives us an overview of courses and room usage. Furthermore, users stay up to date by viewing their schedules and changes. It fits into MIS since it provides structured information to help manage teaching activities.
+*   **Transaction Processing System (TPS):** The core of the system handles routine, day-to-day transactions. This includes the automatic validation of user logins, the recording of room bookings, and the instant transmission of notifications when a class status changes.
+*   **Management Information System (MIS):** The system summarizes data to help stakeholders monitor operations. It provides schedulers and administrators with structured overviews of room utilization rates, course density, and professor availability, ensuring that operations stay on track.
+*   **Decision Support System (DSS):** This is the optimization engine. The system uses an algorithm to analyze variables and suggest the best possible timetable slots to minimize conflicts. It supports the schedulers in making complex decisions about resource allocation.
 
-The Decision Support System (DSS) supports decision-making with analysis. Our system uses an algorithm to optimize timetables and minimalizes conflicts. Moreover, it finds suitable rooms with the required equipment. This DSS functionality leads to optimization.
+## DIKW Framework
+To understand how our system adds value, we apply the Data-Information-Knowledge-Wisdom (DIKW) hierarchy. This framework demonstrates how the system transforms raw, disconnected facts into optimized scheduling decisions that solve the core business problem.
 
-Our system is not primarily ESS, since it doesn’t provide strategic insights and high-level dashboards.
-- **DIKW Framework**: 
-For the chosen system we need specific data to create a timeschedule with as few clashes as possible. It’s impossible to avoid all clashes and unhappy students but it will be more fair than before because every student will be regarded equally by the system. The data includes attributes for the students, professors and rooms. As well as the general data of the university like opening hours, how long lectures last. 
+*   **Data (The Raw Inputs):**
+    At the base level, the system captures discrete, unorganized facts and figures. In the current manual process, this data is often scattered across emails and excel sheets. Our system centralizes:
+    *   **Entities:** Student IDs, Professor names, Room numbers, and Course codes.
+    *   **Attributes:** Room capacity (e.g., "50 seats"), specific equipment attributes (e.g., "Projector," "Wheelchair accessible"), and time variables (e.g., 08:00–16:00 time slots).
+    *   **Enrollment Metrics:** The specific number of students registered for each course.
+    *   *Relevance:* Without context, this is just a collection of numbers and strings that provides no insight into the scheduling conflicts.
 
-We want to analyse for example the following: 
-- How many students take which course.
-- How many lectures are taking place for each student in the semester.
-- How many rooms are available when and which type they are.
-- Which Professors are available at what time for which course.
+*   **Information (The Context):**
+    By processing and structuring the data, the system answers "Who, What, Where, and When." It gives the raw data meaning and context.
+    *   **Contextualization:** The system links specific professors to specific courses and rooms to their capacities.
+    *   **Visibility:** We can now see: *"Course A has 60 students,"* *"Room 101 only holds 40 people,"* or *"Professor Smith is unavailable on Mondays."*
+    *   *Relevance:* This stage allows the Scheduler to see the current state of resources. It highlights the requirements but does not yet solve the conflicts; it merely presents the facts in a readable format (e.g., a list of courses requiring labs).
 
-After getting an overview over all of the information, it’s easier to understand the system's requirements. We now have to think about how we use this information in our system and manage to accomplish our goal with the data given.
+*   **Knowledge (The Rules & Logic):**
+    Knowledge is the application of rules, patterns, and logic to the information. It is the understanding of *how* different data points interact and constrain one another.
+    *   **Constraint Logic:** The system understands that *"Course A cannot be placed in Room 101 because 60 > 40."*
+    *   **Conflict Detection:** It identifies relationships, such as *"Student Group B cannot have two lectures at the same time,"* or *"A professor cannot be in two locations simultaneously."*
+    *   **Regulatory Rules:** It applies university policies, such as ensuring break times between classes or prioritizing accessibility-compliant rooms for students with disabilities.
+    *   *Relevance:* This is where the system identifies problems. It moves beyond just listing availability to understanding *why* a certain schedule configuration will fail.
 
-It’s important to think about general knowledge like how to place courses into different time slots considering the break times and opening hours of the university, it’s part of wisdom because we use it to do the action.
+*   **Wisdom (The Optimization & Action):**
+    Wisdom represents the strategic application of knowledge to achieve the best possible outcome. In our BIS, this is the algorithmic optimization and the decision-making capability.
+    *   **Optimization:** The system doesn't just identify a clash (Knowledge); it calculates the *best* alternative. It answers: *"What is the most efficient way to arrange 500 courses to minimize student gaps and maximize room usage?"*
+    *   **Strategic Agility:** If a room becomes unavailable effectively immediately (e.g., a maintenance issue), the system applies wisdom to automatically reshuffle affected classes with minimal ripple effects, rather than just cancelling them.
+    *   **Fairness:** It ensures that the schedule is equitable, balancing the preferences of professors with the educational needs of students.
+    *   *Relevance:* This is the ultimate goal of the project. It transforms the Scheduler’s role from a "data entry clerk" to a "decision manager," allowing the university to operate with higher efficiency and student satisfaction.
 
-Furthermore, we need to figure out how to process the data to achieve as few clashes as possible. For that we have to set up different rules for example to prioritise professors in the system because they are not able to have any clashes in comparison to the students. 
+### Nature of Change
+Implementing this system represents a significant **Operational and Managerial Change**.
 
-All in all, the decisions we make on what to do are based on the accumulated knowledge and data. It’s important to take all criteria into account and give to the system. The built algorithm needs to get all the data automatically and process it so it’s forming the most optimal timeplan possible for everybody.
-
-Our system transforms raw data, like student’s information, by students logging in with email, to an actionable insights, such as that students can access their schedules. 
-
-- **Organizational Change**: 
-Automated notifications about changes and automated creation of scheduling, so it takes less time by not using the human resource. The operation of management becomes automated. Organizations who use paper, whiteboards or manual calendars will transform to our scheduling system, at the same time this changes their current manual operation to everything digital. Introducing the new software is a type of an operational change. In organizations that use excel with bad structure this will be transformed by adopting the new technology. Organizations who use email threads to create the schedule, this new process will be a managerial change. 
-
-At Ostfold University, the departments will no longer be needed as the new solution will be automatic and this is a change to how the management operates currently. The organization of the creation of the timetable for the different student grades happens now in the sorting algorithm instead of a scheduler, this means cutting off the course management completely. Currently students who require adaptation needs are planned for by the management, with the new system it’s accommodated to by retrieving stored information about the adaptation needs and then sorted automatically so no manual work by the management needs to be done. Which room is assigned will be now done automatically, management changes into no management, it’s transformed into automation likewise the operation also becomes automated. 
-
+*   **Operational Change:** The daily workflow shifts from manual data entry and cross-referencing spreadsheets to automated data retrieval and algorithmic sorting. Tasks that previously took weeks (manual conflict checking) will now take minutes.
+*   **Managerial Change:** The role of the "Timetable Scheduler" evolves from a data entry role to a supervisory role. Instead of building the schedule, they manage the parameters of the algorithm. This shifts the organizational focus from *maintenance* (keeping the schedule running) to *optimization* (improving the quality of education delivery). While this does not necessarily remove the department, it fundamentally changes *how* the department creates value.
 
 ---
 
