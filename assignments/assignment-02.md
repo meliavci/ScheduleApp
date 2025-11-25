@@ -68,11 +68,15 @@ The MVP includes:
 - Use of algorithm as a staff member
 
 ### Iterations / Phases
+This section outlines the planned development approach, breaking down the project into three distinct iterations or phases. The goal of this phased release is to deliver a Minimum Viable Product (MVP) first (Iteration 1), followed by feature enhancements and future functionality.
+
 - Iteration 1 (MVP): UI & Data Setup (Create screens, connect Dataverse tables, sample data)
 - Iteration 2: Navigation & Galleries (Add functional navigation)
 - Iteration 3 (future): Automations, role-based screens (Add Power Automate notifications, role-based logic)
 
 ### Backlog 
+This section lists all outstanding tasks and potential features for the application, categorized as either completed or in-progress (⊠) and planned for the future (□). It serves as the project's backlog, detailing items to be addressed in the current and subsequent development iterations.
+
 - [x] Log-in screen
 - [x] Timetable screen with mocking data/fields 
 - [x] User profile screen 
