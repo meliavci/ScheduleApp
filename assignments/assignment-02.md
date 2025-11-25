@@ -59,13 +59,14 @@ The following features are planned but not yet implemented:
 *   Global data context connection across every single component.
 
 ### Iterations / Phases
-To manage development complexity, we divided the work into three distinct phases. This iterative approach allows us to test and validate features before adding complexity.
+This section outlines the planned development approach, breaking down the project into three distinct iterations or phases. The goal of this phased release is to deliver a Minimum Viable Product (MVP) first (Iteration 1), followed by feature enhancements and future functionality.
 *   **Iteration 1 (MVP):** UI & Data Setup. This involved creating the blank screens, designing the Dataverse tables, and importing sample dummy data.
 *   **Iteration 2:** Navigation & Galleries. We added functional navigation between screens and implemented galleries to display the data created in Iteration 1.
 *   **Iteration 3 (Future):** Automations and Role-Based Logic. This phase will focus on connecting Power Automate flows for notifications and refining the security roles.
 
 ### Backlog 
-We maintained a backlog to track our progress. The following list indicates the status of key deliverables for this assignment.
+This section lists all outstanding tasks and potential features for the application, categorized as either completed or in-progress (⊠) and planned for the future (□). It serves as the project's backlog, detailing items to be addressed in the current and subsequent development iterations.
+The following list indicates the status of key deliverables for this assignment.
 - [x] Log-in screen
 - [x] Timetable screen with mocking data/fields 
 - [x] User profile screen 
