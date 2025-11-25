@@ -82,7 +82,7 @@ We designed a relational data model in Microsoft Dataverse to support the applic
 
 ### Entity-Relationship Diagram
 
-As illustrated in **Entity Relationship Diagram (ERD)**, the Entity-Relationship Diagram (ERD) visualizes the structural logic and interconnectivity of our Dataverse solution. The model is designed to handle complex scheduling needs through relational links between users, academic resources, and time slots.
+As illustrated in **Entity Relationship Diagram (ERD)**, it visualizes the structural logic and interconnectivity of our Dataverse solution. The model is designed to handle complex scheduling needs through relational links between users, academic resources, and time slots.
 
 ![Entity Relationship Diagram](../assets/erd.png)
 
