@@ -136,6 +136,8 @@ Automation Platform: Use Power Automate (or Azure Logic Apps) to create automate
 - Redesign Cascading: Carefully re-evaluate the business requirements that necessitated the Cascade All/Active/User-Owned settings. Often, a simpler, Restrict or Parental relationship is sufficient.
 - Manual Cleanup Logic: If complex cascading is unavoidable, implement the cascading logic manually using Power Automate flows or Dataverse Plug-ins. Instead of relying on the built-in, restrictive cascading, the plug-in/flow can listen for the delete/update event on the parent record and programmatically delete/update the related children records across multiple tables, bypassing the multi-parent relationship constraint.
 - Metadata diagram tool
+# Visualization #
+- The ERD Creator plugin in XrmToolBox generates diagrams of existing Dataverse relationships. This doesn’t remove the limitation but helps identify where cascading constraints already exist. By visualizing the schema, we can spot conflicts early and design manual cleanup logic or alternative relationship types more strategically. This ensures that the workaround (flows or plug-ins) is applied consistently and doesn’t introduce hidden multi-parent conflicts.
 
 
 ## 6. Reflection & Lessons Learned
