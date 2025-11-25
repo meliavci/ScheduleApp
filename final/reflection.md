@@ -17,11 +17,9 @@ Assignment 4 (Copilot, Monitoring & Deployment): Integrated a Copilot to automat
 
 The app solves the problem of inefficient, error-prone, and time-consuming manual university timetable scheduling. It eliminates issues like:
 
-Course Clashes: Timetables that are unoptimized and prone to course overlaps, limiting student flexibility .
-
-Resource Misallocation: Limited room availability or rooms being too small for enrolled students.
-
-Communication Delays: Last-minute changes (cancellations, room swaps) often fail to reach students and professors in time, causing confusion.
+- Course Clashes: Timetables that are unoptimized and prone to course overlaps, limiting student flexibility .
+- Resource Misallocation: Limited room availability or rooms being too small for enrolled students.
+- Communication Delays: Last-minute changes (cancellations, room swaps) often fail to reach students and professors in time, causing confusion.
 
 # Integration Across Assignments
 Each assignment was a sequential step that built the theoretical, functional, and operational foundation for the final Business Information System (BIS), moving the project from a conceptual analysis to a deployed, managed solution.
