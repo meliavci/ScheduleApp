@@ -176,8 +176,8 @@ This system prevents overwriting and keeps the deployment history transparent an
 Throughout the creation and configuration of our Power Apps pipeline, we identified several key strengths and challenges.
 
 *   **What Worked Well**
-  *   **Version Tracking:** The requirement to increment the solution version number before deployment ensured we had a clear, traceable history of changes, allowing us to identify and manage the exact version running in each environment.
-*   **Hosting the pipeline within Melisa Avci’s environment:** It provided a reliable and consistent foundation for deployment and testing activities.
+    *   **Version Tracking:** The requirement to increment the solution version number before deployment ensured we had a clear, traceable history of changes, allowing us to identify and manage the exact version running in each environment.
+    *   **Hosting the pipeline within Melisa Avci’s environment:** It provided a reliable and consistent foundation for deployment and testing activities.
 
 *   **Limittations and Challenges**
     *   **Repository Sync Failure:** We faced a limitation where local changes in the Power Apps solution were not automatically updating the Azure DevOps repository. This was attributed to missing institutional dependencies, forcing us to rely on manual commits.
@@ -232,7 +232,7 @@ The logic of this scheduled flow is shown in **Trigger and List Rows logic for t
 
 This section reflects on our overall DevOps experience throughout this assignment.
 
-### 9.4.1 Azure Boards: Organization and Efficiency
+### Azure Boards: Organization and Efficiency
 Azure Boards served as our central documentation and visualization tool. While our team often worked collaboratively in meetings and had a flexible assignment style, the platform provided necessary structure:
 *   **Scoping and Traceability:** The hierarchical breakdown into Epics, Issues, and Tasks allowed us to define the complete scope of work clearly. This was invaluable for tracing a functional requirement (e.g., "The user wants to view their timetable") back to the specific tasks.
 *   **Workflow Visualization:** Using the Boards view, we could quickly see what was in progress and what was completed. This gave us definite closure on requirements. Although we often knew a task's status from meetings, the board provided the single source of truth for the final submission checklist.
