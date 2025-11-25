@@ -102,15 +102,32 @@ The diagram highlights the following key relationships:
 4.  **Static Reference Data:**
     Tables such as **`cre96_openinghour2`** and **`cre96_breaktime2`** exist as reference entities. While they may not have cascading foreign keys to every transaction, they are essential for the application's logic validation (e.g., preventing a course from being scheduled during a university break).
 
-**Entities & Attributes Table**
+### Entities & Attributes Table
 The following table details the specific columns created in Dataverse for this solution.
 
 ![Course](../assets/Course.png)
+
+*Course table in Dataverse*
+
 ![Person](../assets/Person.png)
+
+*Person table in Dataverse*
+
 ![Breaktime](../assets/Breaktime.png)
+
+*Breaktime table in Dataverse*
+
 ![Enrollment](../assets/Enrollment.png)
+
+*Enrollment table in Dataverse*
+
 ![Room](../assets/Room.png)
+
+*Room table in Dataverse*
+
 ![OpeningHours](../assets/OpeningHours.png)
+
+*Openinghours table in Dataverse*
 
 ## 5. App Prototype
 The prototype consists of three main screens designed for clarity and ease of use.
