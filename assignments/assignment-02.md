@@ -1,6 +1,6 @@
 # Assignment 2 – From BPMN to Power Apps Prototype
 
-## Introduction
+## 1. Introduction
 This section outlines the translation of the business process modeled in Assignment 1 into a functional Low-Code prototype. The scope of this prototype focuses specifically on the **Timeschedule System** swimlane illustrated in the BPMN diagram.
 
 The core process steps included in this MVP (Minimum Viable Product) are:
@@ -11,7 +11,7 @@ The core process steps included in this MVP (Minimum Viable Product) are:
 The prototype implements the frontend interface for Students and Professors. It does not yet cover the full complex backend logic of the Scheduler (Staff) role. The primary focus of this iteration is usability, accessibility, and successful data integration.
 
 #### Team Roles and Responsibilities ####
-*   **Melisa:** UI creation in Power Apps (Timeschedule), Creation of the tables in Dataverse, Connecting the data to the Login and making it functionable
+*   **Melisa:** UI creation in Power Apps (Timeschedule/Homescreen_1 and Login), Creation of the tables in Dataverse, Connecting the data to the Login-scren, Backend of the Login 
 *   **Raphael:** UI creation in Power Apps (Login, Notification), Navbar Component navigation
 *   **Victor:** UI creation in Power Apps (Navbar), Navbar Component navigation
 *   **Aleksandra:** UI creation in Power Apps (Notification)
@@ -33,8 +33,6 @@ To bridge the gap between our process model and the application, we mapped speci
 | R8: Notify users about changes | Notification message in the navbar | Notification | UI element for future automation |
 | R9: Log out of the application | Profile screen | Person(Status) | Future implementation |
 | R10: Close the app | End of navigation flow | - | Process end condition |
-
-Add a short paragraph explaining how BPMN elements were translated into app requirements.  
 
 #### Explanation ####
 Each task from our BPMN diagram was converted into a feature representable in Power Apps. User actions, such as logging in or choosing an action, were translated into specific screens or buttons. System processes, such as "Retrieve Data," became data connections or background data sources. Notification tasks were modeled as visual placeholders in the UI, preparing the ground for future Power Automate integration.
@@ -82,9 +80,27 @@ We maintained a backlog to track our progress. The following list indicates the 
 ## 4. Data Model
 We designed a relational data model in Microsoft Dataverse to support the application. Below is the structure of our entities and the Entity-Relationship (ER) diagram.
 
-**Entity-Relationship Diagram**
-*See Figure 3: Entity Relationship Diagram (ERD) in the Assets folder.*
-The ERD illustrates the relationships between `Person`, `Course`, `Enrollment`, and `Room`. A `Person` (Student/Professor) is linked to `Courses` through the `Enrollment` table, while `Courses` are assigned to specific `Rooms`.
+### Entity-Relationship Diagram
+
+As illustrated in **Entity Relationship Diagram (ERD)**, the Entity-Relationship Diagram (ERD) visualizes the structural logic and interconnectivity of our Dataverse solution. The model is designed to handle complex scheduling needs through relational links between users, academic resources, and time slots.
+
+![Entity Relationship Diagram](../assets/erd.png)
+
+*Entity Relationship Diagram (ERD) showing the schema and relationships between Dataverse tables.*
+
+The diagram highlights the following key relationships:
+
+1.  **Student-Course Relationship (Many-to-Many):**
+    Directly linking students to courses would result in data redundancy. Instead, we utilized a junction table, **`cre96_enrollment`**. This entity sits between **`cre96_person2`** (Student) and **`cre96_course2`** (Course), allowing one student to enroll in multiple courses and one course to have multiple enrolled students.
+
+2.  **Professor-Course Relationship (One-to-Many):**
+    The **`cre96_course2`** table contains a direct lookup field to **`cre96_person2`**. This establishes a relationship where a specific Professor (Person) is assigned as the lecturer for a Course.
+
+3.  **Resource Allocation:**
+    To manage physical space, the **`cre96_course2`** entity is linked to **`cre96_room2`**. This allows every course instance to be assigned a specific room, inheriting the room's attributes (such as Capacity and Campus Name) for validation purposes.
+
+4.  **Static Reference Data:**
+    Tables such as **`cre96_openinghour2`** and **`cre96_breaktime2`** exist as reference entities. While they may not have cascading foreign keys to every transaction, they are essential for the application's logic validation (e.g., preventing a course from being scheduled during a university break).
 
 **Entities & Attributes Table**
 The following table details the specific columns created in Dataverse for this solution.
@@ -98,16 +114,39 @@ The following table details the specific columns created in Dataverse for this s
 
 ## 5. App Prototype
 The prototype consists of three main screens designed for clarity and ease of use.
+
 ### Screens Implemented
-1.  **Login Screen:** As shown in **Figure 4** below, this screen authenticates the user. It checks the input credentials against the `Person` table in Dataverse.
-    *   *Reference: Figure 4 - Login Screen UI*
-2.  **Schedule Screen:** Displayed in **Figure 5**, this is the main landing page. It features a dynamic gallery that filters courses based on the logged-in user's ID.
-    *   *Reference: Figure 5 - Schedule/Timetable UI*
-3.  **Profile Screen:** As seen in **Figure 6**, this screen displays the user's role and provides role-specific action buttons (e.g., "Cancel Class" for professors).
-    *   *Reference: Figure 6 - Profile Screen UI*
+
+1.  **Login Screen:**
+    As shown in the figure below, this screen authenticates the user. It checks the input credentials (email and password) against the `Person` table in Dataverse.
+
+    ![Login Screen](../App_screenshots/login.png)
+
+    *Login Screen UI*
+
+2.  **Schedule Screen (Homescreen):**
+    Displayed below, this is the main landing page. It features a dynamic gallery that filters courses based on the logged-in user's ID, showing only the relevant timetable.
+
+    ![Schedule Screen](../App_screenshots/homescreen.png)
+
+    *Schedule/Timetable UI*
+
+3.  **Profile Screen:**
+    As seen below, this screen displays the user's role and provides role-specific action buttons (e.g., "Cancel Class" for professors or "Change Room").
+
+    ![Profile Screen](../App_screenshots/profile.png)
+
+    *Profile Screen UI*
 
 ### Reusable Components
 To ensure consistency, we created a **Header Component**. This navigation menu includes the notification bell and user profile button and is reused across all post-login screens.
+
+**Notification Component:**
+Shown in the figure below, the notification system appears as a pop-up overlay. Currently, this is a visual mockup to demonstrate how users will be alerted to schedule changes in the next iteration.
+
+![Notification UI](../App_screenshots/notification.png)
+
+*Notification Pop-up UI*
 
 ### Data Connections
 
