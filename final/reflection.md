@@ -162,37 +162,58 @@ autonomous system:
 
 ## Detailed Teamwork Reflection
 
-### **Example Guidelines**
-
-When writing your reflection, include:
-
-- What parts of the project you personally developed (e.g., data model, app screens, Power Automate flows, testing,
-  deployment, documentation, etc.)
-- How you contributed to planning, testing, or troubleshooting
-- How you participated in Git commits or DevOps setup
-- Any leadership, coordination, or mentoring roles you took
-
----
-
 ### **Team Member Contributions**
 
-#### 👤 Member 1 – [Melisa Avci]
+---
+
+#### Melisa Avci
 
 **Main responsibilities:**  
-*(Describe what you were mainly responsible for)*
+I acted as the **Project Lead and Lead Developer**, taking full ownership of the organization, execution, and final delivery of the project. My role went far beyond standard contribution; I was the central hub for all development, infrastructure, and documentation.
+
+*   **Group Coordination & Execution:** In our physical meetings, I was the **active operator**. I connected my laptop to the group room TV and performed the actual development work in real-time. While my teammates watched and provided feedback, I was the one translating that feedback into code, logic, and design immediately.
+*   **Task Management:** I mostly defined the project scope and assigned tasks to members. I actively tried to animate and motivate the group to contribute, but due to the gap in technical competence, I often had to take over their assigned tasks to ensure the solution worked.
+*   **Infrastructure Owner:** I set up and managed the entire DevOps environment (Azure DevOps, GitHub, Power Platform Environment). I manually handled **every single Git commit, sync, and push** for the entire team throughout the semester in our repository.
+*   **Final Delivery:** I took responsibility for the final polish of all deliverables. This included formatting the entire written report, finalizing the templates, integrating the professor's feedback, and even cutting and editing the final submission video.
 
 **Development contributions:**  
-*(Which features, screens, automations, or AI integrations did you implement?)*
+
+*   **Assignment 1 (Analysis & Design):**
+    *   I participated creating the **BPMN diagrams** to model the TO-BE process.
+    *   I developed the **Ishikawa (Fishbone)** analysis to identify the root causes of scheduling inefficiencies.
+
+*   **Assignment 2 (Data & App Architecture):**
+    *   **Dataverse Architecture:** I designed and created the entire Dataverse schema from scratch. This involved creating the tables for e.g. `Course`, `Person`, `Room`, `Enrollment`, `OpeningHour`, and `BreakTime`. I input all the dummy data and defined the complex relationships (e.g., Many-to-Many for Enrollments), personally resolving specific "Cascade All" error conflicts that stopped other team members.
+    *   **Backend Logic:** I implemented the complete backend logic for the **Login screen**, using complex `ClearCollect` sequences to fetch user-specific enrollments (`colUserEnrollments`) and courses.
+    *   **Timetable Engine:** I built the core logic for the **Timetable screen**. This was the most technically difficult part, requiring me to write complex mathematical formulas to calculate dynamic X/Y coordinates for course blocks based on `Weekday` and `StartTime` so they would appear in the correct grid slots.
+    *   **UI & Navigation:** I overhauled the entire UI to ensure consistency, fixing layout issues and implementing the navigation logic across all screens. I also built the visual status indicators, such as the red "X" icon for cancelled courses, using `CountRows` and text-conversion workarounds to handle Boolean logic failures.
+
+*   **Assignment 3 (DevOps & Automation):**
+    *   **Infrastructure:** I set up the "ScheduleApp" project in Azure DevOps, created the GitHub repository, and established the connection between the two.
+    *   **Pipelines:** I configured the **Power Platform Pipelines** for ALM, managing the manual deployment from my Development Environment to Testing and finally to Production.
+    *   **Power Automate Implementation:**
+        *   **`Cancel_Course_Notification`:** I built this instant flow to update the Dataverse status to 'Cancelled'. I personally debugged and resolved specific JSON parsing errors (`TriggerBody`) that were preventing the flow from reading the CourseID.
+        *   **`Reset_Cancelled_Courses_Daily`:** I created this scheduled flow to reset course status overnight. I implemented the necessary OData filter logic (`_cre96_takingplace_value eq 0`) and timezone conversions to compare the course weekday with the current day.
+
+*   **Assignment 4 (Copilot & QA):**
+    *   **Bot Creation & Architecture:** I defined the entire scope and architecture of the "Scheduler" bot. This involved defining the specific **Topics**, configuring the **Knowledge** base (connecting it to the specific Dataverse tables I designed), and setting the system definitions to ensure it behaved as a role-gated assistant rather than a generic chat bot.
+    *   **Copilot Logic:** I created the **"User Authentication"** topic and the logic to force this topic to run at the start of every conversation by redirecting the System Greeting. I implemented the **`Authenticate_User_And_Get_Role`** flow, including the OData filter to match email/password and the Switch logic to return the text-based User Role.
+    *   **Agent Configuration:** I handled the agent configuration, ensuring Generative AI was disabled to force deterministic behavior and defining strict data privacy rules.
+    *   **Testing & Monitoring:** I set up and ran the test suites in **Test Studio** (e.g., `loginAsStudent`, `cancelClassAsProf`), identifying critical bugs like the inability to select buttons in nested galleries. I also used **Power Platform Monitor** to analyze network calls (`getRows`, `patchRow`) to ensure app stability.
 
 **Collaboration:**  
-*(How did you support your teammates?)*
+My collaboration experience was defined by a need to bridge the gap between the group's output and the project requirements.
+*   **Animation & Integration:** I constantly tried to integrate all members by assigning them tasks and encouraging participation in meetings. However, when members struggled with technical tasks or delivered incomplete work, I stepped in to fix it.
+*   **Workload Distribution:** To meet our deadlines, I performed a significant amount of work alone at home. This involved rewriting backend logic that others couldn't get to work and fixing UI alignment issues.
+*   **Documentation Lead:** I wrote the core content for the report templates. While I asked others to contribute sections, I often had to rewrite contributions to ensure they were accurate, professional, and formatted correctly in Markdown. I was the one who managed the final compilation of the report.
 
 **Reflection:**  
-*(What did you learn, what challenges did you face, and how did you solve them?)*
+*   **Technical Mastery:** This project forced me to become an expert in the Power Platform ecosystem. I learned how to resolve high-level type conflict errors (Error, Number, OptionSetValue) in Power Fx and how to architect a full ALM pipeline from scratch.
+*   **Leadership & Resilience:** The biggest challenge I faced was the uneven division of labor. Acting as the leader for the repository, program setups and even the group itself and the primary developer for every complex feature was incredibly stressful. However, it taught me that successful delivery sometimes requires taking on the burden of execution—coding the logic, writing the report, and reworking tasks—while still trying to keep the team engaged. I learned how to drive a project forward through sheer determination, ensuring that despite the team's varying skill levels, we delivered a high-quality, distinction-level product.
 
 ---
 
-#### 👤 Member 2 – [Aleksandra Wos]
+#### Aleksandra Wos
 
 **Main responsibilities:**  
 *   Giving inputs to tasks in the assignments where I thought they were needed.
@@ -240,7 +261,7 @@ The parts I changed after the feedback:
 
 ---
 
-#### 👤 Member 3 – Shehab Wael Abozied Abdelhamed
+#### Shehab Wael Abozied Abdelhamed
 
 **Main responsibilities:**
 In this project, I mainly worked on the Profile Page in Power Apps and helped my team with the project templates, since we often completed them together. My focus was on supporting the front-end and helping where needed.
@@ -261,7 +282,7 @@ This project helped me learn more about Power Apps, UI basics, and data binding.
 
 ---
 
-#### 👤 Member 4 – [Raphael Tam-Dao]
+#### Raphael Tam-Dao
 
 **Main responsibilities:**
 Our group worked very collaboratively, completing most tasks together in joint work sessions. Although we did not begin with fixed roles, our responsibilities shifted whenever tasks were divided. During those moments, my main responsibility became the tasks assigned specifically to me, and I took ownership of completing them while still supporting the entire group. Overall, my role combined shared teamwork with individual responsibility when we split the workload.
@@ -311,7 +332,7 @@ Power Automate was extremely strict with formatting, row listing, and updates, w
 
 ---
 
-#### 👤 Member 5 – [Victor Wilhelmsen]
+#### Victor Wilhelmsen
 
 **Main responsibilities:**
 I took responsibility for a few technical tasks, as well as assisting the team whenever needed. I also helped troubleshoot issues along the way so that the workflow stayed consistent for the whole team. I personally think that I could have done more alone, but it might not have met the quality standards the group desired.
