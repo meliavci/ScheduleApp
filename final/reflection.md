@@ -192,35 +192,72 @@ When writing your reflection, include:
 
 ---
 
-#### 👤 Member 2 – [Full Name]
+#### 👤 Member 2 – [Aleksandra Wos]
 
 **Main responsibilities:**  
-*(Describe what you were mainly responsible for)*
+*   Giving inputs to tasks in the assignments where I thought they were needed.
+*   Doing the tasks in the assignment that were given to me.
 
 **Development contributions:**  
-*(Which features, screens, automations, or AI integrations did you implement?)*
+
+*   **In Assignment 1:**
+    *   Identified the type of organizational change text.
+    *   Wrote some parts of the stakeholders text.
+    *   BPMN modeling together with the rest of the team.
+
+*   **In Assignment 2:**
+    *   Identified most of the key requirements from BPMN in our Google Doc before the text was rewritten in the GitHub template; the rest of the team and I did the mapping.
+    *   Gave input to Melisa when she was doing the Copilot plan designer.
+    *   Developed the Power Apps Prototype notifications interface and component low code with help from Raphael.
+
+*   **In Assignment 3:**
+    *   Defined the tasks in Azure work items and added them to the GitHub template table.
+
+*   **In Assignment 4:**
+    *   For the Copilot Studio agent, I created a new Power Automate flow and worked on parts of the "Change Room" topic that utilized it. The change room agent flow checks room availability. After I created it, Raphael made formatting changes so that the agent response was readable. This was done the next day after a meeting with the whole group, where just Raphael and I met up and worked on the Copilot agent for 4.5 hours.
+    *   Gave input on the instructions text in our agent.
+
+For each assignment, the whole team gave input to the "lessons learned" part, as well as most of the text for the assignments. I don't think the contribution part really shows the scope purely from the tasks that I did because of how we worked together as a team. For most of the work, we met up physically in a group room at the university, multiple times a week, to work for multiple hours at a time. In these meetings, all team members had the chance to participate and give inputs on how we wanted to do the assignments and what text to write for the submissions.
+
+The parts I changed after the feedback:
+*   **Assignment 1:** Ishikawa diagram (Melisa helped) and helped with BPMN.
+*   **Assignment 2:** Introduction to sections 8.3.2 and 8.3.3, and I also did the executive summary.
 
 **Collaboration:**  
-*(How did you support your teammates?)*
+*   Gave ideas for the assignment tasks and collaborated where possible, but with the programs used in this course, this was difficult at every stage because they are not catered to collaboration.
+*   Therefore, as I mentioned previously, most of the work was done with the whole team in physical meetings at the university. Melisa has done the most work, spending time outside the meetings to complete tasks that needed to be done. However, some tasks look like she did them by herself because we were using her environment in Power Apps, her Azure, and her GitHub. I and other team members participated in the physical meetings to do the work; we used the TV in the group room to see Melisa's screen, and from there I/we gave feedback, inputs, and ideas while the changes were made on Melisa's laptop.
+*   Tried to be understanding of Shehab when he didn't understand the assignments and tried to explain things so he would understand. There were two distinct meetings where he didn't give any inputs at all, but after the whole team spoke to him and he explained he had personal family issues going on, his communication from that point on got better in my opinion. The way I supported him was by trying to understand his perspective.
 
 **Reflection:**  
-*(What did you learn, what challenges did you face, and how did you solve them?)*
+*   **What did you learn, what challenges did you face, and how did you solve them?**
+    For testing in Assignment 3, we found out that only one person can do tests at a time because co-authoring gets turned off when one person starts the test. Therefore, we had to do the tests together even though we originally planned for each team member to do their own test individually.
+*   **How you contributed to planning, testing, or troubleshooting:**
+    As a team, we always planned what work we were going to do for our in-person meetings.
+*   **How you participated in Git commits:**
+    Suggested changes to text in GitHub.
+*   **Any leadership, coordination, or mentoring roles you took:**
+    I took on the mentoring role when I thought my ideas made more sense than what my team members suggested.
 
 ---
 
-#### 👤 Member 3 – [Full Name]
+#### 👤 Member 3 – Shehab Wael Abozied Abdelhamed
 
-**Main responsibilities:**  
-*(Describe what you were mainly responsible for)*
+**Main responsibilities:**
+In this project, I mainly worked on the Profile Page in Power Apps and helped my team with the project templates, since we often completed them together. My focus was on supporting the front-end and helping where needed.
 
-**Development contributions:**  
-*(Which features, screens, automations, or AI integrations did you implement?)*
+**Development contributions:**
+*   Built the basic layout of the Profile Page.
+*   Connected some fields to Dataverse with the help of my teammates.
+*   Filled in some data in a few Dataverse tables to support testing.
+*   Helped with testing to make sure the screens worked correctly.
 
-**Collaboration:**  
-*(How did you support your teammates?)*
+**Collaboration:**
+*   Worked with the team on templates and documentation.
+*   Coordinated with teammates so my page matched their data structure.
+*   Helped with small fixes and testing when needed.
 
-**Reflection:**  
-*(What did you learn, what challenges did you face, and how did you solve them?)*
+**Reflection:**
+This project helped me learn more about Power Apps, UI basics, and data binding. I couldn’t attend all meetings, but I always tried to catch up and finish my part. As a team, we communicated well, discussed issues together, and even did online meetings when needed to solve problems. Using AI tools also helped me understand errors and learn faster. Overall, this project improved my teamwork and technical skills.
 
 ---
 
@@ -237,7 +274,9 @@ All team members confirm that:
 
 **Signatures / Names:**
 
-- [Name 1]
-- [Name 2]
-- [Name 3]
+- Melisa Avci
+- Victor Wilhelmsen
+- Aleksandra Wos
+- Raphael Tam-Dao
+- Shehab Wael Abozied Abdelhamed
 - [Date]
