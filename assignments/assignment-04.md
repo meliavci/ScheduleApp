@@ -22,7 +22,7 @@ When a user begins interacting with the Copilot, it first performs authenticatio
 
 As shown in the figure below, the bot successfully identifies a Professor based on their credentials.
 
-![Professor Login Chat](../assets/Assignment4/Copilot/ProfessorLogin.png)
+![Professor Login Chat](../assets/Assignment4/Copilot/professorLogin.png)
 
 *The chat interaction showing the professor login topic and role verification.*
 
@@ -47,11 +47,11 @@ This saves students time and ensures that absence notifications are consistent a
 
 The figures below illustrate this interaction.
 
-![Student Absence Chat Part 1](../assets/Assignment4/Copilot/StudentAbsence.png)
+![Student Absence Chat Part 1](../assets/Assignment4/Copilot/studentAbsence.png)
 
 *The chat about the student absence topic, Part 1.*
 
-![Student Absence Chat Part 2](../assets/Assignment4/Copilot/StudentAbsenceTwo.png)
+![Student Absence Chat Part 2](../assets/Assignment4/Copilot/studentAbsenceTwo.png)
 
 *The chat about the student absence topic, Part 2.*
 
@@ -73,15 +73,15 @@ This automation makes it easy for staff to adjust room assignments quickly—for
 
 The following figures demonstrate the room change workflow.
 
-![Room Change Chat Part 1](../assets/Assignment4/Copilot/RoomChange.png)
+![Room Change Chat Part 1](../assets/Assignment4/Copilot/changeRoom.png)
 
 *The chat about the change room topic, Part 1.*
 
-![Room Change Chat Part 2](../assets/Assignment4/Copilot/RoomChangeTwo.png)
+![Room Change Chat Part 2](../assets/Assignment4/Copilot/changeRoomTwo.png)
 
 *The chat about the change room topic, Part 2.*
 
-![Room Change Chat Part 3](../assets/Assignment4/Copilot/RoomChangeThree.png)
+![Room Change Chat Part 3](../assets/Assignment4/Copilot/changeRoomThree.png)
 
 *The chat about the change room topic, Part 3.*
 
@@ -169,32 +169,6 @@ We created a suite of seven specific flows to support the agent's full functiona
 
 #### Data Usage Summary
 Information is consistently fetched from Dataverse using List rows with OData filters or Expand Query for relational data (e.g., retrieving professor emails or room names across lookups). This information is then used by the Copilot to either control the conversation flow (e.g., checking if roomName is blank in the Change room topic) or to populate the final communication (e.g., the email body in the StudentAbsence topic). Updates are handled by the transactional flows using the Update a row action to change resource assignments.
-
-The following figures illustrate the chat interactions driven by these data connections:
-
-![Change Room Chat Part 1](../assets/Assignment4/Copilot/changeRoom.png)
-
-*The chat about the change room topic, Part 1*
-
-![Change Room Chat Part 2](../assets/Assignment4/Copilot/changeRoomTwo.png)
-
-*The chat about the change room topic, Part 2*
-
-![Change Room Chat Part 3](../assets/Assignment4/Copilot/changeRoomThree.png)
-
-*The chat about the change room topic, Part 3*
-
-![Professor Login Chat](../assets/Assignment4/Copilot/professorLogin.png)
-
-*The chat about the professor login topic*
-
-![Student Absence Chat Part 1](../assets/Assignment4/Copilot/studentAbsence.png)
-
-*The chat about the student absence topic, Part 1*
-
-![Student Absence Chat Part 2](../assets/Assignment4/Copilot/studentAbsenceTwo.png)
-
-*The chat about the student absence topic, Part 2*
 
 **Link to our Copilot Agent:** [Microsoft Copilot Studio Environment](https://web.powerva.microsoft.com/environments/6484ef4a-54a6-e8b2-81c8-a24f9f8b1849/bots/bba1bea3-41ba-f011-bbd3-6045bda07122/overview)
 
