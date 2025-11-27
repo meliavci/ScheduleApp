@@ -109,18 +109,56 @@ When writing your reflection, include:
 
 ### **Team Member Contributions**
 
-#### 👤 Member 1 – [Full Name]
+#### 👤 Member 1 – [Aleksandra Wos]
 **Main responsibilities:**  
-*(Describe what you were mainly responsible for)*  
+- Giving inputs to tasks in the assignments where I though needed.
+- Doing the taks in the assignment that were given to me.
 
-**Development contributions:**  
-*(Which features, screens, automations, or AI integrations did you implement?)*  
+# Development contributions/What parts of the project you personally developed/What they contributed/Which parts they designed or developed:
 
-**Collaboration:**  
+In assignment 1: 
+- Identify the type of organizational change text
+
+_ Some parts of the stakeholders text
+
+- BPMN modelling together with the rest of the team
+
+In assignment 2: 
+- Identifying most of the key requirments from BPMN in our google doc before the text was rewritten in the github template, me and the rest of the team did the mapping.
+
+-Gave imput to Meslia when she was doing the copilot plan designer.
+
+-Power Apps Prototype notifications interface and component low code with help of Raphael  
+
+In assignment 3:
+
+- Defining the tasks in Azure work items and adding them to the github template table.
+
+In assignment 4: 
+
+- For the copilot studio agent I had to do a new power automated flow and I did some parts of the change room topic that used it. The change room agent flow checks room availiabilty after I made it, Raphael made formatting changes to it so that the agent response was readable.
+
+- Gave input on the instructions text in our agent.
+
+For each assignment the whole team gave input to lessons learned part and same with most of the text for the assignments.
+
+The parts I changed after the feeback: for assignment 1 - ishikawa and Melisa helped, helped with BPMN. assignment 2: introductoin to sections 8.3.2 and 8.3.3. and I also did the executive summary.
+
+# Collaboration/How they collaborated with the team:
 *(How did you support your teammates?)*  
+- Give ideas to the assignments tasks, collaborated where was possible but with the programs used in this course at every stage this was diffuclt because they are not catered to collaboration. 
+ 
+# What did you learn, what challenges did you face, and how did you solve them?  
+- For testing in assignment 3 we found out that only one person can do tests at a time because co-authoring gets turned off when one person starts the test, therefore we had to do the tests together even though we originally planned to for each team member to do their own test induvidually. 
 
-**Reflection:**  
-*(What did you learn, what challenges did you face, and how did you solve them?)*  
+# How you contributed to planning, testing, or troubleshooting
+As a team we always planned what work we were going to do for our in person meetings
+
+# How you participated in Git commits:
+Suggested changes to text in github.
+
+# Any leadership, coordination, or mentoring roles you took:
+- I took on the mentoring role when I though my ideas made more sense than what my team members suggested.
 
 ---
 
