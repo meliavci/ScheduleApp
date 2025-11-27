@@ -136,17 +136,19 @@ In assignment 3:
 
 In assignment 4: 
 
-- For the copilot studio agent I had to do a new power automated flow and I did some parts of the change room topic that used it. The change room agent flow checks room availiabilty after I made it, Raphael made formatting changes to it so that the agent response was readable.
+- For the copilot studio agent I had to do a new power automated flow and I did some parts of the change room topic that used it. The change room agent flow checks room availiabilty after I made it, Raphael made formatting changes to it so that the agent response was readable. This was done the next day after one meeting with the whole group, where just me and Raphael met up and worked on the copilot agent for 4.5h.
 
 - Gave input on the instructions text in our agent.
 
-For each assignment the whole team gave input to lessons learned part and same with most of the text for the assignments.
+For each assignment the whole team gave input to lessons learned part and same with most of the text for the assignments. I don't think the contribution part really show the scope from purely the tasks that I did because of how we worked together as a team, for most of the work for the assignments we would meet up physically in a group room at the university, multipe times a week, to work for multiple hours at a time. In these meetings is where all team members had chance to participate and gives inputs on how we wanted to do the assignments and what text to write for the submissons.
 
 The parts I changed after the feeback: for assignment 1 - ishikawa and Melisa helped, helped with BPMN. assignment 2: introductoin to sections 8.3.2 and 8.3.3. and I also did the executive summary.
 
 # Collaboration/How they collaborated with the team:
 *(How did you support your teammates?)*  
-- Give ideas to the assignments tasks, collaborated where was possible but with the programs used in this course at every stage this was diffuclt because they are not catered to collaboration. 
+- Give ideas to the assignments tasks, collaborated where was possible but with the programs used in this course at every stage this was diffuclt because they are not catered to collaboration.
+- Therefor like I mentioned previously most of the work was done with the whole team in physicall meetings at the university, from the work done Melisa has done the most work, she has spent time outside the meetings to do some tasks that needed to be done, but some tasks look like she has done by herself because we were using her enviorment in power apps, her azure and her github. I and other team members participated in the physicall meetings to do the work, we took use of the tv in the group room to see Melisa's screen and from there I/we gave feedbacks, inputs and ideas while the changes where made on Melisa's laptop.
+- Trying to be understandable of Shehab when he didn't understand the assignments and try and explain to him so he would understand. There was two distinct meetings where he didn't give any inputs at all but after the whole team spoke to him where he explained he had personal family issues going on, his communication from that point on got better in my opinion. The way I supported him is by trying to understand his perspective.  
  
 # What did you learn, what challenges did you face, and how did you solve them?  
 - For testing in assignment 3 we found out that only one person can do tests at a time because co-authoring gets turned off when one person starts the test, therefore we had to do the tests together even though we originally planned to for each team member to do their own test induvidually. 
