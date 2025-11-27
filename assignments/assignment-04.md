@@ -350,11 +350,11 @@ Our deployment adhered to the established three-stage Application Lifecycle Mana
 #### Verification of Final Version
 The final version of the application was verified to function as intended after deployment to the Production environment. The App in Production screenshot ([The app in the production environment](../assets/Assignment4/PipelineRun.png)) would serve as evidence that the application loaded correctly and that the core user interfaces (like the login screen or the main timetable) were accessible in the live environment.
 
-![App in Production](../assets/Assignment4/Deployment/ProductionApp.png)
+![App in Production](../assets/Assignment4/AppInProduction.png)
 
 *The final "ScheduleApp" running in the Production environment.*
 
-![Pipeline Run](../assets/Assignment4/Deployment/PipelineRun.png)
+![Pipeline Run](../assets/Assignment4/PipelineRun.png)
 
 *The successful pipeline run history.*
 
