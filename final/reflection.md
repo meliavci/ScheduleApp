@@ -176,7 +176,7 @@ When writing your reflection, include:
 
 ### **Team Member Contributions**
 
-#### 👤 Member 1 – [Full Name]
+#### 👤 Member 1 – [Melisa Avci]
 
 **Main responsibilities:**  
 *(Describe what you were mainly responsible for)*
@@ -261,7 +261,69 @@ This project helped me learn more about Power Apps, UI basics, and data binding.
 
 ---
 
-*(Add additional member sections as needed.)*
+#### 👤 Member 4 – [Raphael Tam-Dao]
+
+**Main responsibilities:**
+Our group worked very collaboratively, completing most tasks together in joint work sessions. Although we did not begin with fixed roles, our responsibilities shifted whenever tasks were divided. During those moments, my main responsibility became the tasks assigned specifically to me, and I took ownership of completing them while still supporting the entire group. Overall, my role combined shared teamwork with individual responsibility when we split the workload.
+
+**Development contributions:**
+
+*   **Power Apps:**
+    *   Developed the frontend of the login screen.
+    *   Implemented the logout button and its corresponding backend logic.
+    *   Developed the backend logic for the navbar component, enabling navigation between core screens.
+    *   Implemented the backend logic for retrieving user profile data such as name, email, and role.
+
+*   **Copilot Studio (Topics & Automations):**
+    *   I created and implemented several Copilot topics and Power Automate flows.
+    *   **Topic: Change Room**
+        *   *GetCourseRoomInformation* – Retrieved room name, type, and capacity for the selected course.
+        *   *ChangeRoomAgent* – Retrieved all available rooms, concatenated and formatted them, and displayed them through the chatbot.
+        *   *Change room with room update in course* – Looked up the room to be changed, updated the course with the new room, and set the chosen room to unavailable.
+    *   **Topic: Student Absence**
+        *   *Get Professor Info for Absence* – Retrieved the professor’s email and name to support absence notifications.
+
+*   **Testing:**
+    *   Testing was integrated into every implementation step.
+    *   I tested all Copilot flows to confirm correct row filtering, formatting, data retrieval, and Dataverse updates.
+    *   I tested backend navigation logic and component behavior in Power Apps.
+    *   I verified the logout functionality and profile data loading.
+    *   I participated in group test sessions and test suite creation.
+
+**Collaboration:**
+*   We collaborated very closely throughout the project. We planned together, created the automated test suites together, and jointly troubleshot UI issues, flow errors, and Dataverse-related problems.
+*   We all participated in the Git commits and Azure DevOps setup. Since DevOps setup and Git file management had to be done through one account (Melisa’s), she shared her screen while we all worked through the steps together in the same room—discussing decisions, writing commits, and verifying changes as a team.
+*   We used a shared Google Docs document where everyone contributed to the written report. Melisa then transferred the final text into the Git repository file since only one person could commit it.
+*   When tasks were divided, I helped teammates who encountered technical difficulties in Power Apps, Power Automate, or Copilot topics, and we resolved the problems together.
+
+**Reflection:**
+This project broadened both my technical skills and my ability to collaborate effectively. I improved at communicating and working with teammates who had different personalities and working styles than I was used to. While this occasionally led to challenges, we solved them through open discussion and mutual support.
+
+Technically, I learned how to work with:
+*   Power Apps (Power FX)
+*   Power Automate
+*   Copilot Studio
+*   Dataverse
+*   Azure DevOps
+*   Camunda (especially BPMN modeling, which was difficult at first but ultimately manageable)
+
+Power Automate was extremely strict with formatting, row listing, and updates, which made debugging frustrating. Power FX was also unfamiliar, but with research and practice, I became more comfortable using it. Working on BPMN diagrams in Camunda was another difficult challenge, but I gained a solid understanding of how to model processes properly. Co-authoring in Power Apps also caused issues—especially when multiple people edited the same screen—but we learned to coordinate better and avoided major conflicts. Despite starting with no prior experience in these tools, I adapted, completed my features, and contributed in multiple areas across the project.
+
+---
+
+#### 👤 Member 5 – [Victor Wilhelmsen]
+
+**Main responsibilities:**  
+*(Describe what you were mainly responsible for)*
+
+**Development contributions:**  
+*(Which features, screens, automations, or AI integrations did you implement?)*
+
+**Collaboration:**  
+*(How did you support your teammates?)*
+
+**Reflection:**  
+*(What did you learn, what challenges did you face, and how did you solve them?)*
 
 ---
 
