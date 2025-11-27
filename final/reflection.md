@@ -313,17 +313,22 @@ Power Automate was extremely strict with formatting, row listing, and updates, w
 
 #### 👤 Member 5 – [Victor Wilhelmsen]
 
-**Main responsibilities:**  
-*(Describe what you were mainly responsible for)*
+**Main responsibilities:**
+I took responsibility for a few technical tasks, as well as assisting the team whenever needed. I also helped troubleshoot issues along the way so that the workflow stayed consistent for the whole team. I personally think that I could have done more alone, but it might not have met the quality standards the group desired.
 
 **Development contributions:**  
-*(Which features, screens, automations, or AI integrations did you implement?)*
+I designed the Ui for the power apps navbar, as well as the navigation logic, with help from others from the team. I also contributed on the flows as help, some of the ai as help, and on the Camunda BPMN. I also assisted in reviewing pipeline steps and ensuring that the deployment flow followed DevOps practices.
+
+We did the documentation and testing together in meetings. We figured out how to do it by ourselves, then in the meeting we did all the tests and the documentation together.
+We also did the assignment templates together as meetings at the end of our working process for the assignments.
 
 **Collaboration:**  
-*(How did you support your teammates?)*
+Our team had physical meetings every week, to ensure quality. This means that during those meetings we discussed our possibilities until we would land one, then do that one. When a problem appeared, the team would try to find a solution during these meetings.
+We did have some difficulties, especially in the beginning, with communication. Over the course of the semester, I personally feel like this got better, and the group was ok. We also tried to have some meetings online. This did not really work that well, so we eventually stopped and only had physical meetings.
+We should have maybe distributed more tasks, instead of doing it in the meetings. However, we did get to have discussions which helped the entire process.
 
 **Reflection:**  
-*(What did you learn, what challenges did you face, and how did you solve them?)*
+Throughout the project, I learned more about how DevOps tools fit together, including how pipelines, automation, and version control work in practice. Some of the difficulties we had were problems with authoring and figuring out how everyone could edit, especially in power apps. We also had some problems dealing with environment inconsistencies, but we were able to work through them with research and assistance from the team.
 
 ---
 
@@ -341,4 +346,4 @@ All team members confirm that:
 - Aleksandra Wos
 - Raphael Tam-Dao
 - Shehab Wael Abozied Abdelhamed
-- [Date]
+- 27.11.2025
