@@ -1,0 +1,277 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "new_sharedcommondataserviceforapps_5c2de"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "manual": {
+          "metadata": {
+            "operationMetadataId": "5e8ade5b-febd-4fa2-90dc-7a5e5b1134a9"
+          },
+          "type": "Request",
+          "kind": "VirtualAgent",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "title": "EmailInput",
+                  "type": "string",
+                  "x-ms-dynamically-added": true,
+                  "description": "Please enter your input",
+                  "x-ms-content-hint": "TEXT"
+                },
+                "text_1": {
+                  "title": "PasswordInput",
+                  "type": "string",
+                  "x-ms-dynamically-added": true,
+                  "description": "Please enter your input",
+                  "x-ms-content-hint": "TEXT"
+                }
+              },
+              "required": [
+                "text",
+                "text_1"
+              ]
+            }
+          }
+        }
+      },
+      "actions": {
+        "List_rows": {
+          "runAfter": {
+            "Initialize_variable": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "bf9aaa58-aef7-4359-870f-aa13260920a4"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "ListRecords",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "cre96_person2s",
+              "$filter": "cre96_email eq '@{triggerBody()['text']}' and cre96_password eq '@{triggerBody()['text_1']}'\n"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Condition": {
+          "actions": {
+            "Compose": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "6489eea7-1633-4ec9-9a30-5af9acfda4c8"
+              },
+              "type": "Compose",
+              "inputs": "@first(body('List_rows')?['value'])?['cre96_role']"
+            },
+            "Success": {
+              "runAfter": {
+                "Switch": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "b2ee059b-777e-4bc9-91ec-481c01426f47"
+              },
+              "type": "Response",
+              "kind": "VirtualAgent",
+              "inputs": {
+                "statusCode": 200,
+                "body": {
+                  "status": "\"Success\"",
+                  "userrole": "@variables('RoleText')"
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "title": "Status",
+                      "x-ms-dynamically-added": true,
+                      "type": "string"
+                    },
+                    "userrole": {
+                      "title": "UserRole",
+                      "x-ms-dynamically-added": true,
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "Switch": {
+              "runAfter": {
+                "Compose": [
+                  "Succeeded"
+                ]
+              },
+              "cases": {
+                "Case": {
+                  "case": 336290000,
+                  "actions": {
+                    "Set_variable": {
+                      "runAfter": {},
+                      "metadata": {
+                        "operationMetadataId": "524cdbc1-db57-4b2e-baa5-583b1a188ae8"
+                      },
+                      "type": "SetVariable",
+                      "inputs": {
+                        "name": "RoleText",
+                        "value": "Student"
+                      }
+                    }
+                  }
+                },
+                "Case_2": {
+                  "case": 336290001,
+                  "actions": {
+                    "Set_variable_2": {
+                      "runAfter": {},
+                      "metadata": {
+                        "operationMetadataId": "6803567b-ddca-4b2b-b10f-d3e766cea2b9"
+                      },
+                      "type": "SetVariable",
+                      "inputs": {
+                        "name": "RoleText",
+                        "value": "Professor"
+                      }
+                    }
+                  }
+                },
+                "Case_3": {
+                  "case": 336290002,
+                  "actions": {
+                    "Set_variable_3": {
+                      "runAfter": {},
+                      "metadata": {
+                        "operationMetadataId": "77f5b1f3-6232-448d-8ebc-3bffa02e65a1"
+                      },
+                      "type": "SetVariable",
+                      "inputs": {
+                        "name": "RoleText",
+                        "value": "Staff"
+                      }
+                    }
+                  }
+                }
+              },
+              "default": {
+                "actions": {
+                  "Set_variable_4": {
+                    "runAfter": {},
+                    "metadata": {
+                      "operationMetadataId": "935dab07-b30e-459e-9fdc-c9a617a80106"
+                    },
+                    "type": "SetVariable",
+                    "inputs": {
+                      "name": "RoleText",
+                      "value": "NoRole"
+                    }
+                  }
+                }
+              },
+              "expression": "@outputs('Compose')",
+              "metadata": {
+                "operationMetadataId": "f3166824-a4e2-44df-8420-f8f8e74954f3"
+              },
+              "type": "Switch"
+            }
+          },
+          "runAfter": {
+            "List_rows": [
+              "Succeeded"
+            ]
+          },
+          "else": {
+            "actions": {
+              "Failure": {
+                "runAfter": {},
+                "metadata": {
+                  "operationMetadataId": "69389b16-5e31-4db7-a607-1d325d263890"
+                },
+                "type": "Response",
+                "kind": "VirtualAgent",
+                "inputs": {
+                  "statusCode": 200,
+                  "body": {
+                    "status": "\"Failure\"",
+                    "userrole": "\"NoRole\""
+                  },
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "status": {
+                        "title": "Status",
+                        "x-ms-dynamically-added": true,
+                        "type": "string"
+                      },
+                      "userrole": {
+                        "title": "UserRole",
+                        "x-ms-dynamically-added": true,
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "expression": {
+            "greater": [
+              "@length(outputs('List_rows')?['body/value'])",
+              0
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "3f157039-8583-4f66-8623-7f9a577318d8"
+          },
+          "type": "If"
+        },
+        "Initialize_variable": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "a87cbb8e-3bf2-40c0-ac7e-90095b3ea39f"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "RoleText",
+                "type": "string"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "templateName": ""
+  },
+  "schemaVersion": "1.0.0.0"
+}

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{7c32cd29-1921-40ba-b925-15bb9ba65a7f}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="cre96_personname" select="1" icon="1" preview="1">
+        <row name="result" id="cre96_person2id">
+          <cell name="cre96_personname" width="300" />
+          <cell name="cre96_email" width="150" />
+          <cell name="cre96_role" width="150" />
+          <cell name="cre96_loggedin" width="150" />
+          <cell name="cre96_password" width="150" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="cre96_person2">
+          <attribute name="cre96_person2id" />
+          <attribute name="cre96_personname" />
+          <attribute name="createdon" />
+          <order attribute="cre96_personname" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="cre96_email" />
+          <attribute name="cre96_role" />
+          <attribute name="cre96_loggedin" />
+          <attribute name="cre96_password" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active People" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{25a1ebcc-bb7a-4e74-ae1c-078e55ec5d40}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="cre96_enrollmentid2" select="1" icon="1" preview="1">
+        <row name="result" id="cre96_enrollmentid">
+          <cell name="cre96_enrollmentid2" width="300" />
+          <cell name="cre96_course2" width="150" />
+          <cell name="cre96_person2" width="150" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="cre96_enrollment">
+          <attribute name="cre96_enrollmentid" />
+          <attribute name="cre96_enrollmentid2" />
+          <attribute name="createdon" />
+          <order attribute="cre96_enrollmentid2" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="cre96_course2" />
+          <attribute name="cre96_person2" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active Enrollments" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

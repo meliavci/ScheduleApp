@@ -1,0 +1,10 @@
+<botcomponent schemaname="cre96_scheduler.topic.StudentAbsence">
+  <componenttype>9</componenttype>
+  <iscustomizable>0</iscustomizable>
+  <name>StudentAbsence</name>
+  <parentbotid>
+    <schemaname>cre96_scheduler</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

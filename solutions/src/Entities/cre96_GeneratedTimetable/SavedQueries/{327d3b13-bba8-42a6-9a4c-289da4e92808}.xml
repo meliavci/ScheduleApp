@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{327d3b13-bba8-42a6-9a4c-289da4e92808}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="cre96_course_person_id" select="1" icon="1" preview="1">
+        <row name="result" id="cre96_generatedtimetableid">
+          <cell name="cre96_course_person_id" width="300" />
+          <cell name="cre96_person2" width="150" />
+          <cell name="cre96_course2" width="150" />
+          <cell name="cre96_room2" width="150" />
+          <cell name="cre96_day" width="150" />
+          <cell name="cre96_starttime" width="150" />
+          <cell name="cre96_endtime" width="150" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="cre96_generatedtimetable">
+          <attribute name="cre96_generatedtimetableid" />
+          <attribute name="cre96_course_person_id" />
+          <attribute name="createdon" />
+          <order attribute="cre96_course_person_id" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="cre96_person2" />
+          <attribute name="cre96_course2" />
+          <attribute name="cre96_room2" />
+          <attribute name="cre96_day" />
+          <attribute name="cre96_starttime" />
+          <attribute name="cre96_endtime" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active GeneratedTimetables" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>
