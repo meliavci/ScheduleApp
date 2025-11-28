@@ -21,7 +21,8 @@ jobs:
       - name: Install Fonts & Dependencies
         run: |
           apk update
-          apk add --no-cache font-noto font-noto-emoji ttf-dejavu
+          apk add --no-cache font-noto font-noto-emoji ttf-dejavu fontconfig
+          fc-cache -f -v
 
       - name: Sanity checks
         run: |
@@ -46,7 +47,7 @@ jobs:
           echo '\newcounter{none}' >> pandoc-patch.tex
           echo '\renewcommand{\arraystretch}{1.3}' >> pandoc-patch.tex
           echo '\usepackage{fontspec}' >> pandoc-patch.tex
-          echo '\newfontfamily\emojifont{Noto Color Emoji}[Renderer=HarfBuzz]' >> pandoc-patch.tex
+          echo '\newfontfamily\emojifont{NotoColorEmoji.ttf}[Path=/usr/share/fonts/noto/,Renderer=HarfBuzz]' >> pandoc-patch.tex
           echo '\DeclareTextFontCommand{\emoji}{\emojifont}' >> pandoc-patch.tex
           echo '% --- PANDOC PATCH END ---' >> pandoc-patch.tex
 
