@@ -191,7 +191,7 @@ A "Role" gateway routes the user to their specific swimlane, defining what actio
 
 ---
 
-# AI Collaboration
+## AI Collaboration
 
 #### Prompt Log
 
