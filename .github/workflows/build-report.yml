@@ -22,7 +22,8 @@ jobs:
         run: |
           cat <<EOF > header.tex
           \usepackage[T1]{fontenc}
-          \usepackage[sfdefault]{roboto}
+          \usepackage{helvet}
+          \renewcommand{\familydefault}{\sfdefault}
           \usepackage{xcolor}
           \usepackage{scrlayer-scrpage}
           \clearpairofpagestyles
