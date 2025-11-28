@@ -55,7 +55,7 @@ Our proposed solution integrates features from three distinct types of informati
 *   **Management Information System (MIS):** The system summarizes data to help stakeholders monitor operations. It provides schedulers and administrators with structured overviews of room utilization rates, course density, and professor availability, ensuring that operations stay on track.
 *   **Decision Support System (DSS):** This is the optimization engine. The system uses an algorithm to analyze variables and suggest the best possible timetable slots to minimize conflicts. It supports the schedulers in making complex decisions about resource allocation.
 
-## DIKW Framework
+### DIKW Framework
 To understand how our system adds value, we apply the Data-Information-Knowledge-Wisdom (DIKW) hierarchy. This framework demonstrates how the system transforms raw, disconnected facts into optimized scheduling decisions that solve the core business problem.
 
 *   **Data (The Raw Inputs):**
@@ -103,7 +103,7 @@ Once they receive the class information, they begin planning the timetables. Som
 
 However, at other universities, the system might not be as efficient. There may be even more manual work if the university does not have the resources for a robust system. For example, timetables might be created in Excel, with no systematic comparison across courses, leading to conflicts between courses, rooms, and even professors.
 
-## TO-BE Description
+### TO-BE Description
 The **TO-BE** process focuses on automation and role-based data handling. The workflow proceeds as follows:
 
 1.  **Data Retrieval:** The system automatically fetches course, student, and room data from the university's central database. No manual entry is required by the scheduler.
@@ -154,6 +154,7 @@ Human factors introduce variability and error into the system.
 The BPMN diagram illustrates the automated **TO-BE** process for the new "ScheduleApp" system. Unlike the manual AS-IS process, this workflow distinguishes clearly between automated system tasks, user interface interactions, and role-specific human actions. The process is divided into five distinct swimlanes: **System**, **Timeschedule System (User Interface)**, **Professor**, **Student**, and **Staff**.
 
 ![BPMN Diagram](../assets/BPMNDiagram.png)
+
 *BPMN Diagram illustrating the automated scheduling and user interaction flow.*
 
 **1. System Initialization and Data Retrieval**
