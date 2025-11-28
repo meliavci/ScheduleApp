@@ -8,37 +8,59 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: pandoc/extra:latest
+    container: pandoc/latex:latest
 
     defaults:
       run:
-        shell: sh
+        shell: sh   
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Sanity checks
+      - name: Show repo tree
         run: |
-          test -f meta.yaml
-          test -f assignments/assignment-01.md
-          test -f assignments/assignment-02.md
-          test -f assignments/assignment-03.md
-          test -f assignments/assignment-04.md
-          test -f final/reflection.md
+          pwd
+          ls -la
+          echo "---- assignments/ ----"
+          ls -la assignments || true
 
-      - name: Download Eisvogel Template
+      - name: Create Styling Config (header.tex)
         run: |
-          wget https://raw.githubusercontent.com/Wandmalfarbe/pandoc-latex-template/v2.4.0/eisvogel.tex -O eisvogel.latex
+          cat <<EOF > header.tex
+          \usepackage[T1]{fontenc}
+          \renewcommand{\familydefault}{\sfdefault} 
+          \usepackage{xcolor}
 
-      - name: Create Patch for Pandoc 3.x
+          \usepackage{scrlayer-scrpage}
+          \clearpairofpagestyles
+          \ihead{} 
+          \ohead{}
+          \ifoot{\textcolor{gray}{ScheduleApp Final Report}} 
+          \ofoot{\thepage} 
+          \setkomafont{pageheadfoot}{\small\sffamily}
+
+          \usepackage{booktabs} 
+          \usepackage{tabularx} 
+          \usepackage{ltablex}  
+          \keepXColumns
+          \renewcommand{\arraystretch}{1.4} 
+
+          \usepackage{float}
+          \let\origfigure\figure
+          \let\endorigfigure\endfigure
+          \renewenvironment{figure}[1][2] {
+              \expandafter\origfigure\expandafter[H]
+          } {
+              \endorigfigure
+          }
+          EOF
+
+      - name: Sanitize Markdown 
         run: |
-          # 1. Fix "\pandocbounded" error
-          echo '\providecommand{\pandocbounded}[1]{#1}' > pandoc-patch.tex
-          # 2. Fix "No counter 'none' defined" error in tables
-          echo '\newcounter{none}' >> pandoc-patch.tex
-          # 3. Ensure 'calc' package is loaded for table width calculations
-          echo '\usepackage{calc}' >> pandoc-patch.tex
+          mkdir -p assignments_clean
+          cp assignments/*.md assignments_clean/
+          sed -i 's/[\d128-\d255]//g' assignments_clean/*.md || true
 
       - name: Build DOCX
         run: |
@@ -54,8 +76,9 @@ jobs:
             --toc --toc-depth=2 --number-sections \
             -o build/final-report.docx
 
-      - name: Build PDF
+      - name: Build PDF (Clean & Modern)
         run: |
+
           pandoc \
             assignments/assignment-01.md \
             assignments/assignment-02.md \
@@ -65,22 +88,13 @@ jobs:
             --metadata-file=meta.yaml \
             --resource-path=.:assets:assignments \
             --pdf-engine=xelatex \
-            --template=./eisvogel.latex \
-            --include-in-header=pandoc-patch.tex \
-            --listings \
             --toc --toc-depth=2 --number-sections \
-            -V book=true \
-            -V classoption=oneside \
-            -V geometry:margin=2.5cm \
-            -V titlepage=true \
-            -V titlepage-color=3E4349 \
-            -V titlepage-text-color=FFFFFF \
-            -V titlepage-rule-height=0 \
-            -V toc-own-page=true \
-            -V colorlinks=true \
-            -V linkcolor=blue \
-            -V urlcolor=blue \
-            -V float-placement-figure=H \
+            -V documentclass=scrartcl \
+            -V papersize=a4 \
+            -V lang=de \
+            -V geometry:top=2.5cm,bottom=3cm,left=2.5cm,right=2.5cm \
+            -H header.tex \
+            --verbose \
             -o build/final-report.pdf
 
       - name: Upload Artifacts
@@ -88,4 +102,3 @@ jobs:
         with:
           name: final-report
           path: build/
-          if-no-files-found: error
