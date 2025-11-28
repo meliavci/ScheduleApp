@@ -25,6 +25,8 @@ jobs:
           \usepackage{helvet}
           \renewcommand{\familydefault}{\sfdefault}
           \usepackage{xcolor}
+          
+          % --- Header & Footer ---
           \usepackage{scrlayer-scrpage}
           \clearpairofpagestyles
           \ihead{} 
@@ -32,11 +34,14 @@ jobs:
           \ifoot{\textcolor{gray}{ScheduleApp Final Report}}
           \ofoot{\thepage}
           \setkomafont{pageheadfoot}{\small\sffamily}
+          
+          % --- Tabellen Styling (Standard Longtable) ---
           \usepackage{booktabs}
-          \usepackage{tabularx}
-          \usepackage{ltablex}
-          \keepXColumns
-          \renewcommand{\arraystretch}{1.4}
+          \usepackage{longtable}
+          \usepackage{array}
+          \renewcommand{\arraystretch}{1.4} % Zeilenabstand für Lesbarkeit
+          
+          % --- Bilder Fix ---
           \usepackage{float}
           \let\origfigure\figure
           \let\endorigfigure\endfigure
