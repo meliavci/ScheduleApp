@@ -1,6 +1,6 @@
 # Assignment 2 – From BPMN to Power Apps Prototype
 
-## 1. Introduction
+## Introduction
 This section outlines the translation of the business process modeled in Assignment 1 into a functional Low-Code prototype. The scope of this prototype focuses specifically on the **Timeschedule System** swimlane illustrated in the BPMN diagram.
 
 The core process steps included in this MVP (Minimum Viable Product) are:
@@ -17,7 +17,7 @@ The prototype implements the frontend interface for Students and Professors. It 
 *   **Aleksandra:** UI creation in Power Apps (Notification)
 *   **Shehab:** UI creation in Power Apps (Profile)
 
-## 2. Mapping BPMN → Features & Data
+## Mapping BPMN → Features & Data
 **Requirement Mapping Table**
 To bridge the gap between our process model and the application, we mapped specific BPMN requirements to tangible app features and data entities.
 
@@ -37,7 +37,7 @@ To bridge the gap between our process model and the application, we mapped speci
 #### Explanation ####
 Each task from our BPMN diagram was converted into a feature representable in Power Apps. User actions, such as logging in or choosing an action, were translated into specific screens or buttons. System processes, such as "Retrieve Data," became data connections or background data sources. Notification tasks were modeled as visual placeholders in the UI, preparing the ground for future Power Automate integration.
 
-## 3. Development Plan (Manual, Inspired by Copilot Designer)
+## Development Plan (Manual, Inspired by Copilot Designer)
 We utilized the Copilot Designer to generate an initial development plan, which we then refined manually to fit our specific constraints. The full AI-generated plan is available in the project assets folder.
 
 ### Scope
@@ -78,7 +78,7 @@ The following list indicates the status of key deliverables for this assignment.
 - [ ] Connecting the data to the whole application in every component so it matches the logged in user
 - [ ] Use of algorithm as a staff member
 
-## 4. Data Model
+## Data Model
 We designed a relational data model in Microsoft Dataverse to support the application. Below is the structure of our entities and the Entity-Relationship (ER) diagram.
 
 ### Entity-Relationship Diagram
@@ -130,7 +130,7 @@ The following table details the specific columns created in Dataverse for this s
 
 *Openinghours table in Dataverse*
 
-## 5. App Prototype
+## App Prototype
 The prototype consists of three main screens designed for clarity and ease of use.
 
 ### Screens Implemented
@@ -188,7 +188,7 @@ During development, we encountered specific limitations in the low-code environm
     *   *Reason:* This is a set limitation from microsoft.
     *   *Solution:* We adjusted the relationship behavior by recreating all of the excisting and new tables in a new take, so it was open for us to chose each relationship.
 
-## 6. Reflection & Lessons Learned
+## Reflection & Lessons Learned
 
 ### What Worked Well
 *   **BPMN as a Blueprint:** Translating the BPMN tasks directly into application features provided a definitive design direction. For example, the BPMN task "Log in" became a specific screen, and "Retrieve Data" became our Dataverse connection strategy. This ensured we didn't build unnecessary features (scope creep).
