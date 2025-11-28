@@ -8,44 +8,34 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: pandoc/latex:latest
+    container: pandoc/extra:latest
 
     defaults:
       run:
-        shell: sh   
+        shell: sh
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Show repo tree
-        run: |
-          pwd
-          ls -la
-          echo "---- assignments/ ----"
-          ls -la assignments || true
-
-      - name: Create Styling Config (header.tex)
+      - name: Create Styling Config
         run: |
           cat <<EOF > header.tex
           \usepackage[T1]{fontenc}
-          \renewcommand{\familydefault}{\sfdefault} 
+          \usepackage[sfdefault]{roboto}
           \usepackage{xcolor}
-
           \usepackage{scrlayer-scrpage}
           \clearpairofpagestyles
           \ihead{} 
           \ohead{}
-          \ifoot{\textcolor{gray}{ScheduleApp Final Report}} 
-          \ofoot{\thepage} 
+          \ifoot{\textcolor{gray}{ScheduleApp Final Report}}
+          \ofoot{\thepage}
           \setkomafont{pageheadfoot}{\small\sffamily}
-
-          \usepackage{booktabs} 
-          \usepackage{tabularx} 
-          \usepackage{ltablex}  
+          \usepackage{booktabs}
+          \usepackage{tabularx}
+          \usepackage{ltablex}
           \keepXColumns
-          \renewcommand{\arraystretch}{1.4} 
-
+          \renewcommand{\arraystretch}{1.4}
           \usepackage{float}
           \let\origfigure\figure
           \let\endorigfigure\endfigure
@@ -54,9 +44,10 @@ jobs:
           } {
               \endorigfigure
           }
+          \usepackage[labelfont=bf, textfont={it}, font=small]{caption}
           EOF
 
-      - name: Sanitize Markdown 
+      - name: Sanitize Markdown
         run: |
           mkdir -p assignments_clean
           cp assignments/*.md assignments_clean/
@@ -76,14 +67,13 @@ jobs:
             --toc --toc-depth=2 --number-sections \
             -o build/final-report.docx
 
-      - name: Build PDF (Clean & Modern)
+      - name: Build PDF
         run: |
-
           pandoc \
-            assignments/assignment-01.md \
-            assignments/assignment-02.md \
-            assignments/assignment-03.md \
-            assignments/assignment-04.md \
+            assignments_clean/assignment-01.md \
+            assignments_clean/assignment-02.md \
+            assignments_clean/assignment-03.md \
+            assignments_clean/assignment-04.md \
             final/reflection.md \
             --metadata-file=meta.yaml \
             --resource-path=.:assets:assignments \
