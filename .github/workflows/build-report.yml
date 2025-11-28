@@ -8,50 +8,35 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: pandoc/extra:latest
+    container: pandoc/latex:latest
 
     defaults:
       run:
-        shell: sh
+        shell: sh   # <- use sh inside the container
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Create Styling Config
+      - name: Show repo tree
         run: |
-          cat <<EOF > header.tex
-          \usepackage[T1]{fontenc}
-          \usepackage{lmodern}
-          \renewcommand{\familydefault}{\sfdefault}
-          \usepackage{xcolor}
-          \usepackage{scrlayer-scrpage}
-          \clearpairofpagestyles
-          \ihead{} 
-          \ohead{}
-          \ifoot{\textcolor{gray}{ScheduleApp Final Report}}
-          \ofoot{\thepage}
-          \setkomafont{pageheadfoot}{\small\sffamily}
-          \usepackage{booktabs}
-          \usepackage{longtable}
-          \usepackage{array}
-          \renewcommand{\arraystretch}{1.4}
-          \usepackage{float}
-          \let\origfigure\figure
-          \let\endorigfigure\endfigure
-          \renewenvironment{figure}[1][2] {
-              \expandafter\origfigure\expandafter[H]
-          } {
-              \endorigfigure
-          }
-          \usepackage[labelfont=bf, textfont={it}, font=small]{caption}
-          EOF
+          pwd
+          ls -la
+          echo "---- assignments/ ----"
+          ls -la assignments || true
+          echo "---- final/ ----"
+          ls -la final || true
+          echo "---- assets/ ----"
+          ls -la assets || true
 
-      - name: Sanitize Markdown
+      - name: Sanity checks (fail early if files missing)
         run: |
-          mkdir -p assignments_clean
-          cp assignments/*.md assignments_clean/
-          sed -i 's/[\d128-\d255]//g' assignments_clean/*.md || true
+          test -f meta.yaml
+          test -f assignments/assignment-01.md
+          test -f assignments/assignment-02.md
+          test -f assignments/assignment-03.md
+          test -f assignments/assignment-04.md
+          test -f final/reflection.md
 
       - name: Build DOCX
         run: |
@@ -67,23 +52,25 @@ jobs:
             --toc --toc-depth=2 --number-sections \
             -o build/final-report.docx
 
-      - name: Build PDF
+      - name: PDF smoke test (Hello, LaTeX)
+        run: |
+          printf "# Hello\nThis is a minimal PDF smoke test.\n" > /tmp/minimal.md
+          pandoc /tmp/minimal.md -o /tmp/minimal.pdf --pdf-engine=xelatex
+          ls -la /tmp/minimal.pdf
+
+      - name: Build PDF (verbose)
         run: |
           pandoc \
-            assignments_clean/assignment-01.md \
-            assignments_clean/assignment-02.md \
-            assignments_clean/assignment-03.md \
-            assignments_clean/assignment-04.md \
+            assignments/assignment-01.md \
+            assignments/assignment-02.md \
+            assignments/assignment-03.md \
+            assignments/assignment-04.md \
             final/reflection.md \
             --metadata-file=meta.yaml \
             --resource-path=.:assets:assignments \
             --pdf-engine=xelatex \
             --toc --toc-depth=2 --number-sections \
-            -V documentclass=scrartcl \
-            -V papersize=a4 \
-            -V lang=en \
-            -V geometry:top=2.5cm,bottom=3cm,left=2.5cm,right=2.5cm \
-            -H header.tex \
+            -V geometry:margin=1in \
             --verbose \
             -o build/final-report.pdf
 
@@ -92,3 +79,4 @@ jobs:
         with:
           name: final-report
           path: build/
+          if-no-files-found: error
