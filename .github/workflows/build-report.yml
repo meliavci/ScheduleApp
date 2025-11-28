@@ -21,7 +21,7 @@ jobs:
       - name: Install Dependencies
         run: |
           apk update
-          apk add --no-cache fontconfig ttf-dejavu
+          apk add --no-cache ttf-dejavu
 
       - name: Sanity checks
         run: |
@@ -32,10 +32,9 @@ jobs:
           test -f assignments/assignment-04.md
           test -f final/reflection.md
 
-      - name: Download Resources (Template & Fonts)
+      - name: Download Eisvogel Template
         run: |
           wget https://raw.githubusercontent.com/Wandmalfarbe/pandoc-latex-template/v2.4.0/eisvogel.tex -O eisvogel.latex
-          wget https://github.com/googlefonts/noto-emoji/raw/main/fonts/NotoColorEmoji.ttf -O NotoColorEmoji.ttf
 
       - name: Create Custom Patch
         run: |
@@ -46,12 +45,6 @@ jobs:
           echo '\usepackage{longtable}' >> pandoc-patch.tex
           echo '\newcounter{none}' >> pandoc-patch.tex
           echo '\renewcommand{\arraystretch}{1.3}' >> pandoc-patch.tex
-          
-          # EMOJI SETUP
-          echo '\usepackage{fontspec}' >> pandoc-patch.tex
-          echo '\newfontfamily\emojifont{NotoColorEmoji.ttf}[Path=./,Renderer=HarfBuzz]' >> pandoc-patch.tex
-          echo '\DeclareTextFontCommand{\emoji}{\emojifont}' >> pandoc-patch.tex
-          
           echo '% --- PANDOC PATCH END ---' >> pandoc-patch.tex
 
       - name: Build DOCX
