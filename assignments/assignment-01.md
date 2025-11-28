@@ -207,42 +207,42 @@ A "Role" gateway routes the user to their specific swimlane, defining what actio
 
 1.  **Output:** Here’s a list of business or organizational settings where a Business Information System (BIS) / data-oriented app could significantly improve workflows or processes:
 
-    *   **📂 Document & Information Management**
+    *   **Document & Information Management**
         *   Legal firms → Case file management, legal document versioning, compliance tracking.
         *   Research institutions → Centralized research data hub for collaboration, experiment tracking, and versioned datasets.
         *   Publishing companies → Manuscript submission and review workflows.
 
-    *   **🏗️ Operations & Logistics**
+    *   **Operations & Logistics**
         *   Construction companies → Construction project document hub (your example), equipment scheduling, and safety inspection reporting.
         *   Logistics & transportation → Fleet tracking, route optimization, cargo documentation.
         *   Warehousing → Inventory tracking, restocking workflows, real-time demand dashboards.
 
-    *   **🏥 Healthcare & Social Services**
+    *   **Healthcare & Social Services**
         *   Hospitals/clinics → Patient record case management, staff scheduling, treatment tracking.
         *   Public health departments → Vaccination campaign registration and monitoring.
         *   Non-profits/NGOs → Case tracking for aid distribution, donor data management.
 
-    *   **🎓 Education & Campus Life**
+    *   **Education & Campus Life**
         *   Universities → Student event registration (your example), course registration optimization, exam room scheduling.
         *   Training organizations → Learning management system for certification and skills tracking.
         *   Research labs → Lab equipment booking, experiment logs, safety protocol tracking.
 
-    *   **🏢 Corporate/HR**
+    *   **Corporate/HR**
         *   Human resources → Employee onboarding, leave requests, performance reviews.
         *   Recruitment agencies → Candidate pipeline management, interview scheduling.
         *   Consulting firms → Project resource allocation and deliverable tracking.
 
-    *   **🏬 Customer-Facing Services**
+    *   **Customer-Facing Services**
         *   Hospitality → Hotel facility maintenance (your example), guest request tracking, room service workflows.
         *   Retail → Returns/exchange management, loyalty program data tracking, supply chain analytics.
         *   Event management companies → Ticketing, vendor coordination, volunteer scheduling.
 
-    *   **⚙️ Government & Public Sector**
+    *   **Government & Public Sector**
         *   Municipal services → Permit applications, building inspections, citizen issue reporting (e.g., potholes, broken streetlights).
         *   Courts → Case assignment, evidence tracking, scheduling of hearings.
         *   Libraries/archives → Digital cataloguing, lending management, research requests.
 
-    *   **👉 A useful heuristic:**
+    *   **A useful heuristic:**
         *   A BIS is especially powerful where there are repetitive, data-heavy processes with multiple stakeholders (documents, approvals, scheduling, compliance, case tracking).
 
     *   **Internal Business Operations**
@@ -251,49 +251,49 @@ A "Role" gateway routes the user to their specific swimlane, defining what actio
         *   IT departments → Asset inventory, incident/ticketing system, license renewals.
         *   R&D divisions → Idea submission and evaluation pipeline, patent documentation management.
 
-    *   **🏥 Healthcare & Wellness**
+    *   **Healthcare & Wellness**
         *   Mental health clinics → Client intake forms, therapy progress tracking, case notes.
         *   Pharmacies → Prescription management, drug stock tracking, regulatory compliance reporting.
         *   Fitness centers → Member management, trainer schedules, class registration, performance data.
 
-    *   **🎓 Education & Training**
+    *   **Education & Training**
         *   K-12 schools → Parent-teacher meeting scheduler, student attendance/behavior dashboard.
         *   Universities → Thesis submission and review workflows, lab equipment booking system.
         *   Corporate training → Certification progress tracker, mandatory compliance training hub.
 
-    *   **🏗️ Field Services & Maintenance**
+    *   **Field Services & Maintenance**
         *   Utilities companies → Maintenance scheduling (pipes, power lines, meters), outage tracking.
         *   Real estate/property managers → Tenant request system, rent collection dashboards, maintenance logs.
         *   Cleaning/janitorial services → Task assignment, inspection reports, supply inventory.
 
-    *   **🚚 Logistics & Supply Chain**
+    *   **Logistics & Supply Chain**
         *   Import/export companies → Customs document tracking, shipment compliance.
         *   Food distributors → Expiry date tracking, supplier audits, delivery routing.
         *   E-commerce fulfillment → Order processing workflow, returns/exchange hub.
 
-    *   **🎭 Events & Community**
+    *   **Events & Community**
         *   Conference organizers → Attendee registration, session scheduling, speaker submissions.
         *   Sports clubs → Player availability, training attendance, match statistics tracking.
         *   Non-profits/volunteer groups → Volunteer shift management, donation/event tracking.
 
-    *   **⚖️ Government & Civic Services**
+    *   **Government & Civic Services**
         *   Police departments → Case management, evidence chain-of-custody, officer scheduling.
         *   City planning offices → Zoning application workflows, land use data management.
         *   Public libraries → Special event registrations, rare book/archive lending requests.
 
-    *   **🌱 Specialized & Niche**
+    *   **Specialized & Niche**
         *   Museums → Collection inventory, loan/borrowing agreements, exhibit scheduling.
         *   Farms/agriculture → Crop yield tracking, equipment usage logs, pesticide application records.
         *   Labs/biotech → Sample tracking, experiment workflow automation, compliance logs.
         *   Environmental NGOs → Wildlife sightings data collection, conservation project tracking.
 
-    *   **👉 The common thread:**
+    *   **The common thread:**
         *   Anywhere with recurring requests, approvals, scheduling, or regulated documentation → a BIS can replace messy spreadsheets and email threads.
         *   *Would you like me to turn this into a master list of 30–40 BIS app scenarios, each with: Core process (what it improves), Key entities/data (what’s stored), Workflow example (how it runs)? That way, you’d have a catalog of use cases ready for inspiration or project pitching.*
 
-2.  **Output:** Yes 👌 You’re already hitting the core pain points. If I put myself in the shoes of a university scheduler, I’d add a few more problems that usually come up:
+2.  **Output:** Yes You’re already hitting the core pain points. If I put myself in the shoes of a university scheduler, I’d add a few more problems that usually come up:
 
-    *   **✅ Additional Problems**
+    *   **Additional Problems**
         *   **Room availability & capacity limits** → Sometimes two classes are scheduled in the same room, or a room is too small for the enrolled students.
         *   **Professor availability** → Professors may be double-booked, or schedules ignore their teaching preferences/office hours.
         *   **Last-minute changes** → When a professor cancels, a room becomes unavailable, or a course is added late, it’s hard to update the schedule without causing ripple effects.
@@ -303,7 +303,7 @@ A "Role" gateway routes the user to their specific swimlane, defining what actio
         *   **Communication delays** → Even when the schedule is finalized, updates may not reach students and professors quickly (leading to confusion).
         *   **Resource allocation** → Some courses need special equipment (labs, projectors), and those rooms may not be managed efficiently.
 
-    > **👉 So, in short:** it’s not just about clashes — it’s also about resources, fairness, last-minute changes, and communication.
+    > **So, in short:** it’s not just about clashes — it’s also about resources, fairness, last-minute changes, and communication.
 
 3.  **Output:** If I were the most inefficient university time scheduler, my “tools” and methods would be the exact opposite of what good scheduling software or practices use. Here’s what would make me terrible at it:
 
