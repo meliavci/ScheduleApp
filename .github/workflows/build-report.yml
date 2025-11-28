@@ -18,11 +18,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install Dependencies
-        run: |
-          apk update
-          apk add --no-cache ttf-dejavu
-
       - name: Sanity checks
         run: |
           test -f meta.yaml
@@ -36,16 +31,13 @@ jobs:
         run: |
           wget https://raw.githubusercontent.com/Wandmalfarbe/pandoc-latex-template/v2.4.0/eisvogel.tex -O eisvogel.latex
 
-      - name: Create Custom Patch
+      - name: Create Patch for Pandoc 3.x
         run: |
-          echo '% --- PANDOC PATCH START ---' > pandoc-patch.tex
-          echo '\providecommand{\pandocbounded}[1]{#1}' >> pandoc-patch.tex
-          echo '\usepackage{booktabs}' >> pandoc-patch.tex
-          echo '\usepackage{calc}' >> pandoc-patch.tex
-          echo '\usepackage{longtable}' >> pandoc-patch.tex
+          echo '\providecommand{\pandocbounded}[1]{#1}' > pandoc-patch.tex
           echo '\newcounter{none}' >> pandoc-patch.tex
+          echo '\usepackage{calc}' >> pandoc-patch.tex
+          echo '\usepackage{booktabs}' >> pandoc-patch.tex
           echo '\renewcommand{\arraystretch}{1.3}' >> pandoc-patch.tex
-          echo '% --- PANDOC PATCH END ---' >> pandoc-patch.tex
 
       - name: Build DOCX
         run: |
