@@ -82,7 +82,7 @@ jobs:
             --toc --toc-depth=2 --number-sections \
             -V documentclass=scrartcl \
             -V papersize=a4 \
-            -V lang=de \
+            -V lang=en \
             -V geometry:top=2.5cm,bottom=3cm,left=2.5cm,right=2.5cm \
             -H header.tex \
             --verbose \
