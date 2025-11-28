@@ -31,7 +31,7 @@ jobs:
         run: |
           wget https://raw.githubusercontent.com/Wandmalfarbe/pandoc-latex-template/v2.4.0/eisvogel.tex -O eisvogel.latex
 
-      - name: Create Patch for Pandoc 3.x
+      - name: Create Patch
         run: |
           echo '\providecommand{\pandocbounded}[1]{#1}' > pandoc-patch.tex
           echo '\newcounter{none}' >> pandoc-patch.tex
@@ -80,7 +80,6 @@ jobs:
             -V urlcolor=blue \
             -V float-placement-figure=H \
             -V tables=true \
-            -V disable-header-and-footer=true \
             -V footer-center="\thepage" \
             -o build/final-report.pdf
 
