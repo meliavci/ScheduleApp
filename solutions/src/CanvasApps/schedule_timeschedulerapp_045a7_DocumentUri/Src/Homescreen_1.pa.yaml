@@ -1,0 +1,194 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  Homescreen_1:
+    Properties:
+      Fill: =RGBA(11, 18, 29, 1)
+      LoadingSpinnerColor: =RGBA(100, 118, 132, 1)
+      OnVisible: |+
+        =Set(varStartHour, 6);      
+        Set(varEndHour, 19);       
+
+        Set(varGridTopY, 120);     
+        Set(varGridHeight, (varEndHour - varStartHour) * 70);   
+        Set(varHourHeight, 70); 
+        Set(varDayCount, 5);       
+        Set(varDayWidth, Homescreen_1.Width / varDayCount);
+        Set(varPadding, 0); 
+        Set(varStatusCancelled, false);
+    Children:
+      - BackgroundTimetableScreen_1:
+          Control: HtmlViewer@2.1.0
+          Properties:
+            AutoHeight: =true
+            Font: =Font.'Open Sans'
+            Height: =App.Height
+            HtmlText: |-
+              =
+              $"<div style='width:100%;height:{App.Height}px;background: linear-gradient(180deg,rgba(30, 33, 43, 1) 0%, rgba(27, 49, 75, 1) 100%)'></div>"
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Width: =App.Width
+      - galDayHeaders:
+          Control: Gallery@2.15.0
+          Variant: BrowseLayout_Vertical_OneTextVariant_ver5.0
+          Properties:
+            BorderColor: =RGBA(197, 203, 207, 1)
+            Height: |+
+              =40
+            Items: |-
+              =Table({Day: "Mon"}, {Day: "Tue"}, {Day: "Wed"}, {Day: "Thu"}, {Day: "Fri"})
+            ShowScrollbar: =false
+            TemplateSize: =galDayHeaders.Height
+            Width: =Homescreen_1.Width - galTimeAxis.Width
+            WrapCount: =5
+            X: |+
+              =galTimeAxis.Width + varPadding
+            Y: =40
+          Children:
+            - Title2:
+                Control: Label@2.5.1
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Color: =RGBA(255, 255, 255, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =Parent.TemplateHeight
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =16
+                  Text: =ThisItem.Day
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: |+
+                    =Parent.TemplateWidth
+                  Y: |+
+                    =0
+      - galTimeAxis:
+          Control: Gallery@2.15.0
+          Variant: BrowseLayout_Vertical_OneTextVariant_ver5.0
+          Properties:
+            BorderColor: =RGBA(197, 203, 207, 1)
+            Height: =If(varGridHeight < 100, 980, varGridHeight)
+            Items: "=If(\r\n    IsBlank(varStartHour) || IsBlank(varEndHour), \r\n    // Fallback: Wenn Variablen fehlen, verwenden wir die feste, funktionierende Sequenz\r\n    Sequence(14, 6), \r\n    \r\n    // Korrekte Logik, wenn Variablen gültige Zahlen sind\r\n    Sequence(varEndHour - varStartHour + 1, varStartHour) \r\n)"
+            ShowScrollbar: =false
+            TemplateSize: =70
+            Width: =80
+            Y: =40
+          Children:
+            - Title4:
+                Control: Label@2.5.1
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Color: =RGBA(255, 255, 255, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =40
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =30
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =14
+                  Text: =Text(ThisItem.Value) & ":00"
+                  VerticalAlign: =VerticalAlign.Bottom
+                  Width: =galTimeAxis.Width
+                  Y: =20
+      - galScheduleBlocks:
+          Control: Gallery@2.15.0
+          Variant: BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0
+          Properties:
+            BorderColor: =RGBA(197, 203, 207, 1)
+            Height: =910
+            Items: =colUserCourses
+            TemplateSize: =0
+            Width: |+
+              =Homescreen_1.Width - galTimeAxis.Width - varPadding
+            X: |+
+              =galTimeAxis.Width
+            Y: =75
+          Children:
+            - Rectangle8:
+                Control: Rectangle@2.3.0
+                Properties:
+                  BorderColor: =RGBA(197, 203, 207, 1)
+                  Fill: =RGBA(0, 0, 0, 0)
+                  Height: =DateDiff(ThisItem.'Starting Time', ThisItem.'Ending Time', TimeUnit.Minutes) / 60 * 70
+                  OnSelect: =Select(Parent)
+                  Visible: =ThisItem.IsSelected
+                  Width: =Parent.Width / 5
+                  X: |-
+                    =(
+                        Switch(
+                            Text(ThisItem.Weekday), // NEU: Erzwingt die Umwandlung des Choice-Objekts in Text
+                            "Monday", 0,
+                            "Tuesday", 1,
+                            "Wednesday", 2,
+                            "Thursday", 3,
+                            "Friday", 4,
+                            0
+                        )
+                    ) * (Parent.Width / 5)
+                  Y: =(Hour(ThisItem.'Starting Time') - 6) * 70 + (Minute(ThisItem.'Starting Time') / 60 * 70)
+            - Button2:
+                Control: Classic/Button@2.2.0
+                Properties:
+                  BorderColor: =ColorFade(Self.Fill, -15%)
+                  Color: =RGBA(255, 255, 255, 1)
+                  DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                  DisplayMode: =DisplayMode.View
+                  Fill: =RGBA(100, 118, 132, 1)
+                  Font: =Font.'Lato Hairline'
+                  Height: =DateDiff(ThisItem.'Starting Time', ThisItem.'Ending Time', TimeUnit.Minutes) / 60 * 70
+                  HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                  HoverColor: =RGBA(255, 255, 255, 1)
+                  HoverFill: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+                  PressedBorderColor: =Self.Fill
+                  PressedColor: =Self.Fill
+                  PressedFill: =Self.Color
+                  Size: =8
+                  Text: =
+                  Width: =(Parent.Width / 5) - 30
+                  X: =Rectangle8.X + 15
+                  Y: =Rectangle8.Y
+            - CourseInfo:
+                Control: HtmlViewer@2.1.0
+                Properties:
+                  Color: =RGBA(237, 237, 237, 1)
+                  Font: =Font.Arial
+                  Height: =Button2.Height
+                  HtmlText: "=With(\r\n    {\r\n        // 1. Definiert die Details ohne '<br>' (wir verwenden HTML-Tags)\r\n        varDetails: \r\n            Text(ThisItem.'Starting Time', \"hh:mm\") & \" - \" & Text(ThisItem.'Ending Time', \"hh:mm\") & \"<br>\" &\r\n            ThisItem.Room.'Room Name' & \" | \" & ThisItem.Professor.'Person Name',\r\n\r\n        // 2. Definiert den ungekürzten Kursnamen\r\n        varCourseName: ThisItem.'Course Name'\r\n    },\r\n\r\n    // 3. Ausgabe mit CSS für das Scrollen\r\n    // CSS Style 'overflow-y: auto;' ist der Schlüssel zum Scrollen\r\n    \"<div style='overflow-y: auto; height: 100%; padding: 5px;'>\" & \r\n        \r\n        // Kursname (Fett und größer)\r\n        \"<b>\" & varCourseName & \"</font></b>\" & \r\n        \r\n        // Trennlinie\r\n        \"<hr style='border: 1px solid white; margin: 5px 0;'>\" &\r\n        \r\n        // Details (Normale Schriftgröße, darunter)\r\n        \"<text>\" & varDetails & \"</font>\" &\r\n        \r\n    \"</div>\"\r\n)"
+                  Size: =7
+                  Width: =Button2.Width
+                  X: =Button2.X
+                  Y: =Button2.Y
+            - IconCancelled:
+                Control: Classic/Icon@2.5.0
+                Properties:
+                  BorderColor: =RGBA(197, 203, 207, 1)
+                  Color: =RGBA(16, 16, 69, 1)
+                  Height: '=Button2.Height '
+                  Icon: =Icon.Cancel
+                  OnSelect: =Select(Parent)
+                  Visible: =ThisItem.'Taking place?' = varStatusCancelled
+                  Width: =90
+                  X: =Rectangle8.X + 11
+                  Y: =Rectangle8.Y
+      - timetable navbar_2:
+          Control: CanvasComponent
+          ComponentName: Component2
+          Properties:
+            IsCancelledAlert: =varCancelledCount > 0
+            Y: =496
+            navigateToBot: '=Launch("https://web.powerva.microsoft.com/environments/6484ef4a-54a6-e8b2-81c8-a24f9f8b1849/bots/bba1bea3-41ba-f011-bbd3-6045bda07122/overview") '
+            navigateToProfile: =Navigate(profilescreen)
+            navigatetoSchedule: =Navigate(Homescreen_1)

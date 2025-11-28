@@ -1,0 +1,172 @@
+{
+  "QualifiedValues": [
+    {
+      "Namespace": "People (Forms)",
+      "Kind": "6484ef4a-54a6-e8b2-81c8-a24f9f8b1849_cre96_person2_forms",
+      "Values": {
+        "Information": "6ef5f3a0-e3be-4766-83e2-a1f3e5057a22"
+      }
+    },
+    {
+      "Namespace": "Rooms (Forms)",
+      "Kind": "6484ef4a-54a6-e8b2-81c8-a24f9f8b1849_cre96_room2_forms",
+      "Values": {
+        "Information": "23a73ca4-add3-4ac3-a697-8e4afc73adb9"
+      }
+    },
+    {
+      "Namespace": "Enrollments (Forms)",
+      "Kind": "6484ef4a-54a6-e8b2-81c8-a24f9f8b1849_cre96_enrollment_forms",
+      "Values": {
+        "Information": "884ca56b-a93c-407b-9124-2db1dca6535d"
+      }
+    },
+    {
+      "Namespace": "Courses (Forms)",
+      "Kind": "6484ef4a-54a6-e8b2-81c8-a24f9f8b1849_cre96_course2_forms",
+      "Values": {
+        "Information": "1f42d5a1-956a-46c3-84d9-cf913fcec764"
+      }
+    },
+    {
+      "Namespace": "OpeningHours (Forms)",
+      "Kind": "6484ef4a-54a6-e8b2-81c8-a24f9f8b1849_cre96_openinghour2_forms",
+      "Values": {
+        "Information": "7206cd2b-1714-45ca-85f0-c5a24f2ed7e9"
+      }
+    },
+    {
+      "Namespace": "Break Times (Forms)",
+      "Kind": "6484ef4a-54a6-e8b2-81c8-a24f9f8b1849_cre96_breaktime2_forms",
+      "Values": {
+        "Information": "5ad94b40-8092-4ec0-b47d-f6187a5ab88d"
+      }
+    },
+    {
+      "Namespace": "Timetables (Forms)",
+      "Kind": "default.cds_cre96_timetable_forms",
+      "Values": {
+        "Information": "fee605a9-36ff-4fc8-84e1-fd374fa1a85b"
+      }
+    },
+    {
+      "Namespace": "Courses_1 (Forms)",
+      "Kind": "default.cds_cre96_course2_forms",
+      "Values": {
+        "Information": "1f42d5a1-956a-46c3-84d9-cf913fcec764"
+      }
+    },
+    {
+      "Namespace": "People (Skjemaer)",
+      "Kind": "6484ef4a-54a6-e8b2-81c8-a24f9f8b1849_cre96_person2_forms",
+      "Values": {
+        "Information": "6ef5f3a0-e3be-4766-83e2-a1f3e5057a22"
+      }
+    },
+    {
+      "Namespace": "OpeningHours (Skjemaer)",
+      "Kind": "6484ef4a-54a6-e8b2-81c8-a24f9f8b1849_cre96_openinghour2_forms",
+      "Values": {
+        "Information": "7206cd2b-1714-45ca-85f0-c5a24f2ed7e9"
+      }
+    },
+    {
+      "Namespace": "Rooms (Skjemaer)",
+      "Kind": "6484ef4a-54a6-e8b2-81c8-a24f9f8b1849_cre96_room2_forms",
+      "Values": {
+        "Information": "23a73ca4-add3-4ac3-a697-8e4afc73adb9"
+      }
+    },
+    {
+      "Namespace": "Enrollments (Skjemaer)",
+      "Kind": "6484ef4a-54a6-e8b2-81c8-a24f9f8b1849_cre96_enrollment_forms",
+      "Values": {
+        "Information": "884ca56b-a93c-407b-9124-2db1dca6535d"
+      }
+    },
+    {
+      "Namespace": "Break Times (Skjemaer)",
+      "Kind": "6484ef4a-54a6-e8b2-81c8-a24f9f8b1849_cre96_breaktime2_forms",
+      "Values": {
+        "Information": "5ad94b40-8092-4ec0-b47d-f6187a5ab88d"
+      }
+    },
+    {
+      "Namespace": "Courses (Skjemaer)",
+      "Kind": "6484ef4a-54a6-e8b2-81c8-a24f9f8b1849_cre96_course2_forms",
+      "Values": {
+        "Information": "1f42d5a1-956a-46c3-84d9-cf913fcec764"
+      }
+    },
+    {
+      "Namespace": "Rooms (Forms)1",
+      "Kind": "6484ef4a-54a6-e8b2-81c8-a24f9f8b1849_cre96_room_forms",
+      "Values": {
+        "Information": "6c836e87-310f-4c81-91a2-dff558236340"
+      }
+    },
+    {
+      "Namespace": "BreakTimes (Forms)",
+      "Kind": "6484ef4a-54a6-e8b2-81c8-a24f9f8b1849_cre96_breaktime_forms",
+      "Values": {
+        "Information": "93227a3b-a325-4a9f-aa35-ff0782240839"
+      }
+    },
+    {
+      "Namespace": "Persons (Forms)",
+      "Kind": "6484ef4a-54a6-e8b2-81c8-a24f9f8b1849_cre96_person_forms",
+      "Values": {
+        "Information": "f9325b48-5efc-4bfa-a5b6-fe7077bcd4ad"
+      }
+    },
+    {
+      "Namespace": "Courses (Forms)1",
+      "Kind": "6484ef4a-54a6-e8b2-81c8-a24f9f8b1849_cre96_course_forms",
+      "Values": {
+        "Information": "0fcf838b-83c9-4120-944b-ea83ab680f53"
+      }
+    },
+    {
+      "Namespace": "Schedules (Forms)",
+      "Kind": "6484ef4a-54a6-e8b2-81c8-a24f9f8b1849_cre96_schedule_forms",
+      "Values": {
+        "Information": "a896cf48-5164-4d04-b00b-e384247cb30a"
+      }
+    },
+    {
+      "Namespace": "OpeningHours (Forms)1",
+      "Kind": "6484ef4a-54a6-e8b2-81c8-a24f9f8b1849_cre96_openinghour_forms",
+      "Values": {
+        "Information": "fb3001bc-53a7-4e54-a776-f070a9737a9c"
+      }
+    },
+    {
+      "Namespace": "Notifications (Forms)",
+      "Kind": "6484ef4a-54a6-e8b2-81c8-a24f9f8b1849_cre96_notification_forms",
+      "Values": {
+        "Information": "0fdcbfc1-3a94-477f-976f-dadcb9570567"
+      }
+    },
+    {
+      "Namespace": "Courses (Forms)11",
+      "Kind": "6484ef4a-54a6-e8b2-81c8-a24f9f8b1849_cre96_course2_forms",
+      "Values": {
+        "Information": "1f42d5a1-956a-46c3-84d9-cf913fcec764"
+      }
+    },
+    {
+      "Namespace": "Rooms (Forms)11",
+      "Kind": "6484ef4a-54a6-e8b2-81c8-a24f9f8b1849_cre96_room2_forms",
+      "Values": {
+        "Information": "23a73ca4-add3-4ac3-a697-8e4afc73adb9"
+      }
+    },
+    {
+      "Namespace": "OpeningHours (Forms)11",
+      "Kind": "6484ef4a-54a6-e8b2-81c8-a24f9f8b1849_cre96_openinghour2_forms",
+      "Values": {
+        "Information": "7206cd2b-1714-45ca-85f0-c5a24f2ed7e9"
+      }
+    }
+  ]
+}

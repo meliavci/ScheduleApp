@@ -1,0 +1,204 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+ComponentDefinitions:
+  Component2:
+    DefinitionType: CanvasComponent
+    CustomProperties:
+      IsCancelledAlert:
+        PropertyKind: Input
+        DisplayName: IsCancelledAlert
+        Description: A custom property
+        DataType: Boolean
+        Default: =true
+      navigateToBot:
+        PropertyKind: Event
+        DisplayName: navigateToBot
+        Description: A custom property
+        ReturnType: Boolean
+        Default: =true
+      navigateToProfile:
+        PropertyKind: Event
+        DisplayName: navigateToProfile
+        Description: En egendefinert egenskap
+        ReturnType: Boolean
+        Default: =true
+      navigatetoSchedule:
+        PropertyKind: Event
+        DisplayName: navigatetoSchedule
+        Description: En egendefinert egenskap
+        ReturnType: Boolean
+        Default: =true
+    Children:
+      - Button1:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =ColorFade(Self.Fill, -15%)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(100, 118, 132, 1)
+            Font: =Font.'Open Sans'
+            Height: =89
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Text: =
+            Width: =598
+            X: =24
+            Y: =532
+      - NotificationIcon:
+          Control: Classic/Icon@2.5.0
+          Group: Group1
+          Properties:
+            BorderColor: =RGBA(197, 203, 207, 1)
+            Color: =RGBA(237, 237, 237, 1)
+            DisabledColor: =RGBA(0, 134, 208, 1)
+            HoverColor: =ColorFade(Self.Color, 35%)
+            Icon: =Icon.Bell
+            OnSelect: =Set(varShowPopup, true)
+            PaddingBottom: =5
+            PaddingTop: =5
+            Width: =119
+            X: =458
+            Y: =544
+      - Circle2_1:
+          Control: Circle@2.3.0
+          Group: Group1
+          Properties:
+            BorderColor: =RGBA(255, 0, 0, 1)
+            Fill: =RGBA(255, 0, 0, 1)
+            Height: =22
+            Visible: "='Component2'.IsCancelledAlert "
+            Width: =22
+            X: =518
+            Y: =549
+      - Profileicon:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(186, 202, 226, 1)
+            Color: =RGBA(237, 237, 237, 1)
+            DisabledColor: =RGBA(0, 134, 208, 1)
+            Height: =60
+            HoverColor: =ColorFade(Self.Color, 35%)
+            Icon: =Icon.Person
+            OnSelect: =Component2.navigateToProfile()
+            Width: =108
+            X: =177
+            Y: =546
+      - schedule icon:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(197, 203, 207, 1)
+            Color: =RGBA(237, 237, 237, 1)
+            DisabledColor: =RGBA(0, 134, 208, 1)
+            Height: =60
+            HoverColor: =ColorFade(Self.Color, 35%)
+            Icon: =Icon.CalendarBlank
+            OnSelect: ='Component2'.navigatetoSchedule()
+            PaddingBottom: =5
+            PaddingTop: =5
+            Width: =108
+            X: =37
+            Y: =546
+      - Icon1:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(197, 203, 207, 1)
+            Color: =RGBA(237, 237, 237, 1)
+            Icon: =Icon.Message
+            OnSelect: =Component2.navigateToBot()
+            X: =352
+            Y: =548
+      - Button5:
+          Control: Classic/Button@2.2.0
+          Group: Group2
+          Properties:
+            BorderColor: =ColorFade(Self.Fill, -15%)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(100, 118, 132, 1)
+            Font: =Font.'Open Sans'
+            Height: =123
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Text: =
+            Visible: |+
+              =varShowPopup
+            X: =342
+            Y: =389
+      - Label6_1:
+          Control: Label@2.5.1
+          Group: Group2
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(197, 203, 207, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Open Sans'
+            Height: =53
+            OnSelect: =
+            Size: =10
+            Text: ="There may be changes in your schedule. Check the timetable for details."
+            Visible: |+
+              =varShowPopup
+            Width: =248
+            X: =358
+            Y: =405
+      - Button6_1:
+          Control: Classic/Button@2.2.0
+          Group: Group2
+          Properties:
+            BorderColor: =ColorFade(Self.Fill, -15%)
+            BorderThickness: =0
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(30, 67, 97, 1)
+            Font: =Font.'Open Sans'
+            Height: =33
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+            OnSelect: =Set(varShowPopup, Not(varShowPopup)); Component2.navigatetoSchedule()
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            Size: =10
+            Text: ="View timetable"
+            Visible: |+
+              =varShowPopup
+            Width: =260
+            X: =352
+            Y: =465
+      - Label1:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(197, 203, 207, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Open Sans'
+            Height: =38
+            Size: =12
+            Text: ="Chatbot"
+            Width: =72
+            X: =348
+            Y: =524
