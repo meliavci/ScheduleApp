@@ -1,5 +1,5 @@
 
-# Assignment 1: "Problem Discovery & Initial Design"
+# Assignment 1 – Problem Discovery & Initial Design"
 
 
 ## Cover Page
