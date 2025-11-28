@@ -1,0 +1,186 @@
+kind: AdaptiveDialog
+modelDescription: This topic is a simple login of the user which needs to be done at the start of every conversation, so that the bot knows the users role.
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent: {}
+  actions:
+    - kind: SendActivity
+      id: sendActivity_Zab1qM
+      activity: Please authenticate first before you can access the system functions.
+
+    - kind: Question
+      id: question_zSErLK
+      displayName: Username
+      interruptionPolicy:
+        allowInterruption: true
+
+      variable: init:Topic.EmailInput
+      prompt: Please enter your email.
+      entity: StringPrebuiltEntity
+
+    - kind: Question
+      id: question_yJqram
+      displayName: Password
+      interruptionPolicy:
+        allowInterruption: true
+
+      variable: Topic.PswrdInput
+      prompt: Please enter your password.
+      entity:
+        kind: StringPrebuiltEntity
+        sensitivityLevel: None
+
+    - kind: InvokeFlowAction
+      id: invokeFlowAction_cASlNw
+      input:
+        binding:
+          text: =Topic.EmailInput
+          text_1: =Topic.PswrdInput
+
+      output:
+        binding:
+          status: Topic.Result
+          userrole: Topic.RetrievedRole
+
+      flowId: 31e8cd7d-30bb-f011-bbd3-6045bda07122
+
+    - kind: SetVariable
+      id: setVariable_YWWB8q
+      variable: Global.UserRole
+      value: =Topic.RetrievedRole
+
+    - kind: ConditionGroup
+      id: conditionGroup_hQmKuD
+      conditions:
+        - id: conditionItem_qGLseF
+          condition: =Topic.Result = """Success"""
+          actions:
+            - kind: SendActivity
+              id: sendActivity_lmA29g
+              activity: Authentication successful! Your role is {Global.UserRole}.
+
+            - kind: InvokeFlowAction
+              id: invokeFlowAction_DsBi7v
+              input:
+                binding:
+                  text: =Topic.EmailInput
+
+              output:
+                binding:
+                  username: Topic.userName
+
+              flowId: 7a0c870a-adc0-f011-bbd3-6045bda07122
+
+            - kind: SetVariable
+              id: setVariable_TgWHb0
+              variable: Global.userName
+              value: =Topic.userName
+
+            - kind: ConditionGroup
+              id: conditionGroup_AznZ7A
+              conditions:
+                - id: conditionItem_yn0hT0
+                  condition: =Global.UserRole = "Student"
+                  actions:
+                    - kind: SendActivity
+                      id: sendActivity_2l9W12
+                      activity: "You have the option to give your absence. "
+
+                    - kind: Question
+                      id: question_cvtP5m
+                      interruptionPolicy:
+                        allowInterruption: true
+
+                      variable: init:Topic.Var1
+                      prompt: Do you want to let your professor know?
+                      entity:
+                        kind: EmbeddedEntity
+                        definition:
+                          kind: ClosedListEntity
+                          items:
+                            - id: Yes
+                              displayName: Yes
+
+                            - id: No
+                              displayName: No
+
+                    - kind: ConditionGroup
+                      id: conditionGroup_HiONHv
+                      conditions:
+                        - id: conditionItem_muPYIF
+                          condition: =Topic.Var1 = 'cre96_scheduler.topic.UserAuthentication.main.question_cvtP5m'.Yes
+                          actions:
+                            - kind: BeginDialog
+                              id: TBowcr
+                              dialog: cre96_scheduler.topic.StudentAbsence
+
+                        - id: conditionItem_DPOrex
+                          condition: =Topic.Var1 = 'cre96_scheduler.topic.UserAuthentication.main.question_cvtP5m'.No
+                          actions:
+                            - kind: BeginDialog
+                              id: IK4BRM
+                              dialog: cre96_scheduler.topic.Endconverstation
+
+              elseActions:
+                - kind: ConditionGroup
+                  id: conditionGroup_WW71b4
+                  conditions:
+                    - id: conditionItem_4W9RiY
+                      condition: =Global.UserRole = "Staff"
+                      actions:
+                        - kind: SendActivity
+                          id: sendActivity_VFawF0
+                          activity: You have the option to change a room.
+
+                        - kind: Question
+                          id: question_21eYPB
+                          interruptionPolicy:
+                            allowInterruption: true
+
+                          variable: init:Topic.Var2
+                          prompt: Do you want to change rooms?
+                          entity:
+                            kind: EmbeddedEntity
+                            definition:
+                              kind: ClosedListEntity
+                              items:
+                                - id: Yes
+                                  displayName: Yes
+
+                                - id: No
+                                  displayName: No
+
+                        - kind: ConditionGroup
+                          id: conditionGroup_EE5ASU
+                          conditions:
+                            - id: conditionItem_dmYGQ5
+                              condition: =Topic.Var2 = 'cre96_scheduler.topic.UserAuthentication.main.question_21eYPB'.Yes
+                              actions:
+                                - kind: BeginDialog
+                                  id: DpQA2O
+                                  dialog: cre96_scheduler.topic.Changeroomtype
+
+                            - id: conditionItem_Ll6CG1
+                              condition: =Topic.Var2 = 'cre96_scheduler.topic.UserAuthentication.main.question_21eYPB'.No
+                              actions:
+                                - kind: BeginDialog
+                                  id: NvKmhr
+                                  dialog: cre96_scheduler.topic.Endconverstation
+
+                  elseActions:
+                    - kind: SendActivity
+                      id: sendActivity_RjSDBD
+                      activity: "There are currently no features implemented in the Scheduler. "
+
+                    - kind: BeginDialog
+                      id: f4njzu
+                      dialog: cre96_scheduler.topic.Endconverstation
+
+      elseActions:
+        - kind: SendActivity
+          id: sendActivity_XEFdxL
+          activity: Authentication failed. Please check your credentials.
+
+inputType: {}
+outputType: {}

@@ -1,0 +1,10 @@
+<botcomponent schemaname="cre96_scheduler.topic.ResetConversation">
+  <componenttype>9</componenttype>
+  <iscustomizable>0</iscustomizable>
+  <name>Reset Conversation</name>
+  <parentbotid>
+    <schemaname>cre96_scheduler</schemaname>
+  </parentbotid>
+  <statecode>1</statecode>
+  <statuscode>2</statuscode>
+</botcomponent>

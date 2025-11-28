@@ -1,0 +1,4 @@
+kind: KnowledgeSourceConfiguration
+source:
+  kind: DataverseStructuredSearchSource
+  skillConfiguration: BreakTime_OpeningHourCoursePersonEnrollmentRoom_0IfK4LED8jYB0XPGlFEDC
