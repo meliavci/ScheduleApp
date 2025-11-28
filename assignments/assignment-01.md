@@ -1,8 +1,8 @@
----
-Assignment 1: "Problem Discovery & Initial Design"
----
 
-# Cover Page
+# Assignment 1: "Problem Discovery & Initial Design"
+
+
+## Cover Page
 - **Group Number**: Group 3
 - **Student Names**: Melisa Avci, Raphael Tam-Dao, Victor Wilhelmsen, Shehab Wael Abozied Abdelhamed, Aleksandra Wos
 - **Course**: DevOps and Low-Code Development
@@ -10,11 +10,11 @@ Assignment 1: "Problem Discovery & Initial Design"
 
 ---
 
-# Introduction
-## Purpose of the Report 
+## Introduction
+### Purpose of the Report 
 This report establishes the foundation for a Business Information System (BIS) designed to revolutionize university timetable scheduling. By utilizing Business Process Modeling (BPMN) and Lean analysis, we identify inefficiencies in the current manual scheduling processes. The purpose is to analyze these real-world problems using BIS concepts and propose an automated, data-driven system design that will subsequently be modeled and executed in Camunda and Power Apps.
 
-## Structure 
+### Structure 
 *   **Section 1: Problem Statement & Context.** We define the core scheduling challenges, identify the key stakeholders—specifically the schedulers, professors, and students—and explain the raw data captured. This is linked to the Data-Information-Knowledge-Wisdom (DIKW) hierarchy to demonstrate how raw inputs are transformed into scheduling solutions.
 *   **Section 2: Theoretical Alignment.** This section classifies the proposed solution within the types of Business Information Systems (TPS, MIS, DSS). We analyze the nature of the change—focusing on Operational and Managerial improvements—and further apply the DIKW framework.
 *   **Section 3: Business Process Analysis.** We detail the **AS-IS** (current) process, highlighting weaknesses through a Lean perspective and a Root Cause Analysis (Ishikawa Diagram). We then define the **TO-BE** (future) process, describing the step-by-step automated workflow that replaces manual efforts.
@@ -23,8 +23,8 @@ This report establishes the foundation for a Business Information System (BIS) d
 
 ---
 
-# Problem Statement & Context
-## Problem Description 
+## Problem Statement & Context
+### Problem Description 
 Universities and their students face significant challenges in the process of schedule creation. 
 
 The current system often relies on manual management, which makes it both inefficient and time-consuming. This results in timetables that are frequently unoptimized and prone to course clashes, especially when students select multiple electives or cross-program courses. This overlap reduces flexibility and limits opportunities for students who want to combine courses from different programs. 
@@ -35,20 +35,20 @@ Communication issues further complicate the situation: delays and last-minute ch
 
 Another problem lies in the outdated tools many universities still rely on, such as slow and error-prone Excel files or even paper-based scheduling.
 
-## Stakeholders 
+### Stakeholders 
 The stakeholders involved and their core expectations are clearly defined by their role in or reliance on the scheduling process:
   - __Timetable Schedulers/Staff (Primary Users)__: 
   They are the core users whose existing manual workflow is directly targeted for replacement. They expect a significant  reduction in manual work and less time expenditure. They rely on the system to efficiently handle the complex task of minimizing clashes and assigning resources automatically.
   - __Professors__: They expect respect of their availability and automatically updated schedules in cases such as cancelled classes. They also require an automatic real-time notification system for any changes.
   - __Students__: They expect transparency and fairness with as few collisions as possible. They also expect a system that automatically updates schedules and provides real-time notifications for schedule or class changes.
 
-## BIS Relevance
+### BIS Relevance
 The individuals currently creating timetables often lack specialized IT expertise and are trained only to maintain the status quo using legacy tools. The problem is not a lack of effort, but a lack of **tool capability**. The current process captures raw data (course lists, room numbers), but fails to efficiently process it into useful information. By introducing a BIS, we bridge the gap between raw data availability and actionable scheduling wisdom, utilizing algorithms to perform tasks that are currently done manually.
 
 ---
 
-# Theoretical Alignment
-## BIS Classification
+## Theoretical Alignment
+### BIS Classification
 Our proposed solution integrates features from three distinct types of information systems:
 
 *   **Transaction Processing System (TPS):** The core of the system handles routine, day-to-day transactions. This includes the automatic validation of user logins, the recording of room bookings, and the instant transmission of notifications when a class status changes.
@@ -93,8 +93,8 @@ Implementing this system represents a significant **Operational and Managerial C
 
 ---
 
-# Business Process Analysis
-## AS-IS Description
+## Business Process Analysis
+### AS-IS Description
 The AS-IS process contains inefficiencies, redundancies, and manual work. At our university, the process is as follows: 
 
 The school (timetable maker) sends information to the professors, informing them that the class information for the next semester must be submitted by a given date. After this, the school collects data from the courses in the “Felles studentsystem” and transfers it to their own timetable system, called “TP”. Next, they group students based on their department and try to minimize scheduling clashes. 
@@ -118,13 +118,13 @@ The **TO-BE** process focuses on automation and role-based data handling. The wo
     *   Upon confirmation, the system updates the database immediately.
 6.  **Automated Notification:** All affected students receive an instant push notification regarding the change, eliminating communication delays.
 
-## Ishikawa Diagram (Root Cause Analysis)  
+### Ishikawa Diagram (Root Cause Analysis)  
 
 To understand the underlying causes of **Scheduling Conflicts & Inefficiencies**, we applied a Root Cause Analysis using the Ishikawa (Fishbone) diagram. As illustrated in the diagram below, we categorized the causes into **Machine, Method, Human, and Data**.
 
 ![Ishikawa](../assets/IshikawaDiagram.png)
 
-*Figure 1: Ishikawa Diagram illustrating the root causes of scheduling inefficiencies.*
+*Ishikawa Diagram illustrating the root causes of scheduling inefficiencies.*
 
 **1. Machine (Technology & Tools)**
 The technological infrastructure often hinders rather than helps the process.
@@ -150,11 +150,11 @@ Human factors introduce variability and error into the system.
 *   **Training & Resistance:** There is insufficient training on the system, particularly for temporary staff who are unfamiliar with procedures. Additionally, there is a general **resistance to change**, keeping the university locked in inefficient manual habits.
 
 
-## BPMN Diagram 
+### BPMN Diagram 
 The BPMN diagram illustrates the automated **TO-BE** process for the new "ScheduleApp" system. Unlike the manual AS-IS process, this workflow distinguishes clearly between automated system tasks, user interface interactions, and role-specific human actions. The process is divided into five distinct swimlanes: **System**, **Timeschedule System (User Interface)**, **Professor**, **Student**, and **Staff**.
 
 ![BPMN Diagram](../assets/BPMNDiagram.png)
-*Figure 2: BPMN Diagram illustrating the automated scheduling and user interaction flow.*
+*BPMN Diagram illustrating the automated scheduling and user interaction flow.*
 
 **1. System Initialization and Data Retrieval**
 The process is triggered automatically by the system one week before the start of the semester.
@@ -192,7 +192,7 @@ A "Role" gateway routes the user to their specific swimlane, defining what actio
 
 # AI Collaboration
 
-### Prompt Log
+#### Prompt Log
 
 1.  **Prompt:** "Give me business or organizational settings where a workflow or process can be improved by a BIS (Data-oriented app). Examples: construction project document hub, facility maintenance..."
     *   **Utility:** Helped identify diverse use cases before settling on university scheduling.
@@ -203,7 +203,7 @@ A "Role" gateway routes the user to their specific swimlane, defining what actio
 
 ***
 
-### Outputs
+#### Outputs
 
 1.  **Output:** Here’s a list of business or organizational settings where a Business Information System (BIS) / data-oriented app could significantly improve workflows or processes:
 
@@ -319,7 +319,7 @@ A "Role" gateway routes the user to their specific swimlane, defining what actio
 
 ***
 
-### Reflection
+#### Reflection
 We've used ChatGPT for brainstorming. Furthermore, we tried to get some help from the AI while working with Camunda Modeler but it wasn't helpful. We tried not to use that much AI, so we could decide on our own how the system should work, resulting in a bigger learning process. Though ChatGPT helped us by getting ideas or the perspective of different roles.
 
 For example, we've used it to tell us what tools could use some improvements or rework out of the scheduler's point of view who is using a less efficient system. The knowledge he gave us was something we didn't have so we either get it from the experience of our scheduler or the AI.
@@ -328,7 +328,7 @@ Because we've already talked to our university about it we only knew about one w
 
 ---
 
-# References
+## References
 *   ProcessMaker by Larissa Lewis (2020, November 2). *Decision model and notation tutorial | DMN examples.* ProcessMaker. [ProcessMaker](https://www.processmaker.com/blog/decision-model-and-notation-dmn-tutorial-examples/)
 *   FSAT. (n.d.). *Felles studentsystem (FS) – English pages.* Felles studentsystem. [FSAT.](https://www.fellesstudentsystem.no/english/index.html)
 *   Wikipedia contributors. (2023, December 30). *Student information system.* Wikipedia. [Wikipedia](https://en.wikipedia.org/wiki/Student_information_system)
